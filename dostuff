@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $1 ]; then
+    LINE=$@
+else
+    LINE="more stuff"
+fi
+
+cp ~/.bashrc .
+cp ~/.bash_profile .
+cp ~/.nvimrc .
+cp ~/.config/ranger/ .config/ -r
+cp ~/.local/bin/tools/ .local/bin/ -r
+cp ~/.local/source .local/ -r
+cp ~/.config/dunst/ .config -r
+rsync -av --progress ~/.config/nvim .config/ --exclude plugged
+
+git add -A
+git commit -m "$LINE"
+git push origin master
