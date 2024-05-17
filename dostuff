@@ -13,6 +13,11 @@ cp ~/.config/ranger/ .config/ -r
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r
+cp ~/.config/hypr/ .config -r
+cp ~/.config/waybar/ .config -r
+cp ~/.config/rofi/ .config -r
+cp ~/.config/kitty/ .config -r
+
 rsync -av --progress ~/.config/nvim .config/ --exclude plugged
 
 git add -A
