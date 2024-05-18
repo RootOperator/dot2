@@ -5,7 +5,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "custom/weather", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
+    "modules-right": ["tray", "custom/weather", "custom/storage", "backlight", "pulseaudio", "network", "custom/profile", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{name}",
         "disable-scroll": true
@@ -77,6 +77,11 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
+    },
+    "custom/profile": {
+        "format": "{}",
+        "interval": 10,
+        "exec": "~/.config/waybar/modules/profile.sh"
     },
     "idle_inhibitor": {
         "format": "{icon}",
