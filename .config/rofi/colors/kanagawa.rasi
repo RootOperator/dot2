@@ -1,0 +1,15 @@
+/**
+ *
+ * Author : RootOperator
+ * 
+ * Colors
+ **/
+
+* {
+    background:     #1F1F28FF;
+    background-alt: #282839FF;
+    foreground:     #DCD7BAFF;
+    selected:       #C8C093FF;
+    active:         #1F1F28FF;
+    urgent:         #e82424FF;
+}
