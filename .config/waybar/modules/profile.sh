@@ -2,9 +2,6 @@
 
 PROFILE=$(cat /sys/firmware/acpi/platform_profile)
 
-balanced
-󰈐 peformance
-
 if [ $PROFILE == "low-power" ]
 then
     ICON="󱑲"

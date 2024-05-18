@@ -5,10 +5,15 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "custom/weather", "custom/storage", "backlight", "pulseaudio", "network", "custom/profile", "battery", "clock"],
+    "modules-right": ["tray", "custom/weather", "custom/storage", "custom/microphone", "pulseaudio", "network", "custom/profile", "battery", "clock"],
     "hyprland/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
+        "format": "{icon}",
+        "disable-scroll": true,
+	"format-icons": {
+		"1": "󰈹",
+		"2": "",
+		"3": "",
+	}
     },
     "hyprland/window": {
         "max-length": 50,
@@ -61,13 +66,10 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
     },
-    "backlight": {
-        "format": "{icon}",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": ["", "󰌵"],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
+    "custom/microphone": {
+        "format": "{}",
+        "interval": 5,
+        "exec": "~/.config/waybar/modules/microphone.sh"
     },
     "custom/weather": {
         "format": "{}",
