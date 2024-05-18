@@ -2476,9 +2476,3 @@ enable_audio_bell no
 
 #: }}}
 
-
-
-# BEGIN_KITTY_THEME
-# Kanagawa
-include current-theme.conf
-# END_KITTY_THEME

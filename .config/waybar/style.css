@@ -6,6 +6,7 @@
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
+    color: rgba(220, 215, 186, 1);
 }
 
 window {
