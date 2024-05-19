@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -P -o "\/\s*\K[0-9]*" | head -1)
+BRIGHTNESS=$(light -G)
+
+if [ $1 == "volume" ]
+then
+    TEXT="󰕾 Volume"
+    VALUE=$VOLUME
+elif [ $1 == "brightness" ]
+then
+    TEXT="󰌵 Brightness"
+    VALUE=$BRIGHTNESS
+fi
+
+dunstify -a volbri -h "int:value:$VALUE" -h "string:hlcolor:#658594" "$TEXT"

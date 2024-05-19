@@ -55,8 +55,8 @@
             "phone": [" ", " ", " "],
             "default": ["", "", ""]
         },
-        "scroll-step": 10,
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "pulseaudio -k"
     },
     "custom/storage": {
         "format": "{} ",
