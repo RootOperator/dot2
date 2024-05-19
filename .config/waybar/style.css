@@ -37,6 +37,10 @@ window#waybar.solo {
     border-bottom: 3px solid rgba(217, 216, 216, 0);
 }
 
+#workspaces button:hover {
+    background: rgba(114, 113, 105, 0);
+}
+
 #workspaces button.urgent {
     color:      rgba(238, 46, 36, 1);
 }
