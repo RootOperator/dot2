@@ -5,12 +5,6 @@
 # load z.sh
 . ~/.local/bin/tools/z.sh
 
-
-echo -e "\e[3 q" #sets cursor shape check cursors for help
-clear
-
-[[ $- != *i* ]] && return
-
 colors() {
     local fgc bgc vals seq0
 
@@ -51,25 +45,12 @@ cursors() {
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
-# Change the window title of X terminals
-case ${TERM} in
-    xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-        PROMPT_COMMAND='echo -ne "\033]0;${USER} : ${PWD/#$HOME/\~}\007"'
-        ;;
-    screen*)
-        PROMPT_COMMAND='echo -ne "\033_${USER} : ${PWD/#$HOME/\~}\033\\"'
-        ;;
-esac
-
 use_color=true
-
-
 
 #parse git branch
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1) /'
 }
-
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
@@ -145,7 +126,6 @@ shopt -s checkwinsize
 
 shopt -s expand_aliases
 
-# export QT_SELECT=4
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
@@ -176,7 +156,4 @@ ex ()
   fi
 }
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
