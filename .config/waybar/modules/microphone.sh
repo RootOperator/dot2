@@ -8,3 +8,4 @@ then
 else
     echo "󰍭"
 fi
+

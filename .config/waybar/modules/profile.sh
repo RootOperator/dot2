@@ -2,19 +2,16 @@
 
 PROFILE=$(cat /sys/firmware/acpi/platform_profile)
 
-if [ $PROFILE == "low-power" ]
-then
+case $PROFILE in
+"low-power")
     ICON="󱑲"
-fi
-
-if [ $PROFILE == "balanced" ]
-then
+    ;;
+"balanced")
     ICON="󱑳"
-fi
-
-if [ $PROFILE == "performance" ]
-then
+    ;;
+"performance")
     ICON="󱑴"
-fi
+    ;;
+esac
 
-echo -e "$ICON  $PROFILE"
+echo "$ICON  $PROFILE"
