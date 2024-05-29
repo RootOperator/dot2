@@ -2,9 +2,6 @@
 # ~/.bashrc
 #
 
-# load z.sh
-. ~/.local/bin/tools/z.sh
-
 colors() {
     local fgc bgc vals seq0
 
@@ -113,6 +110,7 @@ alias cp='cp -i'                                    # confirm before overwriting
 alias df='duf'                                      # human-readable sizes
 alias du='du -h'
 alias free='free -m'                                # show sizes in MB
+alias ip='ip --color=auto'                                # show sizes in MB
 alias more=less
 
 xhost +local:root > /dev/null 2>&1
@@ -157,3 +155,6 @@ ex ()
 }
 
 . "$HOME/.cargo/env"
+
+eval "$(zoxide init bash --cmd cd)"
+eval "$(starship init bash)"

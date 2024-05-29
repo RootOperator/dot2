@@ -18,6 +18,7 @@ cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
 cp ~/.config/kitty/ .config -r
 cp ~/.config/gtk-4.0/ .config -r
+cp ~/.config/starship.toml .config -r
 cp ~/.themes . -r
 cp ~/.icons . -r
 
