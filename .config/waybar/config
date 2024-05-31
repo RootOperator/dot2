@@ -4,7 +4,7 @@
     "height": 24,
 
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-center": ["custom/music"],
     "modules-right": ["tray", "custom/weather", "custom/storage", "custom/microphone", "pulseaudio", "network", "custom/profile", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -71,6 +71,11 @@
         "format": "{}",
         "interval": 5,
         "exec": "~/.config/waybar/modules/microphone.sh"
+    },
+    "custom/music": {
+        "format": "{}",
+        "interval": 5,
+        "exec": "~/.config/waybar/modules/music.sh"
     },
     "custom/weather": {
         "format": "{}",
