@@ -4,7 +4,7 @@
     "height": 24,
 
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/music"],
+    "modules-center": ["hyprland/window", "custom/music"],
     "modules-right": ["tray", "custom/weather", "custom/storage", "custom/microphone", "pulseaudio", "network", "custom/profile", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -17,6 +17,7 @@
 	}
     },
     "hyprland/window": {
+        "format": "",
         "max-length": 50,
         "tooltip": false
     },
