@@ -9,6 +9,7 @@ fi
 cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.nvimrc .
+cp ~/.gitconfig .
 cp ~/.config/ranger/ .config/ -r
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
