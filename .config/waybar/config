@@ -57,7 +57,7 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
-        "on-click": "pulseaudio -k"
+        "on-click": "pavucontrol"
     },
     "custom/storage": {
         "format": "{} ",
