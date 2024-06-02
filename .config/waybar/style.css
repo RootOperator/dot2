@@ -47,12 +47,12 @@ window#waybar.solo {
 
 #mode, #battery, #cpu, #memory, #network, #pulseaudio, #custom-microphone, #custom-storage, #custom-weather, #custom-profile {
     margin:     0px 6px 0px 10px;
-    min-width:  25px;
+    min-width:  10px;
 }
 
 #clock {
     margin:     0px 0px 0px 10px;
-    min-width:  140px;
+    min-width:  100px;
 }
 
 #battery.warning {
