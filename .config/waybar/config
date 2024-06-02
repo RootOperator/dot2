@@ -76,7 +76,9 @@
     "custom/music": {
         "format": "{}",
         "interval": 5,
-        "exec": "~/.config/waybar/modules/music.sh"
+        "max-length": 50,
+        "exec": "~/.config/waybar/modules/music.sh",
+        "exec-if": "playerctl status"
     },
     "custom/weather": {
         "format": "{}",

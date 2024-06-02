@@ -264,17 +264,20 @@ cmp.setup({
     },
 })
 
+tel_options = {
+    mappings = {
+        n = {
+            ["s"] = require('telescope.actions').select_vertical,
+            ["i"] = require('telescope.actions').select_horizontal
+        }
+    }
+}
+
 
 require('telescope').setup {
     pickers = {
-        find_files = {
-            mappings = {
-                n = {
-                    ["s"] = require('telescope.actions').select_vertical,
-                    ["i"] = require('telescope.actions').select_horizontal
-                }
-            }
-        }
+        find_files = tel_options,
+        live_grep = tel_options
     }
 }
 
