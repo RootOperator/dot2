@@ -75,8 +75,5 @@ shopt -s expand_aliases
 
 shopt -s histappend
 
-
-. "$HOME/.cargo/env"
-
 eval "$(zoxide init bash --cmd cd)"
 eval "$(starship init bash)"
