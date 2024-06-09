@@ -2,9 +2,7 @@
 
 # # ex - archive extractor
 # # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
+if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
@@ -20,7 +18,6 @@ ex ()
       *.7z)        7z x $1      ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
-  else
+else
     echo "'$1' is not a valid file"
-  fi
-}
+fi
