@@ -6,6 +6,8 @@ import sys
 BACKGROUND_PATH="/home/rootoperator/Pictures/backgrounds/"
 
 def change_background(file):
+    os.system(f"hyprctl hyprpaper unload all")
+    os.system(f"hyprctl hyprpaper preload {BACKGROUND_PATH}{file}")
     os.system(f"hyprctl hyprpaper wallpaper ,{BACKGROUND_PATH}{file}")
 
 

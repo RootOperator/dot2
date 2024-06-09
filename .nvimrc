@@ -205,6 +205,10 @@ require("mason-lspconfig").setup_handlers {
     end
 }
 
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
 vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
 vim.api.nvim_set_option('updatetime', 300) 
@@ -334,8 +338,8 @@ require("nvim-tree").setup {
     },
 }
 
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- auto open nvimtree
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- LSP Diagnostics Options Setup 
 local sign = function(opts)
@@ -390,7 +394,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "lua", "rust", "toml", "python", "cpp" },
+    ensure_installed = { "lua", "rust", "toml", "python", "cpp", "hyprlang" },
     auto_install = true,
     highlight = {
         enable = true,
