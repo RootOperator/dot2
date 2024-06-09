@@ -8,6 +8,4 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$
 export EDITOR="nvim"
 export BROWSER="firefox"
 export XDG_CONFIG_HOME="$HOME/.config"
-# start graphical server if i3 is not already running
-[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x i3 >/dev/null && exec startx
 . "$HOME/.cargo/env"
