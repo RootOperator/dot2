@@ -6,4 +6,4 @@
 ![alt text](scrnshts/6.png)
 ![alt text](scrnshts/7.png)
 ![alt text](scrnshts/8.png)
-![alt text](scrnshts/walls.gif)
+![alt text](scrnshts/wall.mp4)
