@@ -23,7 +23,8 @@ cp ~/.config/starship.toml .config -r
 cp ~/.themes . -r
 cp ~/.icons . -r
 cp ~/.config/fastfetch/ .config -r
-cp ~/.config/YouTube Music/theme/ -r .config/
+cp ~/.config/YouTube\ Music/theme/ -r .config/
+
 rsync -av --progress ~/.config/nvim .config/ --exclude plugged
 
 git add -A
