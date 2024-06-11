@@ -76,6 +76,7 @@ Plug 'windwp/nvim-ts-autotag'
 
 Plug 'tpope/vim-surround'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 
@@ -184,6 +185,7 @@ require("mason-lspconfig").setup()
 require("todo-comments").setup()
 require("dapui").setup()
 require("zen-mode").setup()
+require('colorizer').setup()
 
 require("mason-lspconfig").setup_handlers {
     function (server_name)
