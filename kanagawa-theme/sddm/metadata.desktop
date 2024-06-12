@@ -1,0 +1,12 @@
+[SddmGreeterTheme]
+Name=Kanagawa
+Description=Kanagawa theme for sddm
+Type=sddm-theme
+Version=2.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=Kanagawa
+Theme-API=2.0
+License=MIT
+QtVersion=6
