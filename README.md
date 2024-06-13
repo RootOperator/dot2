@@ -2,7 +2,6 @@
 ![alt text](scrnshts/2.png)
 ![alt text](scrnshts/3.png)
 ![alt text](scrnshts/4.png)
-![alt text](scrnshts/12.png)
 ![alt text](scrnshts/9.png)
 ![alt text](scrnshts/10.png)
 ![alt text](scrnshts/5.png)
