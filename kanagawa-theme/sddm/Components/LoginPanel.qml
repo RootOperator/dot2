@@ -14,8 +14,8 @@ Item {
       verticalCenter: parent.verticalCenter
       horizontalCenter: parent.horizontalCenter
     }
-    height: inputHeight * 5.3
-    width: inputWidth * 1.2
+    height: inputHeight * 4.3
+    width: inputWidth * 1.1
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
     color: config.sumiInk1
