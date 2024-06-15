@@ -210,7 +210,7 @@ require("mason-lspconfig").setup_handlers {
 
 require('tabnine').setup({
   disable_auto_comment=true,
-  accept_keymap="<Tab>",
+  accept_keymap="<C-Space>",
   dismiss_keymap = "<C-]>",
   debounce_ms = 800,
   suggestion_color = {gui = "#808080", cterm = 244},
@@ -246,7 +246,6 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
