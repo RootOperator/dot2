@@ -95,11 +95,10 @@ let g:gruvbox_plugin_hi_groups = 1
 
 let g:vimsence_small_text = 'NeoVim'
 let g:vimsence_small_image = 'neovim'
-"let g:vimsence_editing_state = 'Working on everything'
 
 let g:closetag_filenames = '*.html,*.xhtml,*.vue'
 
-let g:rust_clip_command = 'xclip -selection clipboard'
+let g:rust_clip_command = 'wl-copy'
 
 au FileType html,vue let b:delimitMate_matchpairs = "(:),[:],{:}"
 
