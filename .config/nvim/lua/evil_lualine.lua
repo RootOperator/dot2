@@ -217,6 +217,15 @@ ins_right {
     padding = { left = 1 },
 }
 
+-- tabnine
+ins_left {
+    'lsp_progress'
+}
+
+ins_left {
+    'tabnine'
+}
+
 -- Now don't forget to initialize lualine
 lualine.setup(config)
 
