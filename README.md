@@ -8,7 +8,7 @@
 - ℹ️  Bar: [WayBar](https://github.com/Alexays/Waybar)
 - 💾 Terminal: [Kitty](https://sw.kovidgoyal.net/kitty)
 - 📋 Menu: [Rofi](https://github.com/davatorium/rofi)
-- 🗄 File Manager: [Thunar](https://github.com/xfce-mirror/thunar)
+- 🗄 File Manager: [Thunar](https://github.com/xfce-mirror/thunar), [Yazi](https://github.com/sxyazi/Yazi)
 - 🎨 theme: [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
     - 🗃 [Nvim](https://github.com/rebelot/kanagawa.nvim)
     - 🖌 [GTK](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme)
