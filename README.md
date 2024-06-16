@@ -1,4 +1,4 @@
-
+## Info
 
 - 💻 DE:  [HyprLand](https://hyprland.org)
     - 🔒 [HyprLock](https://github.com/hyprwm/hyprlock)
@@ -15,6 +15,7 @@
     - 🐱 [Kitty](https://github.com/rebelot/kanagawa.nvim/blob/master/extras/kanagawa.conf)
     - 🖥 [SDDM](kanagawa-theme/sddm)
     - 🌐 [FireFox](https://github.com/Haruzona/penguinFox)
+        - 🖌 [Bento](kanagawa-theme/bento/app.css)
     - 💬 [Discord](kanagawa-theme/discord/kanagawa.css)
     - 🎵 [th-ch/youtube-music](kanagawa-theme/ytmusic/kanagawa.css)
 
