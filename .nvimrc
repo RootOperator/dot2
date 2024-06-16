@@ -135,6 +135,8 @@ map <Leader>ft :RustFmt<CR>
 map <Leader>b :DapToggleBreakpoint<CR>
 map <Leader>c :lua require'dap'.clear_breakpoints()<CR>
 map <Leader>z :ZenMode<CR>
+map <Leader>te :TabnineEnable<CR>
+map <Leader>td :TabnineDisable<CR>
 map <F5> :DapContinue<CR>
 map <F10> :DapStepOver<CR>
 map <F11> :DapStepInto<CR>
@@ -218,6 +220,7 @@ require('tabnine').setup({
   log_file_path = nil, -- absolute path to Tabnine log file
 })
 
+vim.cmd("TabnineDisable")
 
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
