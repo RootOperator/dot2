@@ -14,6 +14,7 @@ cp ~/.gitconfig .
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r
+cp ~/.config/nvim/ .config -r
 cp ~/.config/hypr/ .config -r
 cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
@@ -24,8 +25,6 @@ cp ~/.themes . -r
 cp ~/.icons . -r
 cp ~/.config/fastfetch/ .config -r
 cp ~/kanagawa-theme/ . -r
-
-rsync -av --progress ~/.config/nvim .config/ --exclude plugged
 
 git add -A
 git commit -m "$LINE"
