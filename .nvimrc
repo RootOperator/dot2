@@ -46,6 +46,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'folke/zen-mode.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 Plug 'nvim-neotest/nvim-nio'
 
@@ -124,6 +125,8 @@ map <A-t> :FloatermToggle myfloat<CR>
 tnoremap <A-t> <C-\><C-n> :FloatermToggle myfloat<CR>
 tnoremap <A-n> <C-\><C-n> :FloatermNext<CR> 
 map ZX :noh<CR>
+map <C-m> <Plug>MarkdownPreviewToggle
+
 " stuff
 map <Leader>lp :lclose<CR>
 map <Leader>ll :lopen<CR>
@@ -146,8 +149,8 @@ map <F12> :DapStepOut<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fn <cmd>Telescope treesitter<cr>
+nnoremap <leader>fh <cmd>TodoTelescope<cr>
 
 
 imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
