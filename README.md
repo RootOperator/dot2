@@ -1,3 +1,5 @@
+![](scrnshts/12.png)
+
 ## Info
 
 - 💻 DE:  [HyprLand](https://hyprland.org)
@@ -22,15 +24,15 @@
 
 
 ## Preview
-![alt text](scrnshts/1.png)
-![alt text](scrnshts/2.png)
-![alt text](scrnshts/3.png)
-![alt text](scrnshts/4.png)
-![alt text](scrnshts/9.png)
-![alt text](scrnshts/10.png)
-![alt text](scrnshts/5.png)
-![alt text](scrnshts/6.png)
-![alt text](scrnshts/7.png)
-![alt text](scrnshts/8.png)
-![alt text](scrnshts/11.png)
-![alt  text](scrnshts/wall.gif)
+![](scrnshts/1.png)
+![](scrnshts/2.png)
+![](scrnshts/3.png)
+![](scrnshts/4.png)
+![](scrnshts/9.png)
+![](scrnshts/10.png)
+![](scrnshts/5.png)
+![](scrnshts/6.png)
+![](scrnshts/7.png)
+![](scrnshts/8.png)
+![](scrnshts/11.png)
+![](scrnshts/wall.gif)
