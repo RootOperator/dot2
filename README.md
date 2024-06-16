@@ -12,6 +12,7 @@
 - 🎨 theme: [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
     - 🗃 [Nvim](https://github.com/rebelot/kanagawa.nvim)
     - 🖌 [GTK](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme)
+    - 📋 [Rofi](.config/rofi/colors/kanagawa.rasi)
     - 🐱 [Kitty](https://github.com/rebelot/kanagawa.nvim/blob/master/extras/kanagawa.conf)
     - 🖥 [SDDM](kanagawa-theme/sddm)
     - 🌐 [FireFox](https://github.com/Haruzona/penguinFox)
