@@ -17,7 +17,7 @@ set splitbelow
 set clipboard=unnamedplus
 set mouse=a
 set guicursor=a:hor10
-set foldmethod=marker
+set foldmethod=manual
 
 
 call plug#begin()
@@ -45,7 +45,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'voldikss/vim-floaterm'
-Plug 'folke/zen-mode.nvim'
+Plug 'rootoperator/true-zen.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 Plug 'nvim-neotest/nvim-nio'
@@ -80,6 +80,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+
 call plug#end()
 
 
@@ -137,7 +138,11 @@ map <Leader>p :lprevious<CR>
 map <Leader>ft :RustFmt<CR>
 map <Leader>b :DapToggleBreakpoint<CR>
 map <Leader>c :lua require'dap'.clear_breakpoints()<CR>
-map <Leader>z :ZenMode<CR>
+nmap <Leader>zn :TZNarrow<CR>
+vmap <Leader>zn :'<,'>TZNarrow<CR>
+nmap <leader>zf :TZFocus<CR>
+nmap <leader>zm :TZMinimalist<CR>
+nmap <leader>zz :TZAtaraxis<CR>
 map <Leader>te :TabnineEnable<CR>
 map <Leader>td :TabnineDisable<CR>
 map <F5> :DapContinue<CR>
@@ -176,7 +181,6 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require("todo-comments").setup()
 require("dapui").setup()
-require("zen-mode").setup()
 require('colorizer').setup()
 
 require("mason-lspconfig").setup_handlers {
@@ -198,6 +202,37 @@ require("mason-lspconfig").setup_handlers {
         })
     end
 }
+
+require("true-zen").setup({
+    integrations = {
+        kitty = {
+            enabled = true,
+            font = "+2"
+        },
+        lualine = true
+    },
+})
+
+
+--neorg 
+require("neorg").setup({
+    load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.completion"] = {
+            config = {
+                engine = "nvim-cmp"
+            }
+        },
+        ["core.dirman"] = {
+            config = {
+                workspaces = {
+                    notes = "~/notes",
+                }
+            }
+        },
+    }
+})
 
 require('tabnine').setup({
   disable_auto_comment=true,
@@ -253,6 +288,7 @@ cmp.setup({
         { name = 'buffer', keyword_length = 2 },        -- source current buffer
         { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
         { name = 'calc'},                               -- source for math calculation
+        { name = 'neorg'},                              -- notes
     },
     window = {
         completion = cmp.config.window.bordered(),
