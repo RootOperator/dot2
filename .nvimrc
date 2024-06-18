@@ -1,6 +1,7 @@
 set encoding=UTF-8
 set termguicolors
 set number
+set relativenumber
 set showbreak=+++
 set hlsearch
 set smartcase
@@ -20,14 +21,12 @@ set guicursor=a:hor10
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
-"Plug 'flazz/vim-colorschemes'
 "Plug 'rootoperator/vim-closetag'
 Plug 'preservim/nerdcommenter'
 Plug 'raimondi/delimitmate'
 Plug 'cespare/vim-toml'
 
 Plug 'rootoperator/presence.nvim'
-"Plug 'vimsence/vimsence'
 
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dense-analysis/ale'
@@ -96,12 +95,6 @@ let g:colors_off_a_little = 1
 let g:gruvbox_filetype_hi_groups = 1
 let g:gruvbox_plugin_hi_groups = 1
 
-"let g:vimsence_small_text = 'NeoVim'
-"let g:vimsence_small_image = 'neovim'
-"let g:vimsence_file_explorer_text = 'In NERDTree'
-"let g:vimsence_file_explorer_details = 'Looking for files'
-
-
 let g:closetag_filenames = '*.html,*.xhtml,*.vue'
 
 let g:rust_clip_command = 'wl-copy'
@@ -137,8 +130,8 @@ map <Leader>lp :lclose<CR>
 map <Leader>ll :lopen<CR>
 map <Leader>tm :TableModeToggle<CR>
 map <Leader>st :ALEToggle<CR>
-map <Leader>n :lnext<CR>
-map <Leader>p :lprevious<CR>
+map <Leader>nn :lnext<CR>
+map <Leader>pp :lprevious<CR>
 map <Leader>ft :RustFmt<CR>
 map <Leader>b :DapToggleBreakpoint<CR>
 map <Leader>c :lua require'dap'.clear_breakpoints()<CR>
@@ -149,6 +142,8 @@ nmap <leader>zm :TZMinimalist<CR>
 nmap <leader>zz :TZAtaraxis<CR>
 map <Leader>te :TabnineEnable<CR>
 map <Leader>td :TabnineDisable<CR>
+map <Leader>no :Neorg workspace notes<CR>
+map <Leader>nr :Neorg return<CR>
 map <F5> :DapContinue<CR>
 map <F10> :DapStepOver<CR>
 map <F11> :DapStepInto<CR>
@@ -244,9 +239,9 @@ require("neorg").setup({
 require("presence").setup({
     -- General options
     auto_update         = true,
-    neovim_image_text   = "The One True Text Editor",
+    neovim_image_text   = "Nvim",
     main_image          = "file",
-    log_level           = "debug",
+    log_level           = nil,
     debounce_timeout    = 10,
     enable_line_number  = false,
     blacklist           = {"/home/rootoperator/notes"},
