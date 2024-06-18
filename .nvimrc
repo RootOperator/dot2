@@ -17,8 +17,7 @@ set splitbelow
 set clipboard=unnamedplus
 set mouse=a
 set guicursor=a:hor10
-set foldmethod=manual
-
+set conceallevel=2
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
