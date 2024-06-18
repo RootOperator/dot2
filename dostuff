@@ -6,6 +6,8 @@ else
     LINE="more stuff"
 fi
 
+rm -rf Pictures/backgrounds .local .config .themes .icons kanagawa-theme 
+
 cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.nvimrc .
