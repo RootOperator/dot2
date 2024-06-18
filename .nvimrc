@@ -17,7 +17,6 @@ set splitbelow
 set clipboard=unnamedplus
 set mouse=a
 set guicursor=a:hor10
-set conceallevel=2
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
@@ -206,7 +205,7 @@ require("true-zen").setup({
     integrations = {
         kitty = {
             enabled = true,
-            font = "+2"
+            font = "+1"
         },
         lualine = true
     },
@@ -218,6 +217,7 @@ require("neorg").setup({
     load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
+        ["core.export"] = {},
         ["core.completion"] = {
             config = {
                 engine = "nvim-cmp"
