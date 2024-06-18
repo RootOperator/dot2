@@ -7,7 +7,7 @@ else
 fi
 
 rm -rf backgrounds .local .config .themes .icons kanagawa-theme 
-mkdir .local
+mkdir .local/bin -p
 mkdir .config
 
 cp ~/.bashrc .
