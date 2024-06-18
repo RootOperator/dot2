@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+FILE="/sys/class/leds/tpacpi::lid_logo_dot/brightness"
+STATUS=$(cat $FILE)
+
+if [ $STATUS -gt 0 ]
+then
+    echo 0 > $FILE
+else
+    echo 1 > $FILE
+fi

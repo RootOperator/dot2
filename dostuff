@@ -6,7 +6,9 @@ else
     LINE="more stuff"
 fi
 
-rm -rf Pictures/backgrounds .local .config .themes .icons kanagawa-theme 
+#rm -rf backgrounds .local .config .themes .icons kanagawa-theme 
+mkdir .local
+mkdir .config
 
 cp ~/.bashrc .
 cp ~/.bash_profile .
