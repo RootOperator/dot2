@@ -21,12 +21,12 @@ set guicursor=a:hor10
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
-"Plug 'rootoperator/vim-closetag'
 Plug 'preservim/nerdcommenter'
 Plug 'raimondi/delimitmate'
 Plug 'cespare/vim-toml'
 
 Plug 'rootoperator/presence.nvim'
+Plug 'rootoperator/true-zen.nvim'
 
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dense-analysis/ale'
@@ -45,7 +45,6 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'voldikss/vim-floaterm'
-Plug 'rootoperator/true-zen.nvim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 Plug 'nvim-neotest/nvim-nio'
@@ -80,7 +79,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
-
+Plug 'nanozuki/tabby.nvim'
 call plug#end()
 
 
@@ -179,8 +178,10 @@ require("evil_lualine")
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("todo-comments").setup()
+require("nvim-ts-autotag").setup()
 require("dapui").setup()
 require('colorizer').setup()
+require('tabby').setup()
 
 require("mason-lspconfig").setup_handlers {
     function (server_name)
@@ -334,25 +335,21 @@ cmp.setup({
     },
 })
 
-tel_options = {
-    mappings = {
-        n = {
-            ["s"] = require('telescope.actions').select_vertical,
-            ["i"] = require('telescope.actions').select_horizontal
+require('telescope').setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-s>"] = "select_vertical",
+                ["<C-i>"] = "select_horizontal",
+            },
+            n = {
+                ["s"] = "select_vertical",
+                ["i"] = "select_horizontal",
+            }
         }
     }
 }
 
-
-require('telescope').setup {
-    pickers = {
-        find_files = tel_options,
-        live_grep = tel_options
-    }
-}
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 2
 
 vim.opt.termguicolors = true
 
@@ -467,9 +464,6 @@ require('nvim-treesitter.configs').setup {
         additional_vim_regex_highlighting=true,
     },
     ident = { enable = true }, 
-    autotag = {
-        enable = true
-    }
 }
 
 
