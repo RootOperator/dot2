@@ -121,6 +121,8 @@ map <C-t> :FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR
 map <A-t> :FloatermToggle myfloat<CR>
 tnoremap <A-t> <C-\><C-n> :FloatermToggle myfloat<CR>
 tnoremap <A-n> <C-\><C-n> :FloatermNext<CR> 
+nnoremap <S-j> 5j
+nnoremap <S-k> 5k
 map ZX :noh<CR>
 map <C-m> <Plug>MarkdownPreviewToggle
 
