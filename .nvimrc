@@ -83,7 +83,6 @@ Plug 'nanozuki/tabby.nvim'
 
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
-Plug 'luukvbaal/statuscol.nvim'
 call plug#end()
 
 
@@ -197,27 +196,10 @@ require('tabby').setup()
 
 
 -- better folds
-local builtin = require("statuscol.builtin")
-require("statuscol").setup({
-  setopt = true,
-  relculright = true,
-  segments = {
-    { text = { builtin.foldfunc, "" }, 
-      click = "v:lua.ScFa",
-      hl = "Comment",
-    },
-
-    { text = { "%s"}, click = "v:lua.ScSa" },
-    { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa", },
-  
-  }
-})
-
-vim.o.foldcolumn = '1'
+vim.o.foldcolumn = '0'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
