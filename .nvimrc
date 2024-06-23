@@ -183,6 +183,8 @@ endif
 lua << EOF
 -- TODO: unclutter
 
+-- Welcome to unmanaged garbage :)
+
 require("evil_lualine")
 require("mason").setup()
 require("mason-lspconfig").setup()
