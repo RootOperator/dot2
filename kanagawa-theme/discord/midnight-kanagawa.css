@@ -52,7 +52,7 @@
         --online-indicator: var(--springGreen);
         --dnd-indicator: var(--autumnRed);
         --idle-indicator: var(--autumnYellow);
-        --streaming-indicator: var(--onitViolet);
+        --streaming-indicator: var(--oniViolet);
 
         /* accent colors */
         --accent-1: var(--springBlue); /* links */
