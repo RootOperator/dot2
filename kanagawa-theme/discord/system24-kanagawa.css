@@ -88,9 +88,9 @@
     --border-hover-color: var(--fujiWhite);
     --border-transition: 0.2s ease;
 
-    --online-dot: #FFFFFF;
-    --dnd-dot: #FFFFFF;
-    --idle-dot: #FFFFFF;
+    --online-dot: var(--autumnGreen);
+    --dnd-dot: var(--autumnRed);
+    --idle-dot: var(--autumnYellow);
 
     --pink:  var(--samuraiRed); /* */
     --pink-1: var(--samuraiRed);
