@@ -1,0 +1,104 @@
+/*
+    Credit to refact0r's system24 theme for discord
+    https://github.com/refact0r/system24
+*/
+
+@import url('https://refact0r.github.io/system24/system24.css');
+
+:root {
+    --fujiWhite:        #DCD7BA;
+    --oldWhite:         #C8C093;
+    --sumiInk0:         #16161D;
+    --sumiInk1:         #1F1F28;
+    --sumiInk2:         #2A2A37;
+    --sumiInk3:         #363646;
+    --sumiInk4:         #54546D;
+    --waveBlue1:        #223249;
+    --waveBlue2:        #2D4F67;
+    --winterGreen:      #2B3328;
+    --winterYellow:     #49443C;
+    --winterRed:        #43242B;
+    --winterBlue:       #252535;
+    --autumnGreen:      #76946A;
+    --autumnRed:        #C34043;
+    --autumnYellow:     #DCA561;
+    --samuraiRed:       #E82424;
+    --roninYellow:      #FF9E3B;
+    --waveAqua1:        #6A9589;
+    --dragonBlue:       #658594;
+    --fujiGray:         #727169;
+    --springViolet1:    #938AA9;
+    --oniViolet:        #957FB8;
+    --crystalBlue:      #7E9CD8;
+    --springViolet2:    #9CABCA;
+    --springBlue:       #7FB4CA;
+    --lightBlue:        #A3D4D5;
+    --waveAqua2:        #7AA89F;
+    --springGreen:      #98BB6C;
+    --boatYellow1:      #938056;
+    --boatYellow2:      #C0A36E;
+    --carpYellow:       #E6C384;
+    --sakuraPink:       #D27E99;
+    --waveRed:          #E46876;
+    --peachRed:         #FF5D62;
+    --surimiOrange:     #FFA066;
+    --katanaGrey:       #717C7C;
+
+
+    --font: 'DM Mono';
+    letter-spacing: -0.05ch;
+    font-weight: 300;
+    --label-font-weight: 500;
+
+    --corner-text: 'system24';
+
+    --pad: 16px;
+    --txt-pad: 10px;
+
+    --bg-0: var(--sumiInk1); /* main background */
+    --bg-1: var(--sumiInk0);
+    --bg-2: var(--sumiInk2);
+    --bg-3: var(--sumiInk3);
+
+
+    --hover: var(--sumiInk2);
+    --active: var(--sumiInk3);
+    --selected: var(--active);
+
+    --txt-dark: var(--bg-0);
+    --txt-link: var(--springBlue);
+    --txt-0:  var(--fujiWhite);
+    --txt-1: var(--fujiWhite);
+    --txt-2: var(--katanaGrey);
+    --txt-3: var(--sumiInk4);
+
+    --mention-txt: var(--crystalBlue);
+    --mention-bg: hsla(220, 54%, 67%, 0.15);
+    --mention-overlay:  hsla(220, 54%, 67%, 0.1);
+    --mention-hover-overlay: hsla(220, 54%, 67%, 0.08);
+    --reply-overlay: var(--active);
+    --reply-hover-overlay: var(--hover);
+
+    --border-width: 2px;
+    --border-color: var(--bg-3);
+    --border-hover-color: var(--fujiWhite);
+    --border-transition: 0.2s ease;
+
+    --online-dot: #FFFFFF;
+    --dnd-dot: #FFFFFF;
+    --idle-dot: #FFFFFF;
+
+    --pink:  var(--samuraiRed); /* */
+    --pink-1: var(--samuraiRed);
+    --pink-2: #0F0; /* leaving this here until I find what this actually colors */
+    --purple: var(--fujiWhite);
+    --purple-1: var(--oldWhite);
+    --purple-2: var(--oldWhite);
+    --cyan: var(--springBlue);
+    --yellow: var(--autumnYellow);
+    --green: var(--autumnGreen);
+}
+
+.theme-dark {
+    --status-danger: var(--fujiWhite); /* mute / unmute / unread ping */
+}

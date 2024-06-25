@@ -24,8 +24,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'raimondi/delimitmate'
 Plug 'cespare/vim-toml'
+Plug 'jiriks74/presence.nvim'
 
-Plug 'rootoperator/presence.nvim'
 Plug 'rootoperator/true-zen.nvim'
 
 Plug 'dhruvasagar/vim-table-mode'

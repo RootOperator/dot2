@@ -19,7 +19,9 @@
     - 🖥 [SDDM](kanagawa-theme/sddm)
     - 🌐 [FireFox](https://github.com/Haruzona/penguinFox)
         - 🖌 [Bento](kanagawa-theme/bento/app.css)
-    - 💬 [Discord](kanagawa-theme/discord/kanagawa.css)
+    - 💬 [Discord](kanagawa-theme/discord)
+        -   [midnight](kanagawa-theme/discord/midnight-kanagawa.css)
+        -   [system24](kanagawa-theme/discord/system24-kanagawa.css)
     - 🎵 [th-ch/youtube-music](kanagawa-theme/ytmusic/kanagawa.css)
 
 
@@ -29,6 +31,7 @@
 ![](scrnshts/3.png)
 ![](scrnshts/4.png)
 ![](scrnshts/13.png)
+![](scrnshts/14.png)
 ![](scrnshts/9.png)
 ![](scrnshts/10.png)
 ![](scrnshts/5.png)
