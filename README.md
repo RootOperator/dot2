@@ -20,8 +20,8 @@
     - 🌐 [FireFox](https://github.com/Haruzona/penguinFox)
         - 🖌 [Bento](kanagawa-theme/bento/app.css)
     - 💬 [Discord](kanagawa-theme/discord)
-        -   [midnight](kanagawa-theme/discord/midnight-kanagawa.css)
-        -   [system24](kanagawa-theme/discord/system24-kanagawa.css)
+        -   🌑 [midnight](kanagawa-theme/discord/midnight-kanagawa.css)
+        -   👾 [system24](kanagawa-theme/discord/system24-kanagawa.css)
     - 🎵 [th-ch/youtube-music](kanagawa-theme/ytmusic/kanagawa.css)
 
 
