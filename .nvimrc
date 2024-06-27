@@ -263,7 +263,7 @@ require("true-zen").setup({
         ataraxis = {
             minimum_writing_area = {
                 width = 120,
-                height = 50,
+                height = 44,
             },
             padding = { -- padding windows
                 left = 150,
@@ -547,7 +547,7 @@ require('kanagawa').setup({
     statementStyle = { bold = true },
     typeStyle = {},
     transparent = false,        -- do not set background color
-    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
     globalStatus = false,       -- adjust window separators highlight for laststatus=3
     terminalColors = true,
     colors = {
@@ -560,14 +560,20 @@ require('kanagawa').setup({
         }
     },
     overrides = function(colors)
+        local theme = colors.theme
         return {
             -- Assign a static color to strings
             String = { fg = colors.palette.carpYellow, italic = true },
-            -- theme colors will update dynamically when you change theme!
-            SomePluginHl = { fg = colors.theme.syn.type, bold = true },
+
+            TelescopeTitle = { fg = theme.ui.special, bold = true },
+            TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+            TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+            TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+            TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+            TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+            TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
         }
     end,
-    theme = "default"
 })
 
 local dap, dapui = require("dap"), require("dapui")
