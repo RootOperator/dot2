@@ -91,6 +91,7 @@
     --online-dot: var(--autumnGreen);
     --dnd-dot: var(--autumnRed);
     --idle-dot: var(--autumnYellow);
+    --streaming-dot: var(--oniViolet);
 
     --pink:  var(--samuraiRed); /* */
     --pink-1: var(--samuraiRed);
