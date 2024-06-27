@@ -259,11 +259,28 @@ require("mason-lspconfig").setup_handlers {
 }
 
 require("true-zen").setup({
-    integrations = {
-        kitty = {
-            enabled = true,
-            font = "+1"
+    modes = {
+        ataraxis = {
+            minimum_writing_area = {
+                width = 120,
+                height = 50,
+            },
+            padding = { -- padding windows
+                left = 150,
+                right = 52,
+                top = 0,
+                bottom = 0,
+            },
+            callbacks = { -- run functions when opening/closing Ataraxis mode
+                open_pre = function () vim.cmd("UfoDisable") end,
+                open_pos = nil,
+                close_pre = nil,
+                close_pos = function() vim.cmd("UfoEnable") end
+           },
         },
+    },
+
+    integrations = {
         lualine = true
     },
 })
