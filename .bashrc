@@ -56,15 +56,17 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias cat='bat'                                     # better version of cat
 alias ls='eza --icons=auto --color=auto'            # better version of ls
 alias cp='cp -i'                                    # confirm before overwriting something
 alias df='duf'                                      # human-readable sizes
 alias du='du -h'
 alias free='free -m'                                # show sizes in MB
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'
 alias more=less
 
 complete -cf sudo

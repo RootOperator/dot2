@@ -547,7 +547,7 @@ require('kanagawa').setup({
     statementStyle = { bold = true },
     typeStyle = {},
     transparent = false,        -- do not set background color
-    dimInactive = true,        -- dim inactive window `:h hl-NormalNC`
+    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
     globalStatus = false,       -- adjust window separators highlight for laststatus=3
     terminalColors = true,
     colors = {

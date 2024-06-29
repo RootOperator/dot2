@@ -93,9 +93,9 @@
     --idle-dot: var(--autumnYellow);
     --streaming-dot: var(--oniViolet);
 
-    --pink:  var(--samuraiRed); /* */
+    --pink:  var(--autumnRed);
     --pink-1: var(--samuraiRed);
-    --pink-2: #0F0; /* leaving this here until I find what this actually colors */
+    --pink-2: var(--samuraiRed);
     --purple: var(--fujiWhite);
     --purple-1: var(--oldWhite);
     --purple-2: var(--oldWhite);
