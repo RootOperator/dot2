@@ -1,98 +1,111 @@
-use std::fs::{self, File, OpenOptions};
-use std::io::{Read, Write, Result};
-
-use hyprland::ctl::set_prop;
-use hyprland::ctl::set_prop::PropType;
-use hyprland::data::{Clients, Client};
+use hyprland::ctl::set_prop::{self, PropType};
+use hyprland::data::{Client, Clients};
 use hyprland::shared::{HyprData, HyprDataActiveOptional};
+use std::fs::{self, OpenOptions};
+use std::io::{Read, Result, Write};
 
-
-const FILE_PATH: &'static str = "/tmp/OPACITY";
+const FILE_PATH: &str = "/tmp/OPACITY";
 
 fn main() -> Result<()> {
     let active_window = Client::get_active().unwrap();
 
-    purge_file();
-
     if let Some(active_window) = active_window {
         let address = active_window.address.to_string();
-        let formatted_address = format!("address:{}", address);
 
-        if !in_file(&address).unwrap() {
+        purge_file()?;
+
+        if !in_file(&address)? {
             write_address_to_file(&address)?;
-            change_opacity(&formatted_address, true);
+            change_opacity(&address, true);
         } else {
             delete_address_from_file(&address)?;
-            change_opacity(&formatted_address, false);
+            change_opacity(&address, false);
         }
     }
 
     Ok(())
 }
 
-// changes opacity of the focussed window
+/// Changes the opacity of a window identified by `address`.
+/// If `_override` is true, sets the window opacity override to true.
+/// Otherwise, sets it to false.
 fn change_opacity(address: &str, _override: bool) {
-    set_prop::call(address.to_owned(), PropType::AlphaOverride(_override, false), false).unwrap();
+    set_prop::call(
+        format!("address:{}", address),
+        PropType::AlphaOverride(_override, false),
+        false,
+    )
+    .unwrap();
 }
 
-// checks if address is in file
+/// Checks if the given `address` exists in the file specified by `FILE_PATH`.
+/// Returns `true` if the address is found, `false` otherwise.
 fn in_file(address: &str) -> Result<bool> {
     let content = read_file()?;
-
-    Ok(content.contains(address))
+    Ok(content.lines().any(|line| line == address))
 }
 
-// removes inactive addresses from file
-fn purge_file() {
+/// Removes any addresses from the file specified by `FILE_PATH`
+/// that are no longer associated with active windows.
+fn purge_file() -> Result<()> {
     let clients = Clients::get().unwrap();
     let addresses: Vec<String> = clients.iter().map(|x| x.address.to_string()).collect();
+    let content = read_file()?;
 
-    let content = read_file().unwrap();
+    let new_content: String = content
+        .lines()
+        .filter(|line| addresses.contains(&line.to_string()))
+        .collect::<Vec<&str>>()
+        .join("\n");
 
-    for line in content.lines() {
-        if !addresses.contains(&line.to_owned()) {
-            delete_address_from_file(line).unwrap();
-        }
-    }
+    fs::write(FILE_PATH, new_content)?;
+
+    Ok(())
 }
 
-// reads file
+/// Reads the contents of the file specified by `FILE_PATH`
+/// and returns it as a `String`.
 fn read_file() -> Result<String> {
     let mut file = OpenOptions::new()
-         .read(true)
-         .write(true)
-         .create(true)
-         .open(FILE_PATH).unwrap();
-
+        .read(true)
+        .write(true)
+        .create(true)
+        .open(FILE_PATH)?;
     let mut content = String::new();
     file.read_to_string(&mut content)?;
-
     Ok(content)
 }
 
-// deletes specific address from file
-fn delete_address_from_file(address: &str) -> Result<()>{
-    let mut file = File::open(FILE_PATH)?;
+/// Removes the given `address` from the file specified by `FILE_PATH`.
+fn delete_address_from_file(address: &str) -> Result<()> {
+    let content = read_file()?;
+    let new_content: String = content
+        .lines()
+        .filter(|line| line != &address)
+        .collect::<Vec<&str>>()
+        .join("\n");
 
-    let mut content = String::new();
-    file.read_to_string(&mut content)?;
-
-    content = content
-        .replace(&address, "")
-        .trim()
-        .to_string();
-    fs::write(FILE_PATH, &content)?;
+    fs::write(FILE_PATH, new_content)?;
 
     Ok(())
 }
 
-// append address to file if it's not in there
+/// Writes the given `address` to the file specified by `FILE_PATH`.
+/// Ensures the address is written on a new line if the file is not empty.
 fn write_address_to_file(address: &str) -> Result<()> {
     let mut file = OpenOptions::new()
-         .append(true)
-         .create(true)
-         .open(FILE_PATH).expect("Cannot open file");
+        .append(true)
+        .create(true)
+        .open(FILE_PATH)?;
+    let content = read_file()?;
 
-    writeln!(file, "{}", &address)?;
+    // Ensure there's a newline before appending if the file is not empty.
+    // For some reason after deleting it won't put a new address on a new line.
+    // you'd think the .append() or the writeln! would do that.
+    if !content.is_empty() {
+        write!(file, "\n")?;
+    }
+
+    writeln!(file, "{}", address)?;
     Ok(())
 }
