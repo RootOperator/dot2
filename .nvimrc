@@ -304,6 +304,12 @@ require("neorg").setup({
                 }
             }
         },
+        ["core.esupports.metagen"] = {
+            config = {
+                type = "empty",
+                timezone = "implicit-local"
+            }
+        }
     }
 })
 
