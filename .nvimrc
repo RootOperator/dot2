@@ -27,6 +27,7 @@ Plug 'cespare/vim-toml'
 Plug 'jiriks74/presence.nvim'
 
 Plug 'rootoperator/true-zen.nvim'
+Plug 'rootoperator/kanagawa.nvim'
 
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dense-analysis/ale'
@@ -34,10 +35,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'arzg/vim-rust-syntax-ext'
 Plug 'mattn/webapi-vim'
 Plug 'sainnhe/sonokai'
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'pbrisbin/vim-colors-off'
-Plug 'rebelot/kanagawa.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
@@ -93,9 +92,6 @@ let mapleader = '\'
 let delimitMate_expand_cr = 1
 
 let g:colors_off_a_little = 1
-
-let g:gruvbox_filetype_hi_groups = 1
-let g:gruvbox_plugin_hi_groups = 1
 
 let g:closetag_filenames = '*.html,*.xhtml,*.vue'
 
@@ -192,7 +188,6 @@ require("nvim-ts-autotag").setup()
 require("dapui").setup()
 require('colorizer').setup()
 require('tabby').setup()
-
 
 
 -- better folds
@@ -292,6 +287,11 @@ require("neorg").setup({
         ["core.defaults"] = {},
         ["core.concealer"] = {},
         ["core.export"] = {},
+        ["core.export.markdown"] = {
+            config = {
+                extensions = "all"
+            }
+        },
         ["core.completion"] = {
             config = {
                 engine = "nvim-cmp"
@@ -546,6 +546,7 @@ require('nvim-treesitter.configs').setup {
 
 
 require('kanagawa').setup({
+    compile = true,
     undercurl = true,           -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
