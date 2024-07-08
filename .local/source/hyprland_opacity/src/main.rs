@@ -28,7 +28,6 @@ fn main() -> Result<()> {
 
 /// Changes the opacity of a window identified by `address`.
 /// If `_override` is true, sets the window opacity override to true.
-/// Otherwise, sets it to false.
 fn change_opacity(address: &str, _override: bool) {
     set_prop::call(
         format!("address:{}", address),
@@ -91,7 +90,6 @@ fn delete_address_from_file(address: &str) -> Result<()> {
 }
 
 /// Writes the given `address` to the file specified by `FILE_PATH`.
-/// Ensures the address is written on a new line if the file is not empty.
 fn write_address_to_file(address: &str) -> Result<()> {
     let mut file = OpenOptions::new()
         .append(true)
