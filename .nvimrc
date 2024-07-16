@@ -166,7 +166,8 @@ smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 
 set background=dark
 
-autocmd InsertEnter,InsertLeave * set cul! "sets cursorline when entering Insert mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 autocmd QuitPre * if empty(&bt) | lclose | endif " Auto close loc list after asocicatet file is closed
 
 if $TERM =~ 'xterm-256color'
