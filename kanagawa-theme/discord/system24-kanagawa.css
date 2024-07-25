@@ -116,3 +116,48 @@
 .container_a4d4d9 > [style$='display: flex;'] > .guilds_a4d4d9 {
     margin: var(--pad) 0 var(--pad) 0;
 }
+
+/* minified memberlist (system24 theme version) */
+:root {
+    --collapsed: 62px;
+    --expanded: 240px;
+    --transition: 0.2s ease-out;
+}
+.membersWrap_cbd271 {
+    min-width: unset;
+    width: var(--collapsed);
+    transition: var(--transition);
+    height: 100%;
+}
+.members_cbd271,
+.container_cbd271 {
+    width: var(--collapsed);
+    transition: var(--transition);
+}
+.membersWrap_cbd271:hover,
+.membersWrap_cbd271:hover .members_cbd271,
+.container_cbd271:hover {
+    width: var(--expanded);
+}
+
+.membersWrap_cbd271:hover:after {
+    content: 'members';
+}
+
+.membersGroup_cbd271 {
+    height: 0;
+    padding-top: 0;
+    transition: var(--transition);
+}
+.membersWrap_cbd271:hover .membersGroup_cbd271 {
+    padding: 24px 8px 0 16px;
+    height: 40px;
+}
+.chat_a7d72e:has(.membersWrap_cbd271:not(:hover)) .searchBar_a46bef{
+    width: calc(var(--collapsed) - 24px) !important;
+    margin-left: calc(var(--spacing) + 8px);
+}
+
+.membersWrap_cbd271::after {
+    content: '';
+}
