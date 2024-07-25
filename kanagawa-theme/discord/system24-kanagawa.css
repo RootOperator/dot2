@@ -1,7 +1,7 @@
 /*
     Credit to refact0r's system24 theme for discord
     https://github.com/refact0r/system24
-*/
+ */
 
 
 @import url('https://refact0r.github.io/system24/src/main.css');
@@ -111,4 +111,8 @@
 .theme-dark {
     --badge-brand-bg: var(--fujiWhite);
     --status-danger: var(--fujiWhite); /* mute / unmute / unread ping */
+}
+
+.container_a4d4d9 > [style$='display: flex;'] > .guilds_a4d4d9 {
+    margin: var(--pad) 0 var(--pad) 0;
 }
