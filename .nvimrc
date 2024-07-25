@@ -81,6 +81,7 @@ Plug 'nanozuki/tabby.nvim'
 
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
+Plug 'nvim-zh/whitespace.nvim'
 call plug#end()
 
 
