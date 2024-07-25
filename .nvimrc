@@ -114,6 +114,8 @@ let g:vim_vue_plugin_config = {
 
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
+map <C-h> :tabm -1 <CR>
+map <C-l> :tabm +1<CR>
 map <C-n> :NvimTreeToggle<CR>
 map <C-t> :FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR>
 map <A-t> :FloatermToggle myfloat<CR>

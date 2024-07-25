@@ -3,11 +3,9 @@
     https://github.com/refact0r/system24
 */
 
-/*
-    still need to fix some colors
-*/
 
-@import url('https://refact0r.github.io/system24/system24.css');
+@import url('https://refact0r.github.io/system24/src/main.css');
+@import url('https://refact0r.github.io/system24/src/unrounding.css');
 
 :root {
     --fujiWhite:        #DCD7BA;
@@ -52,7 +50,7 @@
     --font: 'DM Mono';
     letter-spacing: -0.05ch;
     font-weight: 300;
-    --label-font-weight: 400;
+    --label-font-weight: 500;
 
     --corner-text: 'system24';
 
@@ -87,7 +85,7 @@
     --reply-overlay: var(--active);
     --reply-hover-overlay: var(--hover);
 
-    --border-width: 1px;
+    --border-width: 2px;
     --border-color: var(--bg-3);
     --border-hover-color: var(--fujiWhite);
     --border-transition: 0.2s ease;
