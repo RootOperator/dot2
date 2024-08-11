@@ -115,6 +115,7 @@ let g:vim_vue_plugin_config = {
 
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
+imap <C-BS> <C-W>
 map <C-h> :tabm -1 <CR>
 map <C-l> :tabm +1<CR>
 map <C-n> :NvimTreeToggle<CR>

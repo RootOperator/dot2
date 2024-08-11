@@ -55,7 +55,7 @@
     --corner-text: 'system24';
 
     --pad: 16px;
-    --txt-pad: 0px;
+    --txt-pad: 10px;
 
     --bg-0: var(--sumiInk1); /* main background */
     --bg-1: var(--sumiInk0);
