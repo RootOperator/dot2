@@ -11,6 +11,7 @@ fn main() -> Result<()> {
 
     if let Some(active_window) = active_window {
         let address = active_window.address.to_string();
+        println!("{address}");
 
         purge_file()?;
 

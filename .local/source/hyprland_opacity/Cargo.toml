@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-hyprland = "0.4.0-alpha.0"
+hyprland = { git = "https://github.com/hyprland-community/hyprland-rs", branch = "master" }
