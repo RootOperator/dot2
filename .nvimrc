@@ -99,7 +99,7 @@ let g:rust_clip_command = 'wl-copy'
 
 au FileType html,vue let b:delimitMate_matchpairs = "(:),[:],{:}"
 
-let g:vim_vue_plugin_config = { 
+let g:vim_vue_plugin_config = {
     \'syntax': {
     \   'template': ['html'],
     \   'script': ['javascript'],
@@ -122,7 +122,7 @@ map <C-n> :NvimTreeToggle<CR>
 map <C-t> :FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR>
 map <A-t> :FloatermToggle myfloat<CR>
 tnoremap <A-t> <C-\><C-n> :FloatermToggle myfloat<CR>
-tnoremap <A-n> <C-\><C-n> :FloatermNext<CR> 
+tnoremap <A-n> <C-\><C-n> :FloatermNext<CR>
 nnoremap <S-j> 5j
 nnoremap <S-k> 5k
 vnoremap <S-j> 5j
@@ -285,7 +285,7 @@ require("true-zen").setup({
 })
 
 
---neorg 
+--neorg
 require("neorg").setup({
     load = {
         ["core.defaults"] = {},
@@ -360,7 +360,7 @@ vim.filetype.add({
 
 vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true}
-vim.api.nvim_set_option('updatetime', 300) 
+vim.api.nvim_set_option('updatetime', 300)
 
 vim.cmd([[
     set signcolumn=yes
@@ -394,7 +394,7 @@ cmp.setup({
         { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
         { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
         { name = 'buffer', keyword_length = 2 },        -- source current buffer
-        { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
+        { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
         { name = 'calc'},                               -- source for math calculation
         { name = 'neorg'},                              -- notes
     },
@@ -486,7 +486,7 @@ require("nvim-tree").setup {
 -- auto open nvimtree
 -- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
--- LSP Diagnostics Options Setup 
+-- LSP Diagnostics Options Setup
 local sign = function(opts)
 vim.fn.sign_define(opts.name, {
     texthl = opts.name,
@@ -545,7 +545,7 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         additional_vim_regex_highlighting=true,
     },
-    ident = { enable = true }, 
+    ident = { enable = true },
 }
 
 
@@ -614,11 +614,11 @@ dap.configurations.cpp = {
         request = "launch",
         program = function()
             local t={}
-            for str in string.gmatch(vim.fn.getcwd(), "([^/]+)") do 
+            for str in string.gmatch(vim.fn.getcwd(), "([^/]+)") do
               table.insert(t, str)
-            end 
+            end
 
-            return vim.fn.getcwd() .. '/' .. t[#t] 
+            return vim.fn.getcwd() .. '/' .. t[#t]
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
@@ -632,11 +632,11 @@ dap.configurations.rust = {
         request = "launch",
         program = function()
             local t={}
-            for str in string.gmatch(vim.fn.getcwd(), "([^/]+)") do 
+            for str in string.gmatch(vim.fn.getcwd(), "([^/]+)") do
               table.insert(t, str)
-            end 
+            end
 
-            return vim.fn.getcwd() .. '/target/debug/' .. t[#t] 
+            return vim.fn.getcwd() .. '/target/debug/' .. t[#t]
         end,
         cwd = '${workspaceFolder}',
         stopOnEntry = false,
