@@ -127,6 +127,10 @@ nnoremap <S-j> 5j
 nnoremap <S-k> 5k
 vnoremap <S-j> 5j
 vnoremap <S-k> 5k
+nnoremap <S-h> b
+nnoremap <S-l> w
+vnoremap <S-h> b
+vnoremap <S-l> w
 map ZX :noh<CR>
 map <C-m> <Plug>MarkdownPreviewToggle
 
