@@ -19,7 +19,6 @@
     },
     "hyprland/window": {
         "format": "",
-        "max-length": 50,
         "tooltip": false
     },
     "clock": {
