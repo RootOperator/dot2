@@ -20,7 +20,7 @@ set mouse=a
 set guicursor=a:hor10
 
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'raimondi/delimitmate'
 Plug 'cespare/vim-toml'
@@ -116,8 +116,10 @@ let g:vim_vue_plugin_config = {
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
 imap <C-BS> <C-W>
-map <C-h> :tabm -1 <CR>
-map <C-l> :tabm +1<CR>
+nnoremap <C-h> :tabm -1<CR>
+nnoremap <C-l> :tabm +1<CR>
+nnoremap <A-j> :tabprevious<CR>
+nnoremap <A-k> :tabnext<CR>
 map <C-n> :NvimTreeToggle<CR>
 map <C-t> :FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR>
 map <A-t> :FloatermToggle myfloat<CR>
@@ -196,7 +198,7 @@ require("nvim-ts-autotag").setup()
 require("dapui").setup()
 require('colorizer').setup()
 require('tabby').setup()
-
+require('gitsigns').setup()
 
 -- better folds
 vim.o.foldcolumn = '0'
@@ -439,6 +441,12 @@ require('telescope').setup {
 
 vim.opt.termguicolors = true
 
+local function open_tab_silent(node)
+  local api = require("nvim-tree.api")
+  api.node.open.tab(node)
+  vim.cmd.tabprev()
+end
+
 local function my_on_attach(bufnr)
     local api = require("nvim-tree.api")
 
@@ -452,8 +460,8 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', 'i', api.node.open.horizontal, opts('Open: Horizontal Split'))
     vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
     vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts('Up'))
+    vim.keymap.set('n', 'T', open_tab_silent, opts('Open Tab Silent'))
 end
-
 
 local function open_nvim_tree(data)
 
@@ -471,7 +479,6 @@ local function open_nvim_tree(data)
   -- open the tree but don't focus it
   require("nvim-tree.api").tree.toggle({ focus = false })
 end
-
 
 require("nvim-tree").setup {
     on_attach = my_on_attach,
