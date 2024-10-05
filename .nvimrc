@@ -111,7 +111,7 @@ let g:vim_vue_plugin_config = {
     \'keyword': 1,
     \'foldexpr': 0,
     \'debug': 0,
-    \}
+\}
 
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
@@ -324,29 +324,15 @@ require("neorg").setup({
 })
 
 
--- The setup config table shows all available config options with their default values:
 require("presence").setup({
-    -- General options
-    auto_update         = true,
     neovim_image_text   = "Nvim",
     main_image          = "file",
-    log_level           = nil,
-    debounce_timeout    = 10,
     enable_line_number  = false,
     blacklist           = {"/home/rootoperator/notes"},
     buttons             = false,
-    file_assets         = {},
     show_time           = true,
-
-    -- Rich Presence text options
-    editing_text        = "Editing %s",
-    file_explorer_text  = "Browsing %s",
-    git_commit_text     = "Committing changes",
-    plugin_manager_text = "Managing plugins",
-    reading_text        = "Reading %s",
-    workspace_text      = "Working on %s",
-    line_number_text    = "Line %s out of %s",
 })
+
 
 require('tabnine').setup({
   disable_auto_comment=true,
@@ -447,6 +433,18 @@ local function open_tab_silent(node)
   vim.cmd.tabprev()
 end
 
+local function edit_or_open()
+  local api = require("nvim-tree.api")
+  local node = api.tree.get_node_under_cursor()
+
+  if node.nodes ~= nil then
+    api.node.open.edit()
+  else
+    api.node.open.edit()
+    api.tree.close()
+  end
+end
+
 local function my_on_attach(bufnr)
     local api = require("nvim-tree.api")
 
@@ -461,24 +459,10 @@ local function my_on_attach(bufnr)
     vim.keymap.set('n', 't', api.node.open.tab, opts('Open: New Tab'))
     vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts('Up'))
     vim.keymap.set('n', 'T', open_tab_silent, opts('Open Tab Silent'))
+
+    vim.keymap.set("n", "l", edit_or_open, opts("Edit Or Open"))
 end
 
-local function open_nvim_tree(data)
-
-  -- buffer is a real file on the disk
-  local real_file = vim.fn.filereadable(data.file) == 1
-
-  -- buffer is a [No Name]
-  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
-
-  -- only files please
-  if not real_file and not no_name then
-    return
-  end
-
-  -- open the tree but don't focus it
-  require("nvim-tree.api").tree.toggle({ focus = false })
-end
 
 require("nvim-tree").setup {
     on_attach = my_on_attach,
@@ -493,9 +477,6 @@ require("nvim-tree").setup {
         dotfiles = false,
     },
 }
-
--- auto open nvimtree
--- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- LSP Diagnostics Options Setup
 local sign = function(opts)
