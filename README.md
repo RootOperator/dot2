@@ -39,4 +39,3 @@
 ![](scrnshts/7.png)
 ![](scrnshts/8.png)
 ![](scrnshts/11.png)
-![](scrnshts/wall.gif)
