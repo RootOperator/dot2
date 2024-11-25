@@ -13,7 +13,6 @@ mkdir .config
 cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.nvimrc .
-cp ~/Pictures/backgrounds/ . -r
 cp ~/.gitconfig .
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
