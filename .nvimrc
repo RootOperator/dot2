@@ -51,7 +51,6 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'simrat39/rust-tools.nvim'
 
 " Completion framework:
 Plug 'hrsh7th/nvim-cmp'
@@ -200,6 +199,7 @@ require('colorizer').setup()
 require('tabby').setup()
 require('gitsigns').setup()
 
+
 -- better folds
 vim.o.foldcolumn = '0'
 vim.o.foldlevel = 99
@@ -242,26 +242,6 @@ require('ufo').setup({
         return {'treesitter', 'indent'}
     end
 })
-
-require("mason-lspconfig").setup_handlers {
-    function (server_name)
-        require("lspconfig")[server_name].setup {}
-    end,
-    ["rust_analyzer"] = function ()
-        local rt = require("rust-tools")
-
-        rt.setup({
-            server = {
-                on_attach = function(_, bufnr)
-                    -- Hover actions
-                    vim.keymap.set("n", "<C-x>", rt.hover_actions.hover_actions, { buffer = bufnr })
-                    -- Code action groups
-                    vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-                end,
-            },
-        })
-    end
-}
 
 require("true-zen").setup({
     modes = {
