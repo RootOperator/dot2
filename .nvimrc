@@ -199,6 +199,7 @@ require('colorizer').setup()
 require('tabby').setup()
 require('gitsigns').setup()
 
+vim.lsp.inlay_hint.enable(true)
 
 -- better folds
 vim.o.foldcolumn = '0'
