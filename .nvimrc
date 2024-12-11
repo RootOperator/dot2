@@ -28,6 +28,7 @@ Plug 'jiriks74/presence.nvim'
 
 Plug 'rootoperator/true-zen.nvim'
 Plug 'rootoperator/kanagawa.nvim'
+Plug 'sho-87/kanagawa-paper.nvim'
 
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dense-analysis/ale'
@@ -80,7 +81,14 @@ Plug 'nanozuki/tabby.nvim'
 
 Plug 'kevinhwang91/promise-async'
 Plug 'kevinhwang91/nvim-ufo'
+
 Plug 'nvim-zh/whitespace.nvim'
+Plug 'lukas-reineke/headlines.nvim'
+
+Plug 'chentoast/marks.nvim'
+
+Plug 'SmiteshP/nvim-navic'
+Plug 'utilyre/barbecue.nvim'
 call plug#end()
 
 
@@ -132,6 +140,14 @@ nnoremap <S-h> b
 nnoremap <S-l> w
 vnoremap <S-h> b
 vnoremap <S-l> w
+
+nnoremap <C-S-j> :m .+1<CR>==
+nnoremap <C-S-k> :m .-2<CR>==
+inoremap <C-S-j> <Esc>:m .+1<CR>==gi
+inoremap <C-S-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-S-j> :m '>+1<CR>gv=gv
+vnoremap <C-S-k> :m '<-2<CR>gv=gv
+
 map ZX :noh<CR>
 map <C-m> <Plug>MarkdownPreviewToggle
 
@@ -195,9 +211,13 @@ require("mason-lspconfig").setup()
 require("todo-comments").setup()
 require("nvim-ts-autotag").setup()
 require("dapui").setup()
+require("tabby").setup()
 require('colorizer').setup()
-require('tabby').setup()
 require('gitsigns').setup()
+require("headlines").setup()
+require('marks').setup()
+require("nvim-navic").setup()
+require("barbecue").setup()
 
 vim.lsp.inlay_hint.enable(true)
 
@@ -553,6 +573,46 @@ require('kanagawa').setup({
             TelescopePromptNormal = { bg = theme.ui.bg_p1 },
             TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
             TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+            TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+            TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+            TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+        }
+    end,
+})
+
+require('kanagawa-paper').setup({
+    undercurl = true,           -- enable undercurls
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = false,        -- do not set background color
+    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+    globalStatus = false,       -- adjust window separators highlight for laststatus=3
+    terminalColors = true,
+    colors = {
+        palette = {
+            sumiInk3 = "#181820",
+        },
+        theme = {
+            all = {
+                ui = {
+                    bg_gutter = "none"
+                }
+            }
+        }
+    },
+    overrides = function(colors)
+        local theme = colors.theme
+        return {
+            -- Assign a static color to strings
+            String = { fg = colors.palette.carpYellow, italic = true },
+
+            TelescopeTitle = { fg = theme.ui.special, bold = true },
+            TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+            TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+            TelescopeResultsNormal = { fg = theme.ui.fg, bg = theme.ui.bg_m1 },
             TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
             TelescopePreviewNormal = { bg = theme.ui.bg_dim },
             TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
