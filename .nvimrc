@@ -36,6 +36,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'arzg/vim-rust-syntax-ext'
 Plug 'mattn/webapi-vim'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'pbrisbin/vim-colors-off'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -76,7 +77,6 @@ Plug 'tpope/vim-surround'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
-Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 Plug 'nanozuki/tabby.nvim'
 
 Plug 'kevinhwang91/promise-async'
@@ -89,6 +89,8 @@ Plug 'chentoast/marks.nvim'
 
 Plug 'SmiteshP/nvim-navic'
 Plug 'utilyre/barbecue.nvim'
+
+Plug 'Robitx/gp.nvim'
 call plug#end()
 
 
@@ -100,11 +102,13 @@ let delimitMate_expand_cr = 1
 
 let g:colors_off_a_little = 1
 
-let g:closetag_filenames = '*.html,*.xhtml,*.vue'
+let g:closetag_filenames = '*.html,*.xhtml,*.vue,*.svelte'
 
 let g:rust_clip_command = 'wl-copy'
 
 au FileType html,vue let b:delimitMate_matchpairs = "(:),[:],{:}"
+
+let g:vim_svelte_plugin_use_typescript= 1
 
 let g:vim_vue_plugin_config = {
     \'syntax': {
@@ -143,8 +147,8 @@ vnoremap <S-l> w
 
 nnoremap <C-S-j> :m .+1<CR>==
 nnoremap <C-S-k> :m .-2<CR>==
-inoremap <C-S-j> <Esc>:m .+1<CR>==gi
 inoremap <C-S-k> <Esc>:m .-2<CR>==gi
+inoremap <C-S-j> <Esc>:m .+1<CR>==gi
 vnoremap <C-S-j> :m '>+1<CR>gv=gv
 vnoremap <C-S-k> :m '<-2<CR>gv=gv
 
@@ -166,8 +170,6 @@ vmap <Leader>zn :'<,'>TZNarrow<CR>
 nmap <leader>zf :TZFocus<CR>
 nmap <leader>zm :TZMinimalist<CR>
 nmap <leader>zz :TZAtaraxis<CR>
-map <Leader>te :TabnineEnable<CR>
-map <Leader>td :TabnineDisable<CR>
 map <Leader>no :Neorg workspace notes<CR>
 map <Leader>nr :Neorg return<CR>
 map <Leader>nc :Neorg keybind all core.looking-glass.magnify-code-block<CR>
@@ -218,6 +220,32 @@ require("headlines").setup()
 require('marks').setup()
 require("nvim-navic").setup()
 require("barbecue").setup()
+
+
+require("gp").setup({
+    openai_api_key = { "cat", "/home/rootoperator/.gemini_key" },
+    default_command_agent = "ChatGemini",
+    default_chat_agent = "ChatGemini",
+    providers = {
+        googleai = {
+            endpoint = "https://generativelanguage.googleapis.com/v1beta/models/{{model}}:streamGenerateContent?key={{secret}}",
+            secret = { "cat", "/home/rootoperator/.gemini_key" }
+        }
+    },
+    agents = {
+        {
+            provider = "googleai",
+            name = "ChatGemini",
+            chat = false,
+            command = true,
+            -- string with model name or table with model name and parameters
+            model = { model = "gemini-2.0-flash-exp", temperature = 1.1, top_p = 1 },
+            -- system prompt (use this to specify the persona/role of the AI)
+            system_prompt = "Please return ONLY code snippets.\nSTART AND END YOUR ANSWER WITH:\n\n"
+        }
+    }
+
+})
 
 vim.lsp.inlay_hint.enable(true)
 
@@ -333,19 +361,6 @@ require("presence").setup({
     buttons             = false,
     show_time           = true,
 })
-
-
-require('tabnine').setup({
-  disable_auto_comment=true,
-  accept_keymap="<C-Space>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = {gui = "#808080", cterm = 244},
-  exclude_filetypes = {"TelescopePrompt", "NvimTree"},
-  log_file_path = nil, -- absolute path to Tabnine log file
-})
-
-vim.cmd("TabnineDisable")
 
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },

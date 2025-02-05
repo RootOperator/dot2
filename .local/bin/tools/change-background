@@ -12,6 +12,7 @@ def change_background(file):
 
 
 items = sorted(os.listdir(BACKGROUND_PATH))
+print(items)
 items_dict = dict((x.split(".")[0], x.split(".")[1]) for x in items)
 current = int(os.popen("hyprctl hyprpaper listactive | grep -P -o \"\\/\\K[0-9]*\" | head -1").read().strip())
 args = sys.argv
@@ -25,6 +26,7 @@ if len(args) == 2:
             file = f"{current-1}.{items_dict[str(current-1)]}"
             change_background(file)
         else:
+            print(items)
             change_background(items[-1])
 else:
     if str(current+1) in items_dict:
