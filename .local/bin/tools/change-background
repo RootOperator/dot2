@@ -20,6 +20,6 @@ arg = sys.argv[1] if len(sys.argv) > 1 else None
 if arg in items_dict:
     change_background(items_dict[arg])
 elif arg == "prev":
-    change_background(items_dict.get(str(current - 1), items[-1])) # Use .get with a default value
+    change_background(items_dict.get(str(current - 1), items[-1]))
 else:
-    change_background(items_dict.get(str(current + 1), items[0])) # Use .get with a default value
+    change_background(items_dict.get(str(current + 1), items[0]))
