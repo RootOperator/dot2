@@ -22,7 +22,7 @@ set guicursor=a:hor10
 call plug#begin()
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'preservim/nerdcommenter'
-Plug 'raimondi/delimitmate'
+Plug 'windwp/nvim-autopairs'
 Plug 'cespare/vim-toml'
 Plug 'jiriks74/presence.nvim'
 
@@ -98,15 +98,11 @@ syntax on
 let mapleader = '\'
 "let g:ale_open_list = 1
 
-let delimitMate_expand_cr = 1
-
 let g:colors_off_a_little = 1
 
 let g:closetag_filenames = '*.html,*.xhtml,*.vue,*.svelte'
 
 let g:rust_clip_command = 'wl-copy'
-
-au FileType html,vue let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 let g:vim_svelte_plugin_use_typescript= 1
 
@@ -220,11 +216,12 @@ require("headlines").setup()
 require('marks').setup()
 require("nvim-navic").setup()
 require("barbecue").setup()
+require("nvim-autopairs").setup()
 
 
 require("gp").setup({
     openai_api_key = { "cat", "/home/rootoperator/.gemini_key" },
-    default_command_agent = "ChatGemini",
+    default_command_agent = "CodeGemini",
     default_chat_agent = "ChatGemini",
     providers = {
         googleai = {
@@ -235,14 +232,25 @@ require("gp").setup({
     agents = {
         {
             provider = "googleai",
-            name = "ChatGemini",
+            name = "CodeGemini",
             chat = false,
             command = true,
             -- string with model name or table with model name and parameters
             model = { model = "gemini-2.0-flash-exp", temperature = 1.1, top_p = 1 },
             -- system prompt (use this to specify the persona/role of the AI)
             system_prompt = "Please return ONLY code snippets.\nSTART AND END YOUR ANSWER WITH:\n\n"
+        },
+        {
+            provider = "googleai",
+            name = "ChatGemini",
+            chat = true,
+            command = false,
+            -- string with model name or table with model name and parameters
+            model = { model = "gemini-2.0-flash-exp", temperature = 1.1, top_p = 1 },
+            -- system prompt (use this to specify the persona/role of the AI)
+            system_prompt = require("gp.defaults").chat_system_prompt
         }
+
     }
 
 })
@@ -311,6 +319,14 @@ require("true-zen").setup({
                 close_pre = nil,
                 close_pos = function() vim.cmd("UfoEnable") end
            },
+        },
+        minimalist = {
+            callbacks = { -- run functions when opening/closing Ataraxis mode
+                open_pre = function () vim.cmd("Barbecue hide") end,
+                open_pos = nil,
+                close_pre = nil,
+                close_pos = function() vim.cmd("Barbecue show") end
+            },
         },
     },
 
@@ -610,13 +626,6 @@ require('kanagawa-paper').setup({
         palette = {
             sumiInk3 = "#181820",
         },
-        theme = {
-            all = {
-                ui = {
-                    bg_gutter = "none"
-                }
-            }
-        }
     },
     overrides = function(colors)
         local theme = colors.theme
