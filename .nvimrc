@@ -87,8 +87,9 @@ Plug 'lukas-reineke/headlines.nvim'
 
 Plug 'chentoast/marks.nvim'
 
-Plug 'SmiteshP/nvim-navic'
-Plug 'utilyre/barbecue.nvim'
+"Plug 'SmiteshP/nvim-navic'
+"Plug 'utilyre/barbecue.nvim'
+"Plug 'maxkatzmann/barbecue.nvim'
 
 Plug 'Robitx/gp.nvim'
 call plug#end()
@@ -214,10 +215,9 @@ require('colorizer').setup()
 require('gitsigns').setup()
 require("headlines").setup()
 require('marks').setup()
-require("nvim-navic").setup()
-require("barbecue").setup()
+--require("nvim-navic").setup()
+--require("barbecue").setup()
 require("nvim-autopairs").setup()
-
 
 require("gp").setup({
     openai_api_key = { "cat", "/home/rootoperator/.gemini_key" },

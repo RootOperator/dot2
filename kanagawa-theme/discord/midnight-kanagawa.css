@@ -30,14 +30,14 @@ body {
 
     /* top bar options */
     --move-top-bar-buttons: off; /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
-    --custom-app-top-bar-height: 30px; /* height of the titlebar/top bar (default is 36px)*/
+    --custom-app-top-bar-height: 5px; /* height of the titlebar/top bar (default is 36px)*/
 
     /* window controls */
-    --custom-window-controls: on; /* turn off to use discord default window controls */
+    --custom-window-controls: off; /* turn off to use discord default window controls */
     --window-control-size: 14px; /* size of custom window controls */
 
     /* dms button icon options */
-    --dms-icon: on; /* set to default to use discord icon, on to use custom icon, off to disable completely */
+    --dms-icon: off; /* set to default to use discord icon, on to use custom icon, off to disable completely */
     --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* icon svg url. MUST BE A SVG. */
     --dms-icon-svg-size: 90%; /* size of the svg (css mask-size) */
     --dms-icon-color-before: var(--icon-secondary); /* normal icon color */
@@ -152,9 +152,9 @@ body {
     --button-border: hsl(0, 0%, 100%, 0.1); /* neutral border color of buttons */
 
     /* base colors */
-    --red-1: oklch(76% 0.12 0);
-    --red-2: oklch(70% 0.12 0);
-    --red-3: oklch(64% 0.12 0);
+    --red-1: var(--autumnRed);
+    --red-2: var(--autumnRed);
+    --red-3: var(--samuraiRed);
     --red-4: oklch(58% 0.12 0);
     --red-5: oklch(52% 0.12 0);
 
