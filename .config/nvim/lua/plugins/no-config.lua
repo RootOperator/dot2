@@ -38,5 +38,6 @@ return {
 
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
 
+    { 'mrcjkb/rustaceanvim', version = '^6', lazy = false },
     --'b0o/incline.nvim'
 }

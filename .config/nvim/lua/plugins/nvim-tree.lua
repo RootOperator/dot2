@@ -42,9 +42,6 @@ return {
         "NvimTreeToggle",
         "NvimTreeFocus",
     },
-    keys = {
-        { "<C-n>", "<cmd>NvimTreeToggle<CR>", silent = true },
-    },
     config = function()
         require("nvim-tree").setup {
 		on_attach = my_on_attach,

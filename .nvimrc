@@ -51,7 +51,7 @@ nnoremap <C-h> :tabm -1<CR>
 nnoremap <C-l> :tabm +1<CR>
 nnoremap <A-j> :tabprevious<CR>
 nnoremap <A-k> :tabnext<CR>
-"map <C-n> :NvimTreeToggle<CR>
+map <C-n> :NvimTreeToggle<CR>
 map <C-t> :FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR>
 map <A-t> :FloatermToggle myfloat<CR>
 tnoremap <A-t> <C-\><C-n> :FloatermToggle myfloat<CR>
@@ -115,7 +115,7 @@ set background=dark
 
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
-autocmd QuitPre * if empty(&bt) | lclose | endif " Auto close loc list after asocicatet file is closed
+autocmd QuitPre * if empty(&bt) | lclose | endif " Auto close loc list after associcated file is closed
 
 if $TERM =~ 'xterm-256color'
     set noek
