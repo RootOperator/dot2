@@ -1,8 +1,9 @@
 return {
     {
-	'dense-analysis/ale',
-	config = function()
-	    local g = vim.g
-	end
-    }
+        'dense-analysis/ale',
+        lazy = false,
+        commit = "f3512cd",
+        config = function ()
+        end
+    },
 }
