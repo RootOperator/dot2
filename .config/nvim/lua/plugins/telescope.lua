@@ -13,8 +13,12 @@ return {
                         ["i"] = "select_horizontal",
                     }
                 }
+            },
+            pickers = {
+                find_files = {
+                    find_command = { "rg" , "--files", "--color", "never", "--no-require-git"}
+                }
             }
-
         }
     }
 }

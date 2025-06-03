@@ -1,10 +1,10 @@
 return {
     {
-	'IogaMaster/neocord',
+	'rootoperator/neocord.nvim',
         event = "VeryLazy",
         opts = {
-		logo                = "auto",
-                logo_tooltip        = "Neovim",
+		logo                = "adf",
+                logo_tooltip        = nil,
 		main_image          = "language",
 		enable_line_number  = false,
 		blacklist           = {"/home/rootoperator/notes"},

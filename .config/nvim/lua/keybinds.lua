@@ -35,24 +35,31 @@ vim.keymap.set('', '<Leader>pp', '<cmd>lprevious<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>ft', '<cmd>RustFmt<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>c', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
+
 vim.keymap.set('n', '<Leader>zn', '<cmd>TZNarrow<CR>', {noremap = true})
 vim.keymap.set('v', '<Leader>zn', '<cmd>\'<,\'>TZNarrow<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>zf', '<cmd>TZFocus<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>zm', '<cmd>TZMinimalist<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>zz', '<cmd>TZAtaraxis<CR>', {noremap = true})
+
 vim.keymap.set('', '<Leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nc', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', {noremap = true})
-vim.keymap.set('', '<F5>', '<cmd>DapContinue<CR>', {noremap = true})
-vim.keymap.set('', '<F10>', '<cmd>DapStepOver<CR>', {noremap = true})
-vim.keymap.set('', '<F11>', '<cmd>DapStepInto<CR>', {noremap = true})
-vim.keymap.set('', '<F12>', '<cmd>DapStepOut<CR>', {noremap = true})
+
+vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
+vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})
+vim.keymap.set('', '<F11>', ':DapStepInto<CR>', {noremap = true})
+vim.keymap.set('', '<F12>', ':DapStepOut<CR>', {noremap = true})
+
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
 vim.keymap.set('n', '<leader>fn', '<cmd>Telescope treesitter<cr>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<cr>', {noremap = true})
-vim.keymap.set('i', '<expr>', "<Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'", {noremap = true})
-vim.keymap.set('s', '<expr>', "<Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'", {noremap = true})
-vim.keymap.set('i', '<expr>', "<S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'", {noremap = true})
-vim.keymap.set('s', '<expr>', "<S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'", {noremap = true})
+
+vim.cmd([[
+    imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+    smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+    imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+    smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+]])
