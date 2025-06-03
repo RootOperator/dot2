@@ -54,7 +54,7 @@ return {
             dap.configurations.zig = {
                 {
                     name = "Launch Zig Program",
-                    type = "codelldb", -- Matches the adapter name above
+                    type = "codelldb",
                     request = "launch",
                     program = function()
                         -- Prompt user for the executable path, default to common build location
@@ -64,14 +64,11 @@ return {
                         end
                         return default_build_path
                     end,
-                    cwd = "${workspaceFolder}", -- Current working directory of Neovim
-                    stopOnEntry = true, -- Pause execution at the beginning of the program
-                    args = {}, -- Command-line arguments for your program
-                    -- Pre-launch task: build your Zig project
-                    -- This assumes you have a 'build.zig' file and 'zig build' works.
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = true,
+                    args = {},
                     preLaunchTask = function()
                         print("Building Zig project...")
-                        -- Use a job to run 'zig build' asynchronously
                         local job_id = vim.fn.jobstart('zig build', {
                             cwd = vim.fn.getcwd(),
                             on_stdout = function(_, data, _) print(table.concat(data, '\n')) end,
@@ -84,15 +81,8 @@ return {
                                 end
                             end,
                         })
-
-                        -- You might need a way to wait for the job to finish.
-                        -- For simplicity, this example just starts the job.
-                        -- For more robust preLaunchTask handling, consider `nvim-dap`'s built-in
-                        -- `dap.run_task` or a dedicated task runner plugin.
-                        -- For now, let's assume `zig build` is fast enough or you manually ensure it finishes.
                     end,
                 },
-                -- You can add more configurations here, e.g., for attaching to a process
             }
         end
     },
