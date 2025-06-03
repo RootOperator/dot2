@@ -1,6 +1,6 @@
 [init]
 	defaultBranch = master
-[credentials]
+[credential]
 	helper = store
 [user]
 	email = 20143055+RootOperator@users.noreply.github.com
@@ -15,6 +15,7 @@
     navigate = true
     side-by-side = true
     line-numbers = true
+    syntax-theme = "kanagawa"
 
 [merge]
     conflictstyle = diff3
@@ -23,5 +24,3 @@
     colorMoved = default
 
 
-[credential]
-	helper = store
