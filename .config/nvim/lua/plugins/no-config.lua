@@ -34,7 +34,7 @@ return {
 
     { 'lukas-reineke/headlines.nvim', config = true },
 
-    { 'chentoast/marks.nvim', event = "VeryLazy" },
+    { 'chentoast/marks.nvim', event = "VeryLazy", config = true },
 
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
 
