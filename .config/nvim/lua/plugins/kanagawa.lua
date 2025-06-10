@@ -1,6 +1,6 @@
 return {
     {
-        'rootoperator/kanagawa.nvim',
+        'rebelot/kanagawa.nvim',
         opts = {
             compile = true,
             undercurl = true,           -- enable undercurls
@@ -28,6 +28,7 @@ return {
                     -- Assign a static color to strings
                     String = { fg = colors.palette.carpYellow, italic = true },
 
+                    --["@string.special.url"] = { fg = theme.syn.special1, underline = true },
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
                     TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
@@ -60,8 +61,9 @@ return {
             overrides = function(colors)
                 local theme = colors.theme
                 return {
-                    -- Assign a static color to strings
                     String = { fg = colors.palette.carpYellow, italic = true },
+
+                    LspInlayHint = { fg = "#3F424C", bg = colors.palette.sumiInk3, italic = true },
 
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
