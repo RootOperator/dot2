@@ -104,5 +104,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
-vim.cmd("colorscheme kanagawa")
-require('kanagawa.colors').setup()
+vim.cmd("colorscheme kanagawa-paper")
+--require('kanagawa.colors').setup()

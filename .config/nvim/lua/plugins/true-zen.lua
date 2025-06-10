@@ -8,7 +8,7 @@ return {
                         width = 120,
                         height = 44,
                     },
-                    padding = { -- padding windows
+                    padding = {
                         left = 150,
                         right = 52,
                         top = 0,
