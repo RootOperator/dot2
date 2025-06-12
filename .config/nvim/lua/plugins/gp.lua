@@ -3,7 +3,6 @@ return {
         'Robitx/gp.nvim',
         config = function ()
             require("gp").setup({
-                openai_api_key = { "cat", "/home/rootoperator/.gemini_key" },
                 default_command_agent = "CodeGemini",
                 default_chat_agent = "ChatGemini",
                 providers = {

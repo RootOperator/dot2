@@ -12,7 +12,7 @@ return {
     'pbrisbin/vim-colors-off',
     'nvim-tree/nvim-web-devicons',
 
-    { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, config = true },
 
     'voldikss/vim-floaterm',
 

@@ -63,7 +63,7 @@ return {
                 return {
                     String = { fg = colors.palette.carpYellow, italic = true },
 
-                    LspInlayHint = { fg = "#3F424C", bg = colors.palette.sumiInk3, italic = true },
+                    LspInlayHint = { fg = "#494c56", bg = colors.palette.sumiInk3, italic = true },
 
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
