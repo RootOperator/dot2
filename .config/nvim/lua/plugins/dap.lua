@@ -24,7 +24,7 @@ return {
                             table.insert(t, str)
                         end
 
-                        return vim.fn.getcwd() .. '/' .. t[#t]
+                        return vim.fn.getcwd() .. '/build/' .. t[#t]
                     end,
                     cwd = '${workspaceFolder}',
                     stopOnEntry = false,
