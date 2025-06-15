@@ -7363,9 +7363,9 @@ image.circular {
   font-weight: bolder;
 }
 
-.hidden {
-  opacity: 0;
-}
+/*.hidden {*/
+  /*opacity: 0;*/
+/*}*/
 
 .clock-time {
   font-size: 2em;

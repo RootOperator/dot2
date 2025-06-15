@@ -26,8 +26,6 @@ return {
     { 'windwp/nvim-ts-autotag', config = true },
     'tpope/vim-surround',
 
-    { 'norcalli/nvim-colorizer.lua', config = true },
-
     { 'nanozuki/tabby.nvim', config = true },
 
     'nvim-zh/whitespace.nvim',
