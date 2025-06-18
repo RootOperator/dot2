@@ -3,7 +3,6 @@ return {
     'preservim/nerdcommenter',
     'cespare/vim-toml',
 
-    'dhruvasagar/vim-table-mode',
     'rust-lang/rust.vim',
     'arzg/vim-rust-syntax-ext',
     'mattn/webapi-vim',

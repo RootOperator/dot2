@@ -3,7 +3,6 @@ return {
         "nvim-neorg/neorg",
         lazy = false,
         version = "*",
-        --config = true,
         opts = {
             load = {
                 ["core.defaults"] = {},
@@ -28,12 +27,12 @@ return {
                 },
                 ["core.esupports.metagen"] = {
                     config = {
+                        update_date = true,
                         type = "empty",
                         timezone = "implicit-local"
                     }
                 }
             }
-
         }
     }
 }

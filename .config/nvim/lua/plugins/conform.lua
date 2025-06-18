@@ -22,8 +22,8 @@ return {
             },
             formatters = {
                 ["clang-format"] = {
-                    prepend_args = {"-style=Google", "-style={IndentWidth: 4, AllowAllParametersOfDeclarationOnNextLine: false, BinPackArguments: false, BinPackParameters: false}"}
-                }
+                    prepend_args = {"-style=file"}
+                },
             },
             default_format_opts = {
                 lsp_format = "fallback",
