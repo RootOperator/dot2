@@ -20,7 +20,7 @@ cp ~/.config/nvim/ .config -r
 cp ~/.config/hypr/ .config -r
 cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
-cp ~/.config/kitty/ .config -r
+cp ~/.config/alacritty/ .config -r
 cp ~/.config/yazi/ .config -r
 cp ~/.config/starship.toml .config -r
 cp ~/.themes . -r
