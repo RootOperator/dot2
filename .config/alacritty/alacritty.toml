@@ -1,0 +1,18 @@
+[general]
+import = ["kanagawa.toml"]
+
+[window]
+padding = { x = 3 }
+
+[font]
+normal = {family = "JetBrainsMono NFP", style="Regular"}
+bold = {family = "JetBrainsMono NFP", style="Bold"}
+italic = {family = "JetBrainsMono NFP", style = "Italic"}
+bold_italic = {family = "JetBrainsMono NFP", style = "Bold Italic"}
+size = 10.0
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0
+thickness = 0.30

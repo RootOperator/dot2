@@ -31,9 +31,9 @@ vim.keymap.set('n', '<Leader>tt', '<cmd>ToggleInlayEndHints<CR>', {noremap = tru
 vim.keymap.set('n', '<Leader>m', '<cmd>MarkdownPreviewToggle<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>lp', '<cmd>lclose<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>ll', '<cmd>lopen<CR>', {noremap = true})
+
 vim.keymap.set('n', '<Leader>st', '<cmd>ALEToggle<CR>', {noremap = true})
-vim.keymap.set('n', '<Leader>nn', '<cmd>lnext<CR>', {noremap = true})
-vim.keymap.set('n', '<Leader>pp', '<cmd>lprevious<CR>', {noremap = true})
+
 vim.keymap.set('n', '<Leader>ft', '<cmd>Format<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>c', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
@@ -48,6 +48,9 @@ vim.keymap.set('n', '<leader>zz', '<cmd>TZAtaraxis<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nc', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', {noremap = true})
+
+vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})
