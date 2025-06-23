@@ -24,4 +24,4 @@ shopt -s expand_aliases
 shopt -s histappend
 
 eval "$(zoxide init bash --cmd cd)"
-#eval "$(starship init bash)"
+eval "$(starship init bash)"
