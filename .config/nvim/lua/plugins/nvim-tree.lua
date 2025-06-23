@@ -1,19 +1,19 @@
 local function open_tab_silent(node)
-  local api = require("nvim-tree.api")
-  api.node.open.tab(node)
-  vim.cmd.tabprev()
+    local api = require("nvim-tree.api")
+    api.node.open.tab(node)
+    vim.cmd.tabprev()
 end
 
 local function edit_or_open()
-  local api = require("nvim-tree.api")
-  local node = api.tree.get_node_under_cursor()
+    local api = require("nvim-tree.api")
+    local node = api.tree.get_node_under_cursor()
 
-  if node.nodes ~= nil then
-    api.node.open.edit()
-  else
-    api.node.open.edit()
-    api.tree.close()
-  end
+    if node.nodes ~= nil then
+        api.node.open.edit()
+    else
+        api.node.open.edit()
+        api.tree.close()
+    end
 end
 
 local function my_on_attach(bufnr)

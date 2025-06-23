@@ -3,9 +3,7 @@ vim.api.nvim_create_user_command("ToggleInlayEndHints", function(args)
 end, {})
 
 return {
-    {
-        "chrisgrieser/nvim-lsp-endhints",
-        event = "LspAttach",
-        opts = {}
-    }
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {}
 }
