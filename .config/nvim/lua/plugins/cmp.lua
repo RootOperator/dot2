@@ -2,7 +2,6 @@ return {
     'hrsh7th/nvim-cmp',
     dependencies = {
         'hrsh7th/cmp-nvim-lsp',
-
         'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp-signature-help',
         'hrsh7th/cmp-vsnip',
@@ -47,15 +46,23 @@ return {
             },
             formatting = {
                 fields = {'menu', 'abbr', 'kind'},
-                format = function(entry, item)
+                format = function(entry, vim_item)
+                    local highlights_info = require("colorful-menu").cmp_highlights(entry)
+
                     local menu_icon ={
                         nvim_lsp = 'λ',
                         vsnip = '⋗',
                         buffer = 'Ω',
                         path = '',
                     }
-                    item.menu = menu_icon[entry.source.name]
-                    return item
+                    vim_item.menu = menu_icon[entry.source.name]
+
+                    if highlights_info ~= nil then
+                        vim_item.abbr_hl_group = highlights_info.highlights
+                        vim_item.abbr = highlights_info.text
+                    end
+
+                    return vim_item
                 end,
             },
         })

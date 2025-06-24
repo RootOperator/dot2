@@ -3,123 +3,123 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 
 Item {
-  property var user: userField.text
-  property var password: passwordField.text
-  property var session: sessionPanel.session
-  property var inputHeight: Screen.height * 0.032
-  property var inputWidth: Screen.width * 0.16
-  Rectangle {
-    id: loginBackground
-    anchors {
-      verticalCenter: parent.verticalCenter
-      horizontalCenter: parent.horizontalCenter
-    }
-    height: inputHeight * 4.3
-    width: inputWidth * 1.1
-    radius: 5
-    visible: config.LoginBackground == "true" ? true : false
-    color: config.sumiInk1
-  }
-  Column {
-    spacing: 8
-    anchors {
-      bottom: parent.bottom
-      left: parent.left
-    }
-    PowerButton {
-      id: powerButton
-    }
-    RebootButton {
-      id: rebootButton
-    }
-    SleepButton {
-      id: sleepButton
-    }
-    z: 5
-  }
-  Column {
-    spacing: 8
-    anchors {
-      bottom: parent.bottom
-      right: parent.right
-    }
-    SessionPanel {
-      id: sessionPanel
-    }
-    z: 5
-  }
-  Column {
-    spacing: 8
-    z: 5
-    width: inputWidth
-    anchors {
-      verticalCenter: parent.verticalCenter
-      horizontalCenter: parent.horizontalCenter
-    }
-    UserField {
-      id: userField
-      height: inputHeight
-      width: parent.width
-    }
-    PasswordField {
-      id: passwordField
-      height: inputHeight
-      width: parent.width
-      onAccepted: loginButton.clicked()
-    }
-    Button {
-      id: loginButton
-      height: inputHeight
-      width: parent.width
-      enabled: user != "" && password != "" ? true : false
-      hoverEnabled: true
-      contentItem: Text {
-        id: buttonText
-        renderType: Text.NativeRendering
-        font {
-          family: config.Font
-          pointSize: config.FontSize
-          bold: true
+    property var user: userField.text
+    property var password: passwordField.text
+    property var session: sessionPanel.session
+    property var inputHeight: Screen.height * 0.032
+    property var inputWidth: Screen.width * 0.16
+    Rectangle {
+        id: loginBackground
+        anchors {
+            verticalCenter: parent.verticalCenter
+            horizontalCenter: parent.horizontalCenter
         }
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        color: config.fujiWhite
-        text: "Login"
-      }
-      background: Rectangle {
-        id: buttonBackground
-        color: config.sumiInk0
-        radius: 3
-      }
-      states: [
-        State {
-          name: "enabled"
-          when: loginButton.enabled
-          PropertyChanges {
-            target: buttonBackground
-          }
-          PropertyChanges {
-            target: buttonText
-          }
-        }
-      ]
-      transitions: Transition {
-        PropertyAnimation {
-          properties: "color"
-          duration: 300
-        }
-      }
-      onClicked: {
-        sddm.login(user, password, session)
-      }
+        height: inputHeight * 4.3
+        width: inputWidth * 1.1
+        radius: 5
+        visible: config.LoginBackground == "true" ? true : false
+        color: config.sumiInk1
     }
-  }
-  Connections {
-    target: sddm
+    Column {
+        spacing: 8
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+        }
+        PowerButton {
+            id: powerButton
+        }
+        RebootButton {
+            id: rebootButton
+        }
+        SleepButton {
+            id: sleepButton
+        }
+        z: 5
+    }
+    Column {
+        spacing: 8
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+        }
+        SessionPanel {
+            id: sessionPanel
+        }
+        z: 5
+    }
+    Column {
+        spacing: 8
+        z: 5
+        width: inputWidth
+        anchors {
+            verticalCenter: parent.verticalCenter
+            horizontalCenter: parent.horizontalCenter
+        }
+        UserField {
+            id: userField
+            height: inputHeight
+            width: parent.width
+        }
+        PasswordField {
+            id: passwordField
+            height: inputHeight
+            width: parent.width
+            onAccepted: loginButton.clicked()
+        }
+        Button {
+            id: loginButton
+            height: inputHeight
+            width: parent.width
+            enabled: user != "" && password != "" ? true : false
+            hoverEnabled: true
+            contentItem: Text {
+                id: buttonText
+                renderType: Text.NativeRendering
+                font {
+                    family: config.Font
+                    pointSize: config.FontSize
+                    bold: true
+                }
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                color: config.fujiWhite
+                text: "Login"
+            }
+            background: Rectangle {
+                id: buttonBackground
+                color: config.sumiInk0
+                radius: 3
+            }
+            states: [
+                State {
+                    name: "enabled"
+                    when: loginButton.enabled
+                    PropertyChanges {
+                        target: buttonBackground
+                    }
+                    PropertyChanges {
+                        target: buttonText
+                    }
+                }
+            ]
+            transitions: Transition {
+                PropertyAnimation {
+                    properties: "color"
+                    duration: 300
+                }
+            }
+            onClicked: {
+                sddm.login(user, password, session)
+            }
+        }
+    }
+    Connections {
+        target: sddm
 
-    function onLoginFailed() {
-      passwordField.text = ""
-      passwordField.focus = true
+        function onLoginFailed() {
+            passwordField.text = ""
+            passwordField.focus = true
+        }
     }
-  }
 }

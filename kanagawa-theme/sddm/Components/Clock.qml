@@ -17,7 +17,7 @@ Column {
         color: config.fujiWhite
 
         text : Qt.formatTime(container.dateTime, "hh:mm")
-        
+
         font.family: config.Font
         font.pointSize: 72
     }
@@ -29,7 +29,7 @@ Column {
         color: config.fujiWhite
 
         text : Qt.formatDate(container.dateTime, "dddd dd, MMMM yyyy")
-        
+
         font.family: config.Font
         font.pointSize: 24
     }
