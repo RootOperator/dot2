@@ -19,6 +19,7 @@ vim.opt.splitbelow = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.guicursor= "a:hor10"
+vim.opt.scrolloff = 10
 
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
