@@ -51,6 +51,8 @@ vim.keymap.set('', '<Leader>nc', '<cmd>Neorg keybind all core.looking-glass.magn
 
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-x>", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})

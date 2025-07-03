@@ -39,6 +39,15 @@ require("keybinds")
 require("config.lazy")
 
 -- Garbage
+-- TODO: clean up
+
+local function get_background()
+    local handle = io.popen("change-background")
+    local result = handle:read("*a")
+    handle:close()
+
+    return tonumber(result)
+end
 
 vim.lsp.inlay_hint.enable(true)
 vim.cmd('filetype plugin indent on')
@@ -69,7 +78,6 @@ vim.fn.sign_define('DapBreakpoint', {
     numhl = ''
 })
 
-
 sign({name = 'DiagnosticSignError', text = ''})
 sign({name = 'DiagnosticSignWarn', text = ''})
 sign({name = 'DiagnosticSignHint', text = ''})
@@ -94,7 +102,6 @@ vim.cmd([[
     autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
-
 -- close NvimTree when it's the last opened buffer
 vim.api.nvim_create_autocmd("BufEnter", {
     nested = true,
@@ -105,5 +112,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
-vim.cmd("colorscheme kanagawa-paper")
+local default_colorscheme = "kanagawa-paper"
+local colorscheme = (get_background() == 2 and "kanagawa-dragon" or default_colorscheme)
+
+vim.cmd(string.format("colorscheme %s", colorscheme))
 --require('kanagawa.colors').setup()

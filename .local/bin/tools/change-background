@@ -21,5 +21,7 @@ if arg in items_dict:
     change_background(items_dict[arg])
 elif arg == "prev":
     change_background(items_dict.get(str(current - 1), items[-1]))
-else:
+elif arg == "next":
     change_background(items_dict.get(str(current + 1), items[0]))
+else:
+    print(current)
