@@ -49,10 +49,11 @@ vim.keymap.set('', '<Leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = tr
 vim.keymap.set('', '<Leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nc', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', {noremap = true})
 
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-x>", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true})
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+vim.keymap.set('n', '<C-x>', '<cmd>lua require("pretty_hover").hover()<CR>', {noremap = true})
+vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
+vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})

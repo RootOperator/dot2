@@ -1,4 +1,4 @@
 return {
-    "xzbdmw/colorful-menu.nvim",
+    'xzbdmw/colorful-menu.nvim',
     config = true
 }

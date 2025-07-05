@@ -49,6 +49,19 @@ local function get_background()
     return tonumber(result)
 end
 
+local function get_colorscheme()
+    local default_colorscheme = "kanagawa"
+    local hour = os.date("*t").hour
+
+    if get_background() == 2 then
+        return "kanagawa-dragon"
+    elseif hour >= 21 or hour <= 6 then
+        return "kanagawa-paper"
+    else
+        return default_colorscheme
+    end
+end
+
 vim.lsp.inlay_hint.enable(true)
 vim.cmd('filetype plugin indent on')
 vim.filetype.add({
@@ -112,8 +125,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
-local default_colorscheme = "kanagawa-paper"
-local colorscheme = (get_background() == 2 and "kanagawa-dragon" or default_colorscheme)
-
-vim.cmd(string.format("colorscheme %s", colorscheme))
+vim.cmd(string.format("colorscheme %s", get_colorscheme()))
 --require('kanagawa.colors').setup()
