@@ -54,21 +54,35 @@ vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = tr
 vim.keymap.set('n', '<C-x>', '<cmd>lua require("pretty_hover").hover()<CR>', {noremap = true})
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
+vim.keymap.set('n', 'grt', '<cmd>Telescope lsp_references<CR>', {noremap = true})
+
+vim.keymap.set('n', '<leader>xx','<cmd>Trouble diagnostics toggle<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>xX','<cmd>Trouble diagnostics toggle filter.buf=0<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>xs','<cmd>Trouble symbols toggle focus=false<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>xl','<cmd>Trouble lsp toggle focus=false win.position=right<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>xL','<cmd>Trouble loclist toggle<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>xQ','<cmd>Trouble qflist toggle<CR>', {noremap = true})
+vim.keymap.set('n', '[t','<cmd>Trouble next skip_groups = true jump = true<CR>', {noremap = true})
+vim.keymap.set('n', ']t','<cmd>Trouble prev skip_groups = true jump = true<CR>', {noremap = true})
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})
 vim.keymap.set('', '<F11>', ':DapStepInto<CR>', {noremap = true})
 vim.keymap.set('', '<F12>', ':DapStepOut<CR>', {noremap = true})
 
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {noremap = true})
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {noremap = true})
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {noremap = true})
-vim.keymap.set('n', '<leader>fn', '<cmd>Telescope treesitter<cr>', {noremap = true})
-vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<cr>', {noremap = true})
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
 vim.cmd([[
-    imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-    smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-    imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-    smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+    inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+    snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+    snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+    imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+    smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 ]])

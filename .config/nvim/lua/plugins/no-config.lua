@@ -17,8 +17,8 @@ return {
 
     'nvim-neotest/nvim-nio',
 
-    { 'williamboman/mason.nvim', config = true },
-    { 'williamboman/mason-lspconfig.nvim', config = true },
+    { 'mason-org/mason.nvim', config = true },
+    { 'mason-org/mason-lspconfig.nvim', config = true },
 
     'neovim/nvim-lspconfig',
 
