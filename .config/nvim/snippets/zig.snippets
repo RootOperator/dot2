@@ -1,0 +1,12 @@
+# zls already has some good snippets
+
+snippet dba "Debug Allocator"
+    var dba = std.heap.DebugAllocator(.{}).init;
+    const allocator = dba.allocator();
+    ${0}
+
+snippet cimport "C Import"
+    const ${1} = @cImport({
+        @cInclude("${2}");
+    });
+

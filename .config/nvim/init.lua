@@ -37,6 +37,7 @@ vim.cmd([[
 
 require("keybinds")
 require("config.lazy")
+require("luasnip.loaders.from_snipmate").load()
 
 -- Garbage
 -- TODO: clean up
