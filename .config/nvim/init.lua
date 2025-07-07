@@ -23,7 +23,6 @@ vim.opt.scrolloff = 10
 
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
-vim.g.colors_off_a_little = 1
 
 vim.cmd([[
     autocmd InsertEnter * set cul
@@ -72,11 +71,6 @@ vim.filetype.add({
 vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option('updatetime', 300)
-
-vim.cmd([[
-    set signcolumn=yes
-    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]])
 
 local sign = function(opts)
 vim.fn.sign_define(opts.name, {

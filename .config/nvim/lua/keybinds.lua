@@ -6,11 +6,6 @@ vim.keymap.set('n', '<A-j>', '<cmd>tabprevious<CR>', {noremap = true})
 vim.keymap.set('n', '<A-k>', '<cmd>tabnext<CR>', {noremap = true})
 vim.keymap.set('', '<C-n>', '<cmd>NvimTreeToggle<CR>', {noremap = true})
 
-vim.keymap.set('', '<C-t>', '<cmd>FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 <CR>', {noremap = true})
-vim.keymap.set('', '<A-t>', '<cmd>FloatermToggle myfloat<CR>', {noremap = true})
-vim.keymap.set('t', '<A-t>', '<C-\\><C-n> <cmd>FloatermToggle myfloat<CR>', {noremap = true})
-vim.keymap.set('t', '<A-n>', '<C-\\><C-n> <cmd>FloatermNext<CR>', {noremap = true})
-
 vim.keymap.set('n', '<S-j>', '5j', {noremap = true})
 vim.keymap.set('n', '<S-k>', '5k', {noremap = true})
 vim.keymap.set('v', '<S-j>', '5j', {noremap = true})
