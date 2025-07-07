@@ -1,6 +1,7 @@
 command_timeout = 1000
 add_newline = true
 
+
 # custom module for jj status
 [custom.jj]
 ignore_timeout = true
@@ -27,22 +28,3 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
   )
 '
 '''
-
-# optionally disable git modules
-#[git_state]
-#disabled = true
-
-#[git_commit]
-#disabled = true
-
-#[git_metrics]
-#disabled = true
-
-#[git_branch]
-#disabled = true
-
-## re-enable git_branch as long as we're not in a jj repo
-#[custom.git_branch]
-#when = true
-#command = "jj root >/dev/null 2>&1 || starship module git_branch"
-#description = "Only show git_branch if we're not in a jj repo"
