@@ -13,6 +13,7 @@ mkdir .config
 cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.gitconfig .
+cp ~/.tmux.conf .
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r

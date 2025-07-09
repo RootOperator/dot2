@@ -1,24 +1,9 @@
-snippet scode Start basic code for assembly
-	.data
-
-
-	.text
-
-
-	.global main
-
-
-	main:
-
-
 snippet scodes Start basic code for assembly with _start label
-	.data
+    section .data
 
 
-	.text
+    section .text
+        global _start
 
 
-	.globl _start
-
-
-	_start:
+    _start:
