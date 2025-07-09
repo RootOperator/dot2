@@ -6,7 +6,7 @@ else
     LINE="more stuff"
 fi
 
-rm -rf backgrounds .local .config .themes .icons kanagawa-theme
+rm -rf backgrounds .local .config .themes .icons kanagawa-theme .tmux
 mkdir .local/bin -p
 mkdir .config
 
