@@ -29,7 +29,7 @@ cp ~/.icons . -r
 cp ~/.config/fastfetch/ .config -r
 cp ~/kanagawa-theme/ . -r
 
-rsync -av --progress ~/.config/nvim .config/ --exclude lazy-lock.json
+rsync -a ~/.config/nvim .config/ --exclude lazy-lock.json
 
 git add -A
 git commit -m "$LINE"
