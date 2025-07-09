@@ -14,7 +14,7 @@ cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.gitconfig .
 cp ~/.tmux.conf .
-#cp ~/.tmux . -r
+cp ~/.tmux . -r
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r
