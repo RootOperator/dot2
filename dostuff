@@ -6,7 +6,7 @@ else
     LINE="more stuff"
 fi
 
-rm -rf backgrounds .local .config .themes .icons kanagawa-theme .tmux
+rm -rf backgrounds .local .config .themes .icons kanagawa-theme
 mkdir .local/bin -p
 mkdir .config
 
@@ -14,7 +14,6 @@ cp ~/.bashrc .
 cp ~/.bash_profile .
 cp ~/.gitconfig .
 cp ~/.tmux.conf .
-cp ~/.tmux . -r
 cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r
