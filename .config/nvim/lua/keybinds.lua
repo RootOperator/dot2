@@ -49,6 +49,8 @@ vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = tr
 vim.keymap.set('n', '<C-x>', '<cmd>lua require("pretty_hover").hover()<CR>', {noremap = true})
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
+vim.keymap.set('n', '[e', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('n', ']e', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
 vim.keymap.set('n', 'grt', '<cmd>Telescope lsp_references<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>xx','<cmd>Trouble diagnostics toggle<CR>', {noremap = true})

@@ -14,6 +14,7 @@ alias free='free -m'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 alias zbr='zig build run'
+alias tma='tmux attach'
 alias more=less
 
 complete -cf sudo
