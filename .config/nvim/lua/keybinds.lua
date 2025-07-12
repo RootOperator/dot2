@@ -42,7 +42,7 @@ vim.keymap.set('n', '<leader>zz', '<cmd>TZAtaraxis<CR>', {noremap = true})
 
 vim.keymap.set('', '<Leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = true})
 vim.keymap.set('', '<Leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
-vim.keymap.set('', '<Leader>nc', '<cmd>Neorg keybind all core.looking-glass.magnify-code-block<CR>', {noremap = true})
+vim.keymap.set('', '<Leader>nc', '<Plug>(neorg.looking-glass.magnify-code-block)', {noremap = true})
 
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true})
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})

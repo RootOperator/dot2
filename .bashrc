@@ -28,4 +28,5 @@ shopt -s histappend
 bind -r '\C-t'
 
 eval "$(zoxide init bash --cmd cd)"
+eval "$(fzf --bash)"
 eval "$(starship init bash)"
