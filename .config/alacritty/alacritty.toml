@@ -12,7 +12,15 @@ bold_italic = {family = "JetBrainsMono NFP", style = "Bold Italic"}
 size = 10.0
 
 [cursor]
-style = { shape = "Beam", blinking = "On" }
+style = { shape = "Block", blinking = "On" }
 blink_interval = 500
 blink_timeout = 0
 thickness = 0.30
+
+[keyboard]
+bindings = [
+    { key = "Backspace", mods = "Control", chars = "\u0017" },
+    { key = "J", mods = "Control|Shift", chars = "\u001b[106;6u" },
+    { key = "K", mods = "Control|Shift", chars = "\u001b[107;6u" },
+]
+

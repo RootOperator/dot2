@@ -1,0 +1,6 @@
+#!/bin/bash
+
+zig init
+jj git init --colocate
+
+echo -e ".zig-cache/\nzig-out/" > .gitignore

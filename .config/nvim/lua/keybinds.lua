@@ -1,5 +1,4 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('i', '<C-BS>', '<C-W>', {noremap = true})
 vim.keymap.set('n', '<C-h>', '<cmd>tabm -1<CR>', {noremap = true})
 vim.keymap.set('n', '<C-l>', '<cmd>tabm +1<CR>', {noremap = true})
 vim.keymap.set('n', '<A-j>', '<cmd>tabprevious<CR>', {noremap = true})

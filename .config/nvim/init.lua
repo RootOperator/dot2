@@ -29,9 +29,7 @@ vim.cmd([[
     autocmd InsertLeave * set nocul
     autocmd QuitPre * if empty(&bt) | lclose | endif
 
-    if $TERM =~ 'xterm-256color'
-        set noek
-    endif
+    au VimLeave * set guicursor=a:block100,a:blinkon100-blinkoff50
 ]])
 
 require("keybinds")
