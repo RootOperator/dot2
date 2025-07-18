@@ -26,7 +26,6 @@ cp ~/.config/yazi/ .config -r
 cp ~/.config/starship.toml .config -r
 cp ~/.themes . -r
 cp ~/.icons . -r
-cp ~/.config/fastfetch/ .config -r
 cp ~/kanagawa-theme/ . -r
 
 rsync -a ~/.config/nvim .config/ --exclude lazy-lock.json
