@@ -10,6 +10,7 @@ return {
     'nvim-zh/whitespace.nvim',
     'Bekaboo/deadcolumn.nvim',
     'mbbill/undotree',
+    'sindrets/diffview.nvim',
 
 
     { 'rust-lang/rust.vim', dependencies = { 'mattn/webapi-vim' }},

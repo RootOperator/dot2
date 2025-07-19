@@ -19,6 +19,7 @@ cp ~/.local/bin/tools/ .local/bin/ -r
 cp ~/.local/source .local/ -r
 cp ~/.config/dunst/ .config -r
 cp ~/.config/hypr/ .config -r
+cp ~/.config/jj/ .config -r
 cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
 cp ~/.config/alacritty/ .config -r

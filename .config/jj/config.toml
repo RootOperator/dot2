@@ -1,0 +1,25 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "RootOperator"
+email = "20143055+RootOperator@users.noreply.github.com"
+
+
+[ui]
+default-command = "log"
+git.tool = "delta"
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+
+[aliases]
+tug = ["util", "exec", "--", "sh", "-c", """
+if [ "x$1" = "x" ]; then
+  jj bookmark move --from "closest_bookmark(@)" --to "closest_pushable(@)"
+else
+  jj bookmark move --to "closest_pushable(@)" "$@"
+fi
+""", ""]
+
+a = ["log", "-r", "::"]
