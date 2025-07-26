@@ -5,7 +5,11 @@ return {
     opts = {
         load = {
             ["core.defaults"] = {},
-            ["core.concealer"] = {},
+            ["core.concealer"] = {
+                config = {
+                    icon_preset = "varied"
+                }
+            },
             ["core.export"] = {},
             ["core.export.markdown"] = {
                 config = {

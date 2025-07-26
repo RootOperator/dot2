@@ -17,6 +17,7 @@ return {
             rust = { "rustfmt" },
             c = { "clang-format" },
             cpp = { "clang-format" },
+            zig = { "zigfmt" },
         },
         formatters = {
             ["clang-format"] = {

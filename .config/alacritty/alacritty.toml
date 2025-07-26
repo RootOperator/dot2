@@ -23,4 +23,3 @@ bindings = [
     { key = "J", mods = "Control|Shift", chars = "\u001b[106;6u" },
     { key = "K", mods = "Control|Shift", chars = "\u001b[107;6u" },
 ]
-

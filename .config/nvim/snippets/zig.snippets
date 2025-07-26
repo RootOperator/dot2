@@ -2,6 +2,7 @@
 
 snippet dba "Debug Allocator"
     var dba = std.heap.DebugAllocator(.{}).init;
+    defer _ = dba.deinit();
     const allocator = dba.allocator();
     ${0}
 
@@ -10,3 +11,7 @@ snippet cimport "C Import"
         @cInclude("${2}");
     });
 
+snippet pstruct "Public struct"
+    pub const ${1} = struct {
+        ${0}
+    };

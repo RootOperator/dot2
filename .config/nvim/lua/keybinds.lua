@@ -21,6 +21,8 @@ vim.keymap.set('i', '<C-S-j>', '<Esc>:m .+1<CR>==gi', {noremap = true})
 vim.keymap.set('v', '<C-S-j>', ':m \'>+1<CR>gv=gv', {noremap = true})
 vim.keymap.set('v', '<C-S-k>', ':m \'<-2<CR>gv=gv', {noremap = true})
 
+vim.keymap.set('n', '<Leader>df', 'daBdd')
+
 vim.keymap.set('n', '<Leader>tt', '<cmd>ToggleInlayEndHints<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>m', '<cmd>MarkdownPreviewToggle<CR>', {noremap = true})
 vim.keymap.set('n', '<Leader>lp', '<cmd>lclose<CR>', {noremap = true})
