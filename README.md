@@ -8,7 +8,7 @@
     - 🖼️ [HyprPaper](https://github.com/hyprwm/hyprpaper)
 - 🖥 DM: [SDDM](https://github.com/sddm/sddm)
 - ℹ️  Bar: [WayBar](https://github.com/Alexays/Waybar)
-- 💾 Terminal: [Kitty](https://sw.kovidgoyal.net/kitty)
+- `>_` Terminal: [Alacritty](https://alacritty.org/)
 - 📋 Menu: [Rofi](https://github.com/davatorium/rofi)
 - 🗃️ File Manager: [Thunar](https://github.com/xfce-mirror/thunar), [Yazi](https://github.com/sxyazi/Yazi)
 - 🎨 theme: [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
