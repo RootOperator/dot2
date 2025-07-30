@@ -31,7 +31,7 @@ vim.keymap.set('n', '<leader>m', '<cmd>MarkdownPreviewToggle<CR>', {noremap = tr
 vim.keymap.set('n', '<leader>lp', '<cmd>lclose<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>ll', '<cmd>lopen<CR>', {noremap = true})
 
-vim.keymap.set('n', '<leader>st', '<cmd>ALEToggle<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>at', '<cmd>ALEToggle<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>ft', '<cmd>Format<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})

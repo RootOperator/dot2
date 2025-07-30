@@ -20,6 +20,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.guicursor= "a:hor10"
 vim.opt.scrolloff = 10
+vim.opt.swapfile = false
 
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
@@ -32,8 +33,8 @@ vim.cmd([[
     au VimLeave * set guicursor=a:block100,a:blinkon100-blinkoff50
 ]])
 
-require("keybinds")
 require("config.lazy")
+require("keybinds")
 require("luasnip.loaders.from_snipmate").load()
 
 -- Garbage
@@ -61,7 +62,6 @@ local function get_colorscheme()
 end
 
 vim.lsp.inlay_hint.enable(true)
-vim.cmd('filetype plugin indent on')
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })

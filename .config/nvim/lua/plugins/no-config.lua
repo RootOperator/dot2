@@ -12,7 +12,6 @@ return {
     'mbbill/undotree',
     'sindrets/diffview.nvim',
 
-
     { 'rust-lang/rust.vim', dependencies = { 'mattn/webapi-vim' }},
     { 'lewis6991/gitsigns.nvim', config = true },
     { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = true },
@@ -24,5 +23,4 @@ return {
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
     { 'mrcjkb/rustaceanvim', version = '^6', lazy = false },
     { 'echasnovski/mini.align', config = true},
-
 }
