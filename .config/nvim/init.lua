@@ -61,6 +61,17 @@ local function get_colorscheme()
     end
 end
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+    group = yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40,
+        })
+    end,
+})
+
 vim.lsp.inlay_hint.enable(true)
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },

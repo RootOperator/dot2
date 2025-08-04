@@ -13,18 +13,35 @@ return {
                 }
             }
 
-            dap.configurations.cpp = {
+            dap.configurations.c = {
                 {
-                    name = "Launch file",
+                    name = "Launch",
                     type = "codelldb",
                     request = "launch",
                     program = function()
-                        local t={}
-                        for str in string.gmatch(vim.fn.getcwd(), "([^/]+)") do
-                            table.insert(t, str)
-                        end
-
-                        return vim.fn.getcwd() .. '/build/' .. t[#t]
+                        return vim.fn.input(
+                            "Path to executable: ",
+                            vim.fn.getcwd() .. "/",
+                            "file"
+                        )
+                    end,
+                    cwd = '${workspaceFolder}',
+                    stopOnEntry = false,
+                },
+                {
+                    name = "Launch with args",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input(
+                            "Path to executable: ",
+                            vim.fn.getcwd() .. "/",
+                            "file"
+                        )
+                    end,
+                    args = function()
+                        local args_string = vim.fn.input("Arguments: ")
+                        return vim.split(args_string, " +")
                     end,
                     cwd = '${workspaceFolder}',
                     stopOnEntry = false,
@@ -33,7 +50,7 @@ return {
 
             dap.configurations.rust = {
                 {
-                    name = "Launch file",
+                    name = "Launch",
                     type = "codelldb",
                     request = "launch",
                     program = function()
@@ -49,7 +66,7 @@ return {
                 }
             }
 
-            dap.configurations.c = dap.configurations.cpp
+            dap.configurations.cpp = dap.configurations.c
 
             dap.configurations.zig = {
                 {
@@ -57,8 +74,7 @@ return {
                     type = "codelldb",
                     request = "launch",
                     program = function()
-                        -- Prompt user for the executable path, default to common build location
-                        local default_build_path = vim.fn.input("Path to executable (e.g., zig-out/bin/my_program): ", "zig-out/bin/", "file")
+                        local default_build_path = vim.fn.input("Path to executable: ", "zig-out/bin/", "file")
                         if default_build_path == nil or default_build_path == '' then
                             error("No executable path provided!")
                         end

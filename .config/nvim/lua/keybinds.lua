@@ -22,6 +22,7 @@ vim.keymap.set('v', '<C-S-j>', ':m \'>+1<CR>gv=gv', {noremap = true})
 vim.keymap.set('v', '<C-S-k>', ':m \'<-2<CR>gv=gv', {noremap = true})
 
 vim.keymap.set('n', '<leader>df', 'daBdd')
+vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('n', '<leader>j', function()
   vim.cmd('norm! ' .. vim.v.count1 .. 'J')
 end)
@@ -67,6 +68,7 @@ vim.keymap.set('n', '[t','<cmd>Trouble next skip_groups = true jump = true<CR>',
 vim.keymap.set('n', ']t','<cmd>Trouble prev skip_groups = true jump = true<CR>', {noremap = true})
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
+vim.keymap.set('', '<F6>', ':DapTerminate<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})
 vim.keymap.set('', '<F11>', ':DapStepInto<CR>', {noremap = true})
 vim.keymap.set('', '<F12>', ':DapStepOut<CR>', {noremap = true})
