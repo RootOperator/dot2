@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>at', '<cmd>ALEToggle<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>ft', '<cmd>Format<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>c', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>cb', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
 vim.keymap.set('n', "<leader>u",'<cmd>UndotreeToggle<CR>')
 
 vim.keymap.set('n', '<leader>zn', '<cmd>TZNarrow<CR>', {noremap = true})

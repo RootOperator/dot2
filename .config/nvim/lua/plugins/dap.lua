@@ -13,7 +13,45 @@ return {
                 }
             }
 
+            dap.adapters.gdb = {
+                type = "executable",
+                command = "gdb",
+                args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+            }
+
             dap.configurations.c = {
+                {
+                    name = "Launch gdb",
+                    type = "gdb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input(
+                            "Path to executable: ",
+                            vim.fn.getcwd() .. "/",
+                            "file"
+                        )
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopAtBeginningOfMainSubprogram = false,
+                },
+                {
+                    name = "Launch gdb with args",
+                    type = "gdb",
+                    request = "launch",
+                    program = function()
+                        return vim.fn.input(
+                            "Path to executable: ",
+                            vim.fn.getcwd() .. "/",
+                            "file"
+                        )
+                    end,
+                    args = function()
+                        local args_string = vim.fn.input("Arguments: ")
+                        return vim.split(args_string, " +")
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopAtBeginningOfMainSubprogram = false,
+                },
                 {
                     name = "Launch",
                     type = "codelldb",
