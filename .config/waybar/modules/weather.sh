@@ -64,6 +64,7 @@ case "$condition_text" in
         ;;
     *)
         condition_icon=""
+        temp_c=""
         ;;
 esac
 
