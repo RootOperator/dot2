@@ -28,6 +28,7 @@ vim.g.rust_clip_command = 'wl-copy'
 vim.cmd([[
     autocmd InsertEnter * set cul
     autocmd InsertLeave * set nocul
+    autocmd InsertLeave * :StripTrailingWhitespace
     autocmd QuitPre * if empty(&bt) | lclose | endif
 
     au VimLeave * set guicursor=a:block100,a:blinkon100-blinkoff50

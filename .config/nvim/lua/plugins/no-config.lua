@@ -11,6 +11,7 @@ return {
     'Bekaboo/deadcolumn.nvim',
     'mbbill/undotree',
     'sindrets/diffview.nvim',
+    'tpope/vim-obsession',
 
     { 'rust-lang/rust.vim', dependencies = { 'mattn/webapi-vim' }},
     { 'lewis6991/gitsigns.nvim', config = true },

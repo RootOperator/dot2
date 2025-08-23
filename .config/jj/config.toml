@@ -12,6 +12,7 @@ git.tool = "delta"
 [revset-aliases]
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
 'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+"immutable_heads()" = "none()"
 
 [aliases]
 tug = ["util", "exec", "--", "sh", "-c", """
