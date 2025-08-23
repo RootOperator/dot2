@@ -1,7 +1,0 @@
-[package]
-name = "hyprland_opacity"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-hyprland = { git = "https://github.com/hyprland-community/hyprland-rs", branch = "master" }
