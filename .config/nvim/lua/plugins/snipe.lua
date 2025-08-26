@@ -5,9 +5,6 @@ return {
     },
     opts = {
         navigate = {
-            ui = {
-                position = "center"
-            },
             leader = " ",
             leader_map = {
                 ["s"] = function (m, i) require("snipe").open_vsplit(m, i) end,
