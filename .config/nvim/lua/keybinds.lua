@@ -1,9 +1,13 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('n', '<C-h>', '<cmd>tabm -1<CR>', {noremap = true})
-vim.keymap.set('n', '<C-l>', '<cmd>tabm +1<CR>', {noremap = true})
-vim.keymap.set('n', '<A-j>', '<cmd>tabprevious<CR>', {noremap = true})
-vim.keymap.set('n', '<A-k>', '<cmd>tabnext<CR>', {noremap = true})
-vim.keymap.set('', '<C-n>', '<cmd>NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('n', '<C-j>', '<cmd>tabprevious<CR>', {noremap = true})
+vim.keymap.set('n', '<C-k>', '<cmd>tabnext<CR>', {noremap = true})
+vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('n', '<C-l>', '1z=', {noremap = true})
+vim.keymap.set('n', '[2', '[s', {noremap = true})
+vim.keymap.set('n', ']2', ']s', {noremap = true})
+vim.keymap.set('n', '<leader>ss', '<cmd> set spell<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>ns', '<cmd> set nospell<CR>', {noremap = true})
+
 
 vim.keymap.set('n', '<C-e>', '5<C-e>', {noremap = true})
 vim.keymap.set('n', '<C-y>', '5<C-y>', {noremap = true})
@@ -55,6 +59,7 @@ vim.keymap.set('n', '[3', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = 
 vim.keymap.set('n', ']3', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
 vim.keymap.set('n', '[#', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
 vim.keymap.set('n', ']#', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('i', '<C-j>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true})
 vim.keymap.set('n', 'grt', '<cmd>Telescope lsp_references<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>xx','<cmd>Trouble diagnostics toggle<CR>', {noremap = true})
