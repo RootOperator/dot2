@@ -23,5 +23,5 @@ return {
     { 'chentoast/marks.nvim', event = "VeryLazy", config = true },
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
     { 'mrcjkb/rustaceanvim', version = '^6', lazy = false },
-    { 'echasnovski/mini.align', config = true},
+    { 'nvim-mini/mini.align', config = true},
 }

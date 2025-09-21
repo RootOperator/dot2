@@ -5,7 +5,7 @@ return {
     config = function ()
         vim.g.ale_disable_lsp = 1
         vim.g.ale_linters = {
-            c = {"clangtidy", "clang"}
+            c = {"clangtidy", "clang"},
         }
     end
 }
