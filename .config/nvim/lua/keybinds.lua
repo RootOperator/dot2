@@ -81,6 +81,7 @@ vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', {noremap = tr
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
 vim.cmd([[

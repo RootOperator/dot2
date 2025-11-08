@@ -4,6 +4,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.showbreak = "+++"
 vim.opt.hlsearch = true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.cmd('filetype plugin indent on')
@@ -55,7 +56,7 @@ local function get_colorscheme()
 
     if get_background() == 2 then
         return "kanagawa-dragon"
-    elseif hour >= 21 or hour <= 6 then
+    elseif hour >= 19 or hour <= 6 then
         return "kanagawa-paper"
     else
         return default_colorscheme

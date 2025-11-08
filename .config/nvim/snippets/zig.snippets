@@ -15,3 +15,13 @@ snippet pstruct "Public struct"
     pub const ${1} = struct {
         ${0}
     };
+
+snippet structt "@This struct"
+    const ${1} = struct {
+        const Self = @This();
+        ${0}
+    };
+
+snippet This
+    const Self = @This();
+    ${0}

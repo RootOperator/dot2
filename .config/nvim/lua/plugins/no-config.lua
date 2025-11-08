@@ -2,7 +2,7 @@ return {
     'preservim/nerdcommenter',
     'arzg/vim-rust-syntax-ext',
     --'leafOfTree/vim-vue-plugin',
-    --'leafOfTree/vim-svelte-plugin',
+    'leafOfTree/vim-svelte-plugin',
     'nvim-tree/nvim-web-devicons',
     'nvim-neotest/nvim-nio',
     'neovim/nvim-lspconfig',

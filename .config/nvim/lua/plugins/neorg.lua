@@ -2,6 +2,11 @@ return {
     "nvim-neorg/neorg",
     lazy = false,
     version = "*",
+    dependencies = {
+        'nvim-neorg/lua-utils.nvim',
+        'pysan3/pathlib.nvim',
+        'nvim-neotest/nvim-nio',
+    },
     opts = {
         load = {
             ["core.defaults"] = {},
