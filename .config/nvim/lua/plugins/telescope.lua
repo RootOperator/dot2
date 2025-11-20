@@ -16,7 +16,10 @@ return {
         pickers = {
             find_files = {
                 find_command = { "rg" , "--files", "--color", "never", "--no-require-git"}
-            }
+            },
+            man_pages = {
+                sections = { 'ALL' }
+            },
         }
     }
 }

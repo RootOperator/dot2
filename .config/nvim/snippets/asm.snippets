@@ -1,9 +1,27 @@
-snippet scodes Start basic code for assembly with _start label
-    section .data
+snippet section
+    section ${0}
 
+snippet macro
+    %macro ${1}
+        ${0}
+    %endmacro
 
-    section .text
-        global _start
+snippet ifndef
+    %ifndef ${1}
+    %define ${1}
+    ${0}
+    %endif
 
+snippet include
+    %include "${0}"
 
-    _start:
+snippet ex
+    extern ${0}
+
+snippet define
+    %define ${0}
+
+snippet struc
+    struc ${1}
+        ${0}
+    endstruc

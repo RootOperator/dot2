@@ -1,7 +1,7 @@
 # zls already has some good snippets
 
 snippet dba "Debug Allocator"
-    var dba = std.heap.DebugAllocator(.{}).init;
+    var dba: std.heap.DebugAllocator(.{}) = .init;
     defer _ = dba.deinit();
     const allocator = dba.allocator();
     ${0}
@@ -25,3 +25,19 @@ snippet structt "@This struct"
 snippet This
     const Self = @This();
     ${0}
+
+snippet arena
+	var arena = std.heap.ArenaAllocator.init(${1:std.heap.page_allocator});
+	defer arena.deinit();
+	const allocator = arena.allocator();
+
+snippet fba
+	var buffer: [${1:1024}]u8 = undefined;
+	var fba = std.heap.FixedBufferAllocator.init(&buffer);
+	const allocator = fba.allocator();
+
+snippet page
+	const allocator = std.heap.page_allocator;
+
+snippet calloc
+	const allocator = std.heap.c_allocator;
