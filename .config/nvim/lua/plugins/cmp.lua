@@ -65,7 +65,9 @@ return {
                         vim_item.abbr = highlights_info.text
                     end
 
-                    vim_item.kind = kind.kind
+                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
+                    vim_item.icon = " " .. (strings[1] or "") .. " "
+                    vim_item.menu = ""
 
                     return vim_item
                 end,
