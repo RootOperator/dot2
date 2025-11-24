@@ -4,19 +4,7 @@ return {
     { 'nvim-mini/mini.move', config = true },
     { 'nvim-mini/mini.pairs', config = true },
     { 'nvim-mini/mini.splitjoin', config = true },
-    {
-        'nvim-mini/mini.surround',
-        opts = {
-            mappings = {
-                add = 'ya',
-                delete = 'yd',
-                find = 'yf',
-                find_left = 'yF',
-                highlight = 'yh',
-                replace = 'yr',
-            },
-        }
-    },
+    {'nvim-mini/mini.surround', config = true },
     {
         'nvim-mini/mini.files',
         config = function()
@@ -47,7 +35,7 @@ return {
                 end
 
                 local desc = 'Split ' .. direction
-                vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc })
+                vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc, nowait = true })
             end
 
             vim.api.nvim_create_autocmd('User', {
