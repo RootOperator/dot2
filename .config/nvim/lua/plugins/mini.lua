@@ -4,7 +4,19 @@ return {
     { 'nvim-mini/mini.move', config = true },
     { 'nvim-mini/mini.pairs', config = true },
     { 'nvim-mini/mini.splitjoin', config = true },
-    { 'nvim-mini/mini.surround', config = true },
+    {
+        'nvim-mini/mini.surround',
+        opts = {
+            mappings = {
+                add = 'ya',
+                delete = 'yd',
+                find = 'yf',
+                find_left = 'yF',
+                highlight = 'yh',
+                replace = 'yr',
+            },
+        }
+    },
     {
         'nvim-mini/mini.files',
         config = function()
@@ -42,8 +54,8 @@ return {
                 pattern = 'MiniFilesBufferCreate',
                 callback = function(args)
                     local buf_id = args.data.buf_id
-                    map_split(buf_id, 'i', 'belowright horizontal')
-                    map_split(buf_id, 's', 'belowright vertical')
+                    map_split(buf_id, 'i', 'horizontal')
+                    map_split(buf_id, 's', 'vertical')
                     map_split(buf_id, 't', 'tab')
                 end,
             })
