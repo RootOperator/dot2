@@ -6,13 +6,15 @@ return {
     'nvim-tree/nvim-web-devicons',
     'nvim-neotest/nvim-nio',
     'neovim/nvim-lspconfig',
-    'tpope/vim-surround',
     'nvim-zh/whitespace.nvim',
     'Bekaboo/deadcolumn.nvim',
     'mbbill/undotree',
     'sindrets/diffview.nvim',
     'tpope/vim-obsession',
 
+    { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
+    { 'Fildo7525/pretty_hover', event = 'LspAttach', config = true },
+    { 'xzbdmw/colorful-menu.nvim', config = true },
     { 'rust-lang/rust.vim', dependencies = { 'mattn/webapi-vim' }},
     { 'lewis6991/gitsigns.nvim', config = true },
     { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = true },
@@ -23,5 +25,4 @@ return {
     { 'chentoast/marks.nvim', event = "VeryLazy", config = true },
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
     { 'mrcjkb/rustaceanvim', version = '^6', lazy = false },
-    { 'nvim-mini/mini.align', config = true},
 }

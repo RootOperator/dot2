@@ -13,6 +13,7 @@ alias du='du -h'
 alias free='free -m'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
+alias vim='nvim'
 alias more=less
 
 complete -cf sudo

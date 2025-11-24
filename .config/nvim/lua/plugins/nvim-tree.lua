@@ -36,6 +36,7 @@ end
 
 return {
     "nvim-tree/nvim-tree.lua",
+    enabled = false,
     lazy = false,
     cmd = {
         "NvimTreeOpen",
