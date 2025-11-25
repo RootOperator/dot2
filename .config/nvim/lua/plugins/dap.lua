@@ -108,7 +108,7 @@ return {
 
             dap.configurations.zig = {
                 {
-                    name = "Launch Zig Program",
+                    name = "Launch",
                     type = "codelldb",
                     request = "launch",
                     program = function()
@@ -119,8 +119,41 @@ return {
                         return default_build_path
                     end,
                     cwd = "${workspaceFolder}",
-                    stopOnEntry = true,
+                    stopOnEntry = false,
                     args = {},
+                    preLaunchTask = function()
+                        print("Building Zig project...")
+                        local job_id = vim.fn.jobstart('zig build', {
+                            cwd = vim.fn.getcwd(),
+                            on_stdout = function(_, data, _) print(table.concat(data, '\n')) end,
+                            on_stderr = function(_, data, _) print(table.concat(data, '\n')) end,
+                            on_exit = function(_, code, _)
+                                if code ~= 0 then
+                                    vim.notify("Zig build failed!", vim.log.levels.ERROR)
+                                else
+                                    vim.notify("Zig build successful!", vim.log.levels.INFO)
+                                end
+                            end,
+                        })
+                    end,
+                },
+                {
+                    name = "Launch with args",
+                    type = "codelldb",
+                    request = "launch",
+                    program = function()
+                        local default_build_path = vim.fn.input("Path to executable: ", "zig-out/bin/", "file")
+                        if default_build_path == nil or default_build_path == '' then
+                            error("No executable path provided!")
+                        end
+                        return default_build_path
+                    end,
+                    cwd = "${workspaceFolder}",
+                    stopOnEntry = false,
+                    args = function()
+                        local args_string = vim.fn.input("Arguments: ")
+                        return vim.split(args_string, " +")
+                    end,
                     preLaunchTask = function()
                         print("Building Zig project...")
                         local job_id = vim.fn.jobstart('zig build', {

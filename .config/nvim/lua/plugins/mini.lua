@@ -42,6 +42,8 @@ return {
                 pattern = 'MiniFilesBufferCreate',
                 callback = function(args)
                     local buf_id = args.data.buf_id
+
+                    vim.keymap.set('n', '<C-n>', '<cmd>lua MiniFiles.close()<CR>', { buffer = buf_id })
                     map_split(buf_id, 'i', 'horizontal')
                     map_split(buf_id, 's', 'vertical')
                     map_split(buf_id, 't', 'tab')
