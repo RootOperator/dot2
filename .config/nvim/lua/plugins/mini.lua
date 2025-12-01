@@ -1,10 +1,20 @@
 return {
-    { 'nvim-mini/mini.ai', config = true },
     { 'nvim-mini/mini.align', config = true },
     { 'nvim-mini/mini.move', config = true },
     { 'nvim-mini/mini.pairs', config = true },
     { 'nvim-mini/mini.splitjoin', config = true },
     { 'nvim-mini/mini.surround', config = true },
+    {
+        'nvim-mini/mini.ai',
+        opts = function()
+            local gen_spec = require('mini.ai').gen_spec
+            return {
+                custom_textobjects = {
+                    f = gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }, {}),
+                },
+            }
+        end,
+    },
     {
         'nvim-mini/mini.files',
         config = function()

@@ -39,9 +39,6 @@ require("config.lazy")
 require("keybinds")
 require("luasnip.loaders.from_snipmate").load()
 
--- Garbage
--- TODO: clean up
-
 local function get_background()
     local handle = io.popen("change-background")
     local result = handle:read("*a")
@@ -103,7 +100,10 @@ sign({name = 'DiagnosticSignHint', text = ''})
 sign({name = 'DiagnosticSignInfo', text = ''})
 
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = {
+        prefix = '■',
+        source = "if_many"
+    },
     signs = true,
     update_in_insert = true,
     underline = true,
@@ -120,16 +120,6 @@ vim.cmd([[
     set signcolumn=yes
     autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
-
--- close NvimTree when it's the last opened buffer
---vim.api.nvim_create_autocmd("BufEnter", {
-    --nested = true,
-    --callback = function()
-    --if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
-        --vim.cmd "quit"
-        --end
-    --end
---})
 
 vim.cmd(string.format("colorscheme %s", get_colorscheme()))
 --require('kanagawa.colors').setup()

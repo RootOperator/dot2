@@ -27,7 +27,6 @@ vim.keymap.set('v', '<S-k>', '5k', {noremap = true})
 --vim.keymap.set('v', '<C-S-j>', ':m \'>+1<CR>gv=gv', {noremap = true})
 --vim.keymap.set('v', '<C-S-k>', ':m \'<-2<CR>gv=gv', {noremap = true})
 
-vim.keymap.set('n', '<leader>df', 'daBdd')
 vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('n', '<leader>j', function()
   vim.cmd('norm! ' .. vim.v.count1 .. 'J')
