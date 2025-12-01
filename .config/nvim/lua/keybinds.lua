@@ -63,7 +63,7 @@ vim.keymap.set('n', ']3', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = 
 vim.keymap.set('n', '[#', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
 vim.keymap.set('n', ']#', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
 vim.keymap.set('i', '<C-j>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true})
-vim.keymap.set('n', 'grt', '<cmd>Telescope lsp_references<CR>', {noremap = true})
+vim.keymap.set('n', 'grr', '<cmd>Telescope lsp_references<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>xx','<cmd>Trouble diagnostics toggle<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>xX','<cmd>Trouble diagnostics toggle filter.buf=0<CR>', {noremap = true})

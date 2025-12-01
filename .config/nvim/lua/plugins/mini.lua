@@ -4,7 +4,7 @@ return {
     { 'nvim-mini/mini.move', config = true },
     { 'nvim-mini/mini.pairs', config = true },
     { 'nvim-mini/mini.splitjoin', config = true },
-    {'nvim-mini/mini.surround', config = true },
+    { 'nvim-mini/mini.surround', config = true },
     {
         'nvim-mini/mini.files',
         config = function()
@@ -17,6 +17,7 @@ return {
                 mappings = {
                     go_in = 'L',
                     go_in_plus = 'l',
+                    synchronize = "<CR>"
                 }
             })
             local map_split = function(buf_id, lhs, direction)

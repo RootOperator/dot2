@@ -56,7 +56,7 @@ local function get_colorscheme()
 
     if get_background() == 2 then
         return "kanagawa-dragon"
-    elseif hour >= 19 or hour <= 6 then
+    elseif hour >= 18 or hour <= 6 then
         return "kanagawa-paper"
     else
         return default_colorscheme
