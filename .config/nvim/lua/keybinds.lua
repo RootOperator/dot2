@@ -37,18 +37,12 @@ vim.keymap.set('n', '<leader>m', '<cmd>MarkdownPreviewToggle<CR>', {noremap = tr
 vim.keymap.set('n', '<leader>lp', '<cmd>lclose<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>ll', '<cmd>lopen<CR>', {noremap = true})
 
-vim.keymap.set('n', '<leader>at', '<cmd>ALEToggle<CR>', {noremap = true})
-
 vim.keymap.set('n', '<leader>ft', '<cmd>Format<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>cb', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
 vim.keymap.set('n', "<leader>u",'<cmd>UndotreeToggle<CR>')
 
-vim.keymap.set('n', '<leader>zn', '<cmd>TZNarrow<CR>', {noremap = true})
-vim.keymap.set('v', '<leader>zn', '<cmd>\'<,\'>TZNarrow<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>zf', '<cmd>TZFocus<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>zm', '<cmd>TZMinimalist<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>zz', '<cmd>TZAtaraxis<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>zz', '<cmd>ZenMode<CR>', {noremap = true})
 
 vim.keymap.set('', '<leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = true})
 vim.keymap.set('', '<leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
@@ -81,7 +75,6 @@ vim.keymap.set('', '<F12>', ':DapStepOut<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
