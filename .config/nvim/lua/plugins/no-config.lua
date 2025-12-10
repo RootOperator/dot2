@@ -15,7 +15,6 @@ return {
     { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
     { 'Fildo7525/pretty_hover', event = 'LspAttach', config = true },
     { 'xzbdmw/colorful-menu.nvim', config = true },
-    { 'rust-lang/rust.vim', dependencies = { 'mattn/webapi-vim' }},
     { 'lewis6991/gitsigns.nvim', config = true },
     { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, config = true },
     { 'mason-org/mason.nvim', config = true },

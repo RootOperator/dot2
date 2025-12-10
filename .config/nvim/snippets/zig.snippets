@@ -26,18 +26,30 @@ snippet This
     const Self = @This();
     ${0}
 
+snippet self
+    self: Self
+
+snippet selff
+    self: *Self
+
 snippet arena
-	var arena = std.heap.ArenaAllocator.init(${1:std.heap.page_allocator});
-	defer arena.deinit();
-	const allocator = arena.allocator();
+    var arena = std.heap.ArenaAllocator.init(${1:std.heap.page_allocator});
+    defer arena.deinit();
+    const allocator = arena.allocator();
 
 snippet fba
-	var buffer: [${1:1024}]u8 = undefined;
-	var fba = std.heap.FixedBufferAllocator.init(&buffer);
-	const allocator = fba.allocator();
+    var buffer: [${1:1024}]u8 = undefined;
+    var fba = std.heap.FixedBufferAllocator.init(&buffer);
+    const allocator = fba.allocator();
 
 snippet page
-	const allocator = std.heap.page_allocator;
+    const allocator = std.heap.page_allocator;
 
 snippet calloc
-	const allocator = std.heap.c_allocator;
+    const allocator = std.heap.c_allocator;
+
+snippet stdt
+    var stdout_buffer: [1024]u8 = undefined;
+    var stdout_writer = std.fs.File.stdout().writer(&stdout_buffer);
+    const stdout = &stdout_writer.interface;
+

@@ -4,7 +4,6 @@
 name = "RootOperator"
 email = "20143055+RootOperator@users.noreply.github.com"
 
-
 [ui]
 default-command = "log"
 git.tool = "delta"
@@ -12,7 +11,10 @@ git.tool = "delta"
 [revset-aliases]
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
 'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
-"immutable_heads()" = "none()"
+#"immutable_heads()" = "none()"
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
 
 [aliases]
 tug = ["util", "exec", "--", "sh", "-c", """
@@ -25,3 +27,11 @@ fi
 
 a = ["log", "-r", "::"]
 d = ["desc"]
+
+init = ["git", "init", "--no-colocate"]
+
+fedit = ["edit", "--ignore-immutable"]
+frebase = ["rebase", "--ignore-immutable"]
+fsquash = ["squash", "--ignore-immutable"]
+
+

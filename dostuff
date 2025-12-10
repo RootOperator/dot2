@@ -11,6 +11,7 @@ mkdir .local/bin -p
 mkdir .config
 
 cp ~/.bashrc .
+cp ~/.inputrc .
 cp ~/.bash_profile .
 cp ~/.gitconfig .
 cp ~/.tmux.conf .

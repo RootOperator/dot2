@@ -2,7 +2,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-j>', '<cmd>tabprevious<CR>', {noremap = true})
 vim.keymap.set('n', '<C-k>', '<cmd>tabnext<CR>', {noremap = true})
 
---vim.keymap.set('n', '<C-n>', '<cmd>vimTreeToggle<CR>', {noremap = true})
 vim.keymap.set('n', '<C-n>', '<cmd>lua MiniFiles.open()<CR>', {noremap = true})
 
 vim.keymap.set('n', '<C-l>', '1z=', {noremap = true})
@@ -20,20 +19,13 @@ vim.keymap.set('n', '<S-k>', '5k', {noremap = true})
 vim.keymap.set('v', '<S-j>', '5j', {noremap = true})
 vim.keymap.set('v', '<S-k>', '5k', {noremap = true})
 
---vim.keymap.set('n', '<C-S-j>', ':m .+1<CR>==', {noremap = true})
---vim.keymap.set('n', '<C-S-k>', ':m .-2<CR>==', {noremap = true})
---vim.keymap.set('i', '<C-S-k>', '<Esc>:m .-2<CR>==gi', {noremap = true})
---vim.keymap.set('i', '<C-S-j>', '<Esc>:m .+1<CR>==gi', {noremap = true})
---vim.keymap.set('v', '<C-S-j>', ':m \'>+1<CR>gv=gv', {noremap = true})
---vim.keymap.set('v', '<C-S-k>', ':m \'<-2<CR>gv=gv', {noremap = true})
-
 vim.keymap.set('n', '<leader>d', '"_d')
 vim.keymap.set('n', '<leader>j', function()
   vim.cmd('norm! ' .. vim.v.count1 .. 'J')
 end)
 
 vim.keymap.set('n', '<leader>tt', '<cmd>ToggleInlayEndHints<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>m', '<cmd>MarkdownPreviewToggle<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>mt', '<cmd>MarkdownPreviewToggle<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>lp', '<cmd>lclose<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>ll', '<cmd>lopen<CR>', {noremap = true})
 
@@ -78,6 +70,8 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = tru
 vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
+
+vim.keymap.set('n', '<leader>mm', ':lua require"popui.marks-manager"()<CR>', {noremap = true, silent = true})
 
 vim.cmd([[
     imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
