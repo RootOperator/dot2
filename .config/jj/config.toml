@@ -6,7 +6,6 @@ email = "20143055+RootOperator@users.noreply.github.com"
 
 [ui]
 default-command = "log"
-git.tool = "delta"
 
 [revset-aliases]
 'closest_bookmark(to)' = 'heads(::to & bookmarks())'
@@ -33,5 +32,3 @@ init = ["git", "init", "--no-colocate"]
 fedit = ["edit", "--ignore-immutable"]
 frebase = ["rebase", "--ignore-immutable"]
 fsquash = ["squash", "--ignore-immutable"]
-
-
