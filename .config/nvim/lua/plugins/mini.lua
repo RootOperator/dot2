@@ -5,6 +5,17 @@ return {
     { 'nvim-mini/mini.splitjoin', config = true },
     { 'nvim-mini/mini.surround', config = true },
     {
+        'nvim-mini/mini.indentscope',
+        config = function()
+            require('mini.indentscope').setup({
+                draw = {
+                    delay = 0,
+                    animation = require('mini.indentscope').gen_animation.none()
+                }
+            })
+        end
+    },
+    {
         'nvim-mini/mini.ai',
         opts = function()
             local gen_spec = require('mini.ai').gen_spec
