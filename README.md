@@ -10,7 +10,7 @@
 - ℹ️  Bar: [WayBar](https://github.com/Alexays/Waybar)
 - `>_` Terminal: [Alacritty](https://alacritty.org/)
 - 📋 Menu: [Rofi](https://github.com/davatorium/rofi)
-- 🗃️ File Manager: [Thunar](https://github.com/xfce-mirror/thunar), [Yazi](https://github.com/sxyazi/Yazi)
+- 🗃️ File Manager: [Thunar](https://github.com/xfce-mirror/thunar)
 - 🎨 theme: [Kanagawa](https://github.com/rebelot/kanagawa.nvim)
     - 📒 [Nvim](https://github.com/rebelot/kanagawa.nvim)
     - 🖌️ [GTK](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme)
@@ -21,7 +21,6 @@
         - 🖌️ [Bento](kanagawa-theme/bento/app.css)
     - 💬 [Discord](kanagawa-theme/discord)
         -   🌑 [midnight](kanagawa-theme/discord/midnight-kanagawa.css)
-        <!---   👾 [system24](kanagawa-theme/discord/system24-kanagawa.css)-->
     - 🎵 [th-ch/youtube-music](kanagawa-theme/ytmusic/kanagawa.css)
 
 
@@ -31,7 +30,6 @@
 ![](scrnshts/3.png)
 ![](scrnshts/4.png)
 ![](scrnshts/13.png)
-<!--![](scrnshts/14.png)-->
 ![](scrnshts/9.png)
 ![](scrnshts/10.png)
 ![](scrnshts/5.png)
