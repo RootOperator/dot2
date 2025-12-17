@@ -22,7 +22,15 @@ local langs = {
 }
 
 return {
-    { "nvim-treesitter/nvim-treesitter-textobjects", branch = 'main' },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        branch = 'main',
+        opts = {
+            move = {
+                set_jumps = true,
+            }
+        }
+    },
     {
         'nvim-treesitter/nvim-treesitter',
         branch = 'main',

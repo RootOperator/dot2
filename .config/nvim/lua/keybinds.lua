@@ -73,13 +73,53 @@ vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>mm', ':lua require"popui.marks-manager"()<CR>', {noremap = true, silent = true})
 
-vim.cmd([[
-    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-    inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+vim.keymap.set({ 'n', 'x', 'o' }, ']4', function()
+  require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects')
+end)
+vim.keymap.set({ 'n', 'x', 'o' }, ']]', function()
+  require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects')
+end)
 
-    snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-    snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+vim.keymap.set({ 'n', 'x', 'o' }, ']$', function()
+  require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects')
+end)
+vim.keymap.set({ 'n', 'x', 'o' }, '][', function()
+  require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer', 'textobjects')
+end)
 
-    imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-    smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-]])
+vim.keymap.set({ 'n', 'x', 'o' }, '[4', function()
+  require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects')
+end)
+vim.keymap.set({ 'n', 'x', 'o' }, '[[', function()
+  require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects')
+end)
+
+vim.keymap.set({ 'n', 'x', 'o' }, '[$', function()
+  require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects')
+end)
+vim.keymap.set({ 'n', 'x', 'o' }, '[]', function()
+  require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer', 'textobjects')
+end)
+
+
+vim.keymap.set("i", "<Tab>", function()
+    if require("luasnip").expand_or_jumpable() then
+        return "<Plug>luasnip-expand-or-jump"
+    else
+        return "<Tab>"
+    end
+end, { silent = true, expr = true })
+
+vim.keymap.set("i", "<S-Tab>", function() require("luasnip").jump(-1) end, { silent = true })
+
+vim.keymap.set("s", "<Tab>", function() require("luasnip").jump(1) end, { silent = true })
+
+vim.keymap.set("s", "<S-Tab>", function() require("luasnip").jump(-1) end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+    if require("luasnip").choice_active() then
+        return "<Plug>luasnip-next-choice"
+    else
+        return "<C-E>"
+    end
+end, { silent = true, expr = true })

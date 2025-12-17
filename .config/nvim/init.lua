@@ -26,14 +26,22 @@ vim.opt.swapfile = false
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
 
-vim.cmd([[
-    autocmd InsertEnter * set cul
-    autocmd InsertLeave * set nocul
-    autocmd InsertLeave * :StripTrailingWhitespace
-    autocmd QuitPre * if empty(&bt) | lclose | endif
+vim.api.nvim_create_autocmd('InsertEnter', {
+    callback = function()
+        vim.opt.cursorline = true
+    end,
+})
 
-    au VimLeave * set guicursor=a:block100,a:blinkon100-blinkoff50
-]])
+vim.api.nvim_create_autocmd('InsertLeave', {
+    callback = function()
+        vim.opt.cursorline = false
+        pcall(vim.cmd, 'StripTrailingWhitespace')
+    end,
+})
+
+vim.api.nvim_create_autocmd('VimLeave', {
+    command = 'set guicursor=a:block100,a:blinkon100-blinkoff50',
+})
 
 require("config.lazy")
 require("keybinds")
@@ -122,4 +130,3 @@ vim.cmd([[
 ]])
 
 vim.cmd(string.format("colorscheme %s", get_colorscheme()))
---require('kanagawa.colors').setup()
