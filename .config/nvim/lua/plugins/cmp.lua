@@ -1,17 +1,3 @@
-local unlink_group = vim.api.nvim_create_augroup('UnlinkSnippet', { })
-vim.api.nvim_create_autocmd('ModeChanged', {
-    group = unlink_group,
-    pattern = { 's:n', 'i:*' },
-    callback = function(event)
-        local luasnip = require 'luasnip'
-        if luasnip.session
-            and luasnip.session.current_nodes[event.buf]
-            and not luasnip.session.jump_active then
-            luasnip.unlink_current()
-        end
-    end,
-})
-
 return {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -20,7 +6,16 @@ return {
         'hrsh7th/cmp-nvim-lsp-signature-help',
         'hrsh7th/cmp-path',
         'onsails/lspkind.nvim',
-        { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+        {
+            'L3MON4D3/LuaSnip',
+            build = 'make install_jsregexp',
+            opts = {
+                history = true,
+                update_events = "TextChanged,TextChangedI",
+                delete_check_events = "TextChanged",
+                region_check_events = "InsertEnter",
+            }
+        },
         'saadparwaiz1/cmp_luasnip'
     },
 

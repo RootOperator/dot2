@@ -27,13 +27,13 @@ snippet This
     ${0}
 
 snippet self
-    self: Self
-
-snippet self*
-    self: *const Self
+    self: *const ${1:Self}
 
 snippet selff
-    self: *Self
+    self: ${1:Self}
+
+snippet self*
+    self: *${1:Self}
 
 snippet arena
     var arena = std.heap.ArenaAllocator.init(${1:std.heap.page_allocator});
