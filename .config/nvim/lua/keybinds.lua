@@ -35,6 +35,7 @@ vim.keymap.set('n', '<leader>cb', '<cmd>lua require\'dap\'.clear_breakpoints()<C
 vim.keymap.set('n', "<leader>u",'<cmd>UndotreeToggle<CR>')
 
 vim.keymap.set('n', '<leader>zz', '<cmd>ZenMode<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>zf', '<C-w>_<C-w>|', {noremap = true})
 
 vim.keymap.set('', '<leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = true})
 vim.keymap.set('', '<leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
@@ -71,7 +72,11 @@ vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {no
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
+vim.keymap.set('n', '<leader>fr', '<cmd>reg<CR>', {noremap = true})
+
 vim.keymap.set('n', '<leader>mm', ':lua require"popui.marks-manager"()<CR>', {noremap = true, silent = true})
+
+vim.keymap.set('n', 'saa', 'sa_', { remap = true })
 
 vim.keymap.set({ 'n', 'x', 'o' }, ']4', function()
   require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects')

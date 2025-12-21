@@ -1,0 +1,3 @@
+#!/bin/bash
+
+paru -S --rebuild qt5-styleplugins qt6gtk2

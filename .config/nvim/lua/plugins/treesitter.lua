@@ -17,8 +17,10 @@ local langs = {
     'html',
     'css',
     'javascript',
+    'typescript',
     'svelte',
-    'norg'
+    'norg',
+    'norg_meta',
 }
 
 return {
