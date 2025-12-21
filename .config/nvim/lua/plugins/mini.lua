@@ -1,3 +1,4 @@
+
 return {
     { 'nvim-mini/mini.align', config = true },
     { 'nvim-mini/mini.move', config = true },

@@ -20,10 +20,13 @@ return {
             overrides = function(colors)
                 local theme = colors.theme
                 return {
-                    -- Assign a static color to strings
                     String = { fg = colors.palette.carpYellow, italic = true },
 
-                    LspInlayHint = { italic = true },
+                    --LspInlayHint = { italic = true },
+                    LspInlayHint = { fg = colors.palette.sumiInk6, bg = colors.palette.sumiInk3, italic = true },
+
+                    MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },
+
                     --["@string.special.url"] = { fg = theme.syn.special1, underline = true },
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
@@ -63,6 +66,7 @@ return {
                         String = { fg = colors.palette.carpYellow, italic = true },
 
                         LspInlayHint = { fg = "#494c56", bg = colors.palette.sumiInk1, italic = true },
+                        MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },
 
                         TelescopeTitle = { fg = theme.ui.special, bold = true },
                         TelescopePromptNormal = { bg = theme.ui.bg_p1 },

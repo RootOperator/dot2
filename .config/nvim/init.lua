@@ -130,3 +130,5 @@ vim.cmd([[
 ]])
 
 vim.cmd(string.format("colorscheme %s", get_colorscheme()))
+
+--vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "Comment" })
