@@ -1,5 +1,4 @@
 return {
-    'preservim/nerdcommenter',
     'arzg/vim-rust-syntax-ext',
     --'leafOfTree/vim-vue-plugin',
     'leafOfTree/vim-svelte-plugin',

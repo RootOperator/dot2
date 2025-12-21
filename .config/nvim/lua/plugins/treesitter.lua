@@ -13,6 +13,8 @@ local langs = {
     'make',
     'cmake',
     'markdown',
+    'markdown_inline',
+    'regex',
     'hyprlang',
     'html',
     'css',

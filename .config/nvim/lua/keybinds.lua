@@ -72,7 +72,18 @@ vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {no
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
-vim.keymap.set('n', '<leader>fr', '<cmd>reg<CR>', {noremap = true})
+--vim.keymap.set('n', '<leader>fr', '<cmd>reg<CR>', {noremap = true})
+--vim.keymap.set('n', '<leader>fr', '<cmd>Telescope registers<CR>', {noremap = true})
+vim.keymap.set(
+    'n',
+    '<leader>fr',
+    function()
+        vim.cmd('NoiceDisable')
+        vim.cmd('reg')
+        vim.defer_fn(function() vim.cmd('NoiceEnable') end, 100)
+    end,
+    {noremap = true}
+)
 
 vim.keymap.set('n', '<leader>mm', ':lua require"popui.marks-manager"()<CR>', {noremap = true, silent = true})
 

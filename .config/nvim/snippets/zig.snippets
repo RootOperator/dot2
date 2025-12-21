@@ -39,20 +39,24 @@ snippet arena
     var arena = std.heap.ArenaAllocator.init(${1:std.heap.page_allocator});
     defer arena.deinit();
     const allocator = arena.allocator();
+    ${0}
 
 snippet fba
     var buffer: [${1:1024}]u8 = undefined;
     var fba = std.heap.FixedBufferAllocator.init(&buffer);
     const allocator = fba.allocator();
+    ${0}
 
 snippet page
     const allocator = std.heap.page_allocator;
+    ${0}
 
 snippet calloc
     const allocator = std.heap.c_allocator;
+    ${0}
 
 snippet stdt
     var stdout_buffer: [1024]u8 = undefined;
     var stdout_writer = std.fs.File.stdout().writer(&stdout_buffer);
     const stdout = &stdout_writer.interface;
-
+    ${0}
