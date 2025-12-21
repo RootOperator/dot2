@@ -3,16 +3,11 @@ return {
         'rebelot/kanagawa.nvim',
         opts = {
             compile = true,
-            undercurl = true,           -- enable undercurls
             commentStyle = { italic = true },
             functionStyle = {},
             keywordStyle = { italic = true },
             statementStyle = { bold = true },
             typeStyle = {},
-            transparent = false,        -- do not set background color
-            dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-            globalStatus = false,       -- adjust window separators highlight for laststatus=3
-            terminalColors = true,
             colors = {
                 theme = {
                     all = {
@@ -28,6 +23,7 @@ return {
                     -- Assign a static color to strings
                     String = { fg = colors.palette.carpYellow, italic = true },
 
+                    LspInlayHint = { italic = true },
                     --["@string.special.url"] = { fg = theme.syn.special1, underline = true },
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
@@ -42,38 +38,42 @@ return {
     },
     {
         'sho-87/kanagawa-paper.nvim',
-        opts = {
-            undercurl = true,           -- enable undercurls
-            commentStyle = { italic = true },
-            functionStyle = {},
-            keywordStyle = { italic = true },
-            statementStyle = { bold = true },
-            typeStyle = {},
-            transparent = false,        -- do not set background color
-            dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-            globalStatus = false,       -- adjust window separators highlight for laststatus=3
-            terminalColors = true,
-            colors = {
-                palette = {
-                    sumiInk3 = "#181820",
+        opts = function()
+            local colors = require("kanagawa-paper.colors")
+            return {
+                styles = {
+                    comment = { italic = true },
+                    functions = {},
+                    keyword = { italic = true },
+                    statement = { bold = true },
+                    type = { italic = false },
                 },
-            },
-            overrides = function(colors)
-                local theme = colors.theme
-                return {
-                    String = { fg = colors.palette.carpYellow, italic = true },
+                colors = {
+                    theme = {
+                        ink = {
+                            ui = {
+                                bg = colors.palette.sumiInk1
+                            }
+                        }
+                    }
+                },
+                overrides = function(colors)
+                    local theme = colors.theme
+                    return {
+                        String = { fg = colors.palette.carpYellow, italic = true },
 
-                    LspInlayHint = { fg = "#494c56", bg = colors.palette.sumiInk3, italic = true },
+                        LspInlayHint = { fg = "#494c56", bg = colors.palette.sumiInk1, italic = true },
 
-                    TelescopeTitle = { fg = theme.ui.special, bold = true },
-                    TelescopePromptNormal = { bg = theme.ui.bg_p1 },
-                    TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-                    TelescopeResultsNormal = { fg = theme.ui.fg, bg = theme.ui.bg_m1 },
-                    TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-                    TelescopePreviewNormal = { bg = theme.ui.bg_dim },
-                    TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
-                }
-            end,
-        }
+                        TelescopeTitle = { fg = theme.ui.special, bold = true },
+                        TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+                        TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+                        TelescopeResultsNormal = { fg = theme.ui.fg, bg = theme.ui.bg_m1 },
+                        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+                        TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+                        TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+                    }
+                end,
+            }
+        end
     }
 }
