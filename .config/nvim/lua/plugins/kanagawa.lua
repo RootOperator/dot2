@@ -22,12 +22,11 @@ return {
                 return {
                     String = { fg = colors.palette.carpYellow, italic = true },
 
-                    --LspInlayHint = { italic = true },
                     LspInlayHint = { fg = colors.palette.sumiInk6, bg = colors.palette.sumiInk3, italic = true },
 
                     MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },
 
-                    --["@string.special.url"] = { fg = theme.syn.special1, underline = true },
+                    ["@string.special.url"] = { fg = theme.syn.special1, underline = true, undercurl = false },
                     TelescopeTitle = { fg = theme.ui.special, bold = true },
                     TelescopePromptNormal = { bg = theme.ui.bg_p1 },
                     TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },

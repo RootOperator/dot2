@@ -1,10 +1,13 @@
 return {
     'nvim-lualine/lualine.nvim',
+    -- enabled = false,
     config = function ()
         local lualine = require('lualine')
 
         local colors = {
             bg       = '#202328',
+            -- bg       = '#181820',
+            -- bg       = '#1F1F28',
             fg       = '#bbc2cf',
             yellow   = '#ECBE7B',
             cyan     = '#008080',
@@ -135,6 +138,15 @@ return {
                 color_warn = { fg = colors.yellow },
                 color_info = { fg = colors.cyan },
             },
+        }
+
+        ins_left {
+            function()
+                local mode = require("noice").api.statusline.mode.get()
+                return (mode and mode:find("recording", 1, true)) and mode or ''
+            end,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = colors.yellow },
         }
 
         ins_left {

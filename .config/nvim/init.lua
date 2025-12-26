@@ -61,7 +61,7 @@ local function get_colorscheme()
 
     if get_background() == 2 then
         return "kanagawa-dragon"
-    elseif hour >= 18 or hour <= 6 then
+    elseif hour >= 18 or hour <= 8 then
         return "kanagawa-paper"
     else
         return default_colorscheme
@@ -130,5 +130,3 @@ vim.cmd([[
 ]])
 
 vim.cmd(string.format("colorscheme %s", get_colorscheme()))
-
---vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { link = "Comment" })

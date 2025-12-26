@@ -10,7 +10,6 @@ return {
             'L3MON4D3/LuaSnip',
             build = 'make install_jsregexp',
             opts = {
-                history = true,
                 update_events = "TextChanged,TextChangedI",
                 delete_check_events = "TextChanged",
                 region_check_events = "InsertEnter",
@@ -36,7 +35,7 @@ return {
                 end,
             },
             mapping = {
-                ['<C-S-Tab>'] = cmp.mapping.select_prev_item(),
+                ['<S-Tab>'] = cmp.mapping.select_prev_item(),
                 ['<Tab>'] = cmp.mapping.select_next_item(),
                 ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),

@@ -12,6 +12,9 @@ return {
             },
             open_vsplit = "S",
             open_split = "I",
-        }
+        },
+        hints = {
+            dictionary = "asdflewcmpghio"
+        },
     }
 }

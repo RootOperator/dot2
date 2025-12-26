@@ -20,6 +20,9 @@ vim.keymap.set('v', '<S-j>', '5j', {noremap = true})
 vim.keymap.set('v', '<S-k>', '5k', {noremap = true})
 
 vim.keymap.set('n', '<leader>d', '"_d')
+vim.keymap.set('n', '<leader>c', '"_c')
+vim.keymap.set('n', '<leader>fi', 'gg=G\'\'zz')
+
 vim.keymap.set('n', '<leader>j', function()
   vim.cmd('norm! ' .. vim.v.count1 .. 'J')
 end)
@@ -44,10 +47,12 @@ vim.keymap.set('', '<leader>nc', '<Plug>(neorg.looking-glass.magnify-code-block)
 vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true})
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
 vim.keymap.set('n', '<C-x>', '<cmd>lua require("pretty_hover").hover()<CR>', {noremap = true})
-vim.keymap.set('n', '[3', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
-vim.keymap.set('n', ']3', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
-vim.keymap.set('n', '[#', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
-vim.keymap.set('n', ']#', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('n', ']3', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
+vim.keymap.set('n', '[3', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
+vim.keymap.set('n', ']#', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('n', '[#', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('n', ']!', '<cmd>cnext<CR>', {noremap = true})
+vim.keymap.set('n', '[!', '<cmd>cprev<CR>', {noremap = true})
 vim.keymap.set('i', '<C-j>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true})
 vim.keymap.set('n', 'grr', '<cmd>Telescope lsp_references<CR>', {noremap = true})
 
@@ -72,8 +77,6 @@ vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {no
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
---vim.keymap.set('n', '<leader>fr', '<cmd>reg<CR>', {noremap = true})
---vim.keymap.set('n', '<leader>fr', '<cmd>Telescope registers<CR>', {noremap = true})
 vim.keymap.set(
     'n',
     '<leader>fr',
@@ -118,24 +121,23 @@ vim.keymap.set({ 'n', 'x', 'o' }, '[]', function()
 end)
 
 
-vim.keymap.set("i", "<Tab>", function()
-    if require("luasnip").jumpable(1) then
-        return "<Plug>luasnip-jump-next"
+vim.keymap.set('i', '<Tab>', function()
+    if require('luasnip').jumpable(1) then
+        return '<Plug>luasnip-jump-next'
     else
-        return "<Tab>"
+        return '<Tab>'
     end
 end, { silent = true, expr = true })
 
-vim.keymap.set("i", "<S-Tab>", function() require("luasnip").jump(-1) end, { silent = true })
 
-vim.keymap.set("s", "<Tab>", function() require("luasnip").jump(1) end, { silent = true })
+vim.keymap.set('s', '<Tab>', function() require('luasnip').jump(1) end, { silent = true })
 
-vim.keymap.set("s", "<S-Tab>", function() require("luasnip").jump(-1) end, { silent = true })
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function() require('luasnip').jump(-1) end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-E>", function()
-    if require("luasnip").choice_active() then
-        return "<Plug>luasnip-next-choice"
+vim.keymap.set({ 'i', 's' }, '<C-E>', function()
+    if require('luasnip').choice_active() then
+        return '<Plug>luasnip-next-choice'
     else
-        return "<C-E>"
+        return '<C-E>'
     end
 end, { silent = true, expr = true })

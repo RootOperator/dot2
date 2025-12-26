@@ -1,6 +1,6 @@
 return {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     opts = {
         lsp = {
             hover = {
@@ -19,6 +19,6 @@ return {
         },
     },
     dependencies = {
-        "MunifTanjim/nui.nvim"
+        'MunifTanjim/nui.nvim'
     }
 }
