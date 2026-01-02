@@ -43,12 +43,12 @@ window#waybar.solo {
 
 #pulseaudio {
     margin:     0px 6px 0px 10px;
-    min-width: 14px;
+    /* min-width: 14px; */
 }
 
 #mode, #battery, #cpu, #memory, #network, #custom-microphone, #custom-storage, #custom-weather, #custom-profile {
     margin:     0px 6px 0px 10px;
-    min-width:  10px;
+    /* min-width:  10px; */
 }
 
 #clock {

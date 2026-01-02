@@ -94,14 +94,6 @@
         "interval": 10,
         "exec": "~/.config/waybar/modules/profile.sh"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-        "tooltip": false
-    },
     "tray": {
         "icon-size": 15,
         "spacing": 5,

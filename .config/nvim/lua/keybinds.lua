@@ -2,7 +2,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-j>', '<cmd>tabprevious<CR>', {noremap = true})
 vim.keymap.set('n', '<C-k>', '<cmd>tabnext<CR>', {noremap = true})
 
-vim.keymap.set('n', '<C-n>', '<cmd>lua MiniFiles.open()<CR>', {noremap = true})
+vim.keymap.set('n', '<C-n>', MiniFiles.open, {noremap = true})
 
 vim.keymap.set('n', '<C-l>', '1z=', {noremap = true})
 vim.keymap.set('n', '[2', '[s', {noremap = true})
@@ -34,8 +34,8 @@ vim.keymap.set('n', '<leader>ll', '<cmd>lopen<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>ft', '<cmd>Format<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>b', '<cmd>DapToggleBreakpoint<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>cb', '<cmd>lua require\'dap\'.clear_breakpoints()<CR>', {noremap = true})
-vim.keymap.set('n', "<leader>u",'<cmd>UndotreeToggle<CR>')
+vim.keymap.set('n', '<leader>cb', require('dap').clear_breakpoints, {noremap = true})
+vim.keymap.set('n', '<leader>u','<cmd>UndotreeToggle<CR>')
 
 vim.keymap.set('n', '<leader>zz', '<cmd>ZenMode<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>zf', '<C-w>_<C-w>|', {noremap = true})
@@ -44,16 +44,16 @@ vim.keymap.set('', '<leader>no', '<cmd>Neorg workspace notes<CR>', {noremap = tr
 vim.keymap.set('', '<leader>nr', '<cmd>Neorg return<CR>', {noremap = true})
 vim.keymap.set('', '<leader>nc', '<Plug>(neorg.looking-glass.magnify-code-block)', {noremap = true})
 
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true})
-vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
-vim.keymap.set('n', '<C-x>', '<cmd>lua require("pretty_hover").hover()<CR>', {noremap = true})
-vim.keymap.set('n', ']3', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
-vim.keymap.set('n', '[3', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
-vim.keymap.set('n', ']#', '<cmd>lua vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
-vim.keymap.set('n', '[#', '<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>', {noremap = true})
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {noremap = true})
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {noremap = true})
+vim.keymap.set('n', '<C-x>', require('pretty_hover').hover, {noremap = true})
+vim.keymap.set('n', ']3', vim.diagnostic.goto_next, {noremap = true})
+vim.keymap.set('n', '[3', vim.diagnostic.goto_prev, {noremap = true})
+vim.keymap.set('n', ']#', function() vim.diagnostic.goto_next({severity=vim.diagnostic.severity.ERROR}) end, {noremap = true})
+vim.keymap.set('n', '[#', function() vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR}) end, {noremap = true})
 vim.keymap.set('n', ']!', '<cmd>cnext<CR>', {noremap = true})
 vim.keymap.set('n', '[!', '<cmd>cprev<CR>', {noremap = true})
-vim.keymap.set('i', '<C-j>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {noremap = true})
+vim.keymap.set('i', '<C-j>', vim.lsp.buf.signature_help, {noremap = true})
 vim.keymap.set('n', 'grr', '<cmd>Telescope lsp_references<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>xx','<cmd>Trouble diagnostics toggle<CR>', {noremap = true})
@@ -77,6 +77,10 @@ vim.keymap.set('n', '<leader>fn', '<cmd>Telescope lsp_document_symbols<CR>', {no
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fh', '<cmd>TodoTelescope<CR>', {noremap = true})
 
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+vim.keymap.set('n', 'za', 'zA')
+
 vim.keymap.set(
     'n',
     '<leader>fr',
@@ -88,7 +92,7 @@ vim.keymap.set(
     {noremap = true}
 )
 
-vim.keymap.set('n', '<leader>mm', ':lua require"popui.marks-manager"()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>mm', require('popui.marks-manager'), {noremap = true, silent = true})
 
 vim.keymap.set('n', 'saa', 'sa_', { remap = true })
 

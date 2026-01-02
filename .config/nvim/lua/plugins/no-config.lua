@@ -11,6 +11,8 @@ return {
     'sindrets/diffview.nvim',
     'tpope/vim-obsession',
 
+    { "vague-theme/vague.nvim", config = true },
+
     { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
     { 'Fildo7525/pretty_hover', event = 'LspAttach', config = true },
     { 'xzbdmw/colorful-menu.nvim', config = true },

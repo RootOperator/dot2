@@ -17,6 +17,7 @@ vim.opt.softtabstop = 4
 vim.opt.undolevels = 1000
 vim.opt.backspace = "indent,eol,start"
 vim.opt.splitbelow = true
+vim.opt.splitright = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.guicursor= "a:hor10"
@@ -25,6 +26,58 @@ vim.opt.swapfile = false
 
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
+
+vim.api.nvim_create_autocmd({"BufWinEnter", "BufRead"}, {
+  pattern = "*/doc/*",
+  callback = function()
+    vim.cmd("wincmd L")
+  end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "quiet",
+  callback = function()
+    vim.api.nvim_set_hl(0, 'Pmenu', { fg = '#ffffff', bg = '#1c1c1c' })
+    vim.api.nvim_set_hl(0, 'PmenuSel', { fg = '#000000', bg = '#808080' })
+
+    vim.api.nvim_set_hl(0, 'MatchParen', {
+      fg = '#e8a004',
+    })
+  end
+})
+
+local function set_terminal_bg(color_code)
+  local is_tmux = os.getenv("TMUX") ~= nil
+  local sequence
+
+  if color_code then
+    sequence = string.format("\027]11;%s\007", color_code)
+  else
+    sequence = "\027]111\007"
+  end
+
+  if is_tmux then
+    sequence = sequence:gsub("\027", "\027\027")
+    sequence = "\027Ptmux;" .. sequence .. "\027\\"
+  end
+
+  io.write(sequence)
+end
+
+vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
+  callback = function()
+    local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
+    if normal.bg then
+      set_terminal_bg(string.format("#%06x", normal.bg))
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    set_terminal_bg(nil)
+  end,
+})
 
 vim.api.nvim_create_autocmd('InsertEnter', {
     callback = function()

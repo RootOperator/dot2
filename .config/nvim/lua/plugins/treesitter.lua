@@ -43,36 +43,13 @@ return {
         config = function()
             require('nvim-treesitter').install(langs)
 
-            --vim.api.nvim_create_autocmd("FileType", {
-                --pattern = { "norg", "neorg" },
-                --callback = function()
-                    --if pcall(vim.treesitter.start) then
-                        --vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-                        --vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-                    --end
-                --end,
-            --})
-
-            --require("nvim-treesitter.parsers").norg = {
-                --install_info = {
-                    --url = "https://github.com/nvim-neorg/tree-sitter-norg",
-                    --files = { "src/parser.c", "src/scanner.cc" },
-                    --build_cmd = "yarn gen",
-                    --cxx_standard = "c++14",
-                    --revision = "d89d95af13d409f30a6c7676387bde311ec4a2c8",
-                --},
-                --maintainers = { "@JoeyGrajciar", "@vhyrro" },
-                --tier = 2,
-                --generate_requires_npm = true,
-            --}
-
             vim.api.nvim_create_autocmd('FileType', {
                 pattern = langs,
                 callback = function()
                     vim.treesitter.start()
 
-                    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                    vim.wo[0][0].foldmethod = 'expr'
+                    -- vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                    -- vim.wo[0][0].foldmethod = 'expr'
 
                     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end,

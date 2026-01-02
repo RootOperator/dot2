@@ -22,7 +22,7 @@ return {
                 return {
                     String = { fg = colors.palette.carpYellow, italic = true },
 
-                    LspInlayHint = { fg = colors.palette.sumiInk6, bg = colors.palette.sumiInk3, italic = true },
+                    LspInlayHint = { italic = true, fg = theme.ui.nontext },
 
                     MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },
 
