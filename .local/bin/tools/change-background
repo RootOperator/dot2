@@ -6,12 +6,15 @@ import sys
 BACKGROUND_PATH = os.path.expanduser("~/Pictures/backgrounds/")
 
 def change_background(file):
-    os.system(f"hyprctl hyprpaper unload all; hyprctl hyprpaper preload '{BACKGROUND_PATH}{file}'; hyprctl hyprpaper wallpaper ,'{BACKGROUND_PATH}{file}'")
+    print(f"hyprctl hyprpaper wallpaper ,{BACKGROUND_PATH}{file},fill")
+
+    os.system(f"hyprctl hyprpaper wallpaper ,{BACKGROUND_PATH}{file},fill")
 
 try:
     items = sorted(os.listdir(BACKGROUND_PATH))
     items_dict = {x.split(".")[0]: x for x in items}
     current = int(os.popen("hyprctl hyprpaper listactive | grep -Po \"\\/\\K[0-9]*\" | head -1").read().strip())
+    print(current)
 except (FileNotFoundError, ValueError):
     sys.exit(1)
 
