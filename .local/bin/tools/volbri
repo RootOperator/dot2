@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 
 VOLUME=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -P -o "\/\s*\K[0-9]*" | head -1)
 BRIGHTNESS=$(light -G)

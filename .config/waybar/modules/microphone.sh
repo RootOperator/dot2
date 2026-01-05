@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 MUTED=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -P -o ": \K.*\w")
 
