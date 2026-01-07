@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 FILE="/sys/class/leds/tpacpi::lid_logo_dot/brightness"
 STATUS=$(cat $FILE)

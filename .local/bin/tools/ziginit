@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 zig init
 jj git init --colocate

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 mount="/"
 warning=20

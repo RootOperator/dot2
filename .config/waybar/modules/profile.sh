@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PROFILE=$(cat /sys/firmware/acpi/platform_profile)
 
