@@ -11,8 +11,6 @@ fi
 
 if [[ "$1" == "full" ]]; then
     hyprctl dispatch setprop active opaque true
-fi
-
-if [[ "$TRANSPARENCY" == "1" ]]; then
+else
     hyprctl dispatch setprop active opacity 1.2
 fi
