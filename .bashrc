@@ -15,6 +15,7 @@ alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 alias vim='nvim'
 alias more=less
+alias rg='rg -S'
 
 complete -cf sudo
 

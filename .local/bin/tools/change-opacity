@@ -3,18 +3,13 @@
 TRANSPARENCY=$(hyprctl getprop active opacity)
 OPAQUE=$(hyprctl getprop active opaque)
 
-echo $OPAQUE
-echo $TRANSPARENCY
-
-FULL=0; if [[ "$1" == "full" ]]; then FULL=1; fi
-
 if [[ "$OPAQUE" == "true" ]] || [[ "$TRANSPARENCY" != "1" ]]; then
     hyprctl dispatch setprop active opaque false
     hyprctl dispatch setprop active opacity 1
     exit
 fi
 
-if [[ $FULL -eq 1 ]]; then
+if [[ "$1" == "full" ]]; then
     hyprctl dispatch setprop active opaque true
 fi
 
