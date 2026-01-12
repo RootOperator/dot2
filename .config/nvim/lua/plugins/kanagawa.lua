@@ -64,6 +64,8 @@ return {
                     return {
                         String = { fg = colors.palette.carpYellow, italic = true },
 
+                        FloatBorder = { bg = colors.palette.sumiInk1 },
+
                         LspInlayHint = { fg = '#494c56', bg = colors.palette.sumiInk1, italic = true },
                         MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },
 

@@ -23,11 +23,10 @@ cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
 cp ~/.config/alacritty/ .config -r
 cp ~/.config/starship.toml .config -r
+cp ~/.config/nvim .config -r
 cp ~/.themes . -r
 cp ~/.icons . -r
 cp ~/kanagawa-theme/ . -r
-
-rsync -a ~/.config/nvim .config/ --exclude lazy-lock.json
 
 git add -A
 git commit -m "$LINE"

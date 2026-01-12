@@ -38,6 +38,7 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         branch = 'main',
+        commit = '4fc09be',
         lazy = false,
         build = ':TSUpdate',
         config = function()
@@ -51,55 +52,9 @@ return {
                     -- vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
                     -- vim.wo[0][0].foldmethod = 'expr'
 
-                    vim.bo.indentexpr = 'v:lua.require"nvim-treesitter".indentexpr()'
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end,
             })
         end
     }
 }
-
-    --return {
-    --{ 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'master' },
-    --{
-        --'nvim-treesitter/nvim-treesitter',
-        --lazy = false,
-        --branch = 'master',
-        --build = ':TSUpdate',
-        --config = function ()
-            --require('nvim-treesitter.configs').setup({
-                --ensure_installed = { 'lua', 'rust', 'toml', 'python', 'c', 'cpp', 'zig' },
-                --auto_install = true,
-                --highlight = {
-                    --enable = true,
-                    --additional_vim_regex_highlighting=true,
-                --},
-                --textobjects = {
-                    --select = {
-                        --enable = true,
-                        --keymaps = {
-                            --['if'] = '@function.inner',
-                            --['ic'] = '@class.inner',
-                        --},
-                    --},
-                    --move = {
-                        --enable = true,
-                        --set_jumps = true,
-                        --goto_next_start = {
-                            --[']4'] = '@function.outer',
-                        --},
-                        --goto_next_end = {
-                            --[']$'] = '@function.outer',
-                        --},
-                        --goto_previous_start = {
-                            --['[4'] = '@function.outer',
-                        --},
-                        --goto_previous_end = {
-                            --['[4'] = '@function.outer',
-                        --},
-                    --}
-                --},
-                --ident = { enable = true },
-            --})
-        --end
-    --}
---}
