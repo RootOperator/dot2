@@ -142,10 +142,10 @@ return {
 
         ins_left {
             function()
-                local mode = require("noice").api.statusline.mode.get()
-                return (mode and mode:find("recording", 1, true)) and mode or ''
+                local mode = require('noice').api.statusline.mode.get()
+                return (mode and mode:find('recording', 1, true)) and mode or ''
             end,
-            cond = require("noice").api.statusline.mode.has,
+            cond = require('noice').api.statusline.mode.has,
             color = { fg = colors.yellow },
         }
 

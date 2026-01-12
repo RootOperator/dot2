@@ -4,18 +4,18 @@ return {
         defaults = {
             mappings = {
                 i = {
-                    ["<C-s>"] = "select_vertical",
-                    ["<C-i>"] = "select_horizontal",
+                    ['<C-s>'] = 'select_vertical',
+                    ['<C-i>'] = 'select_horizontal',
                 },
                 n = {
-                    ["s"] = "select_vertical",
-                    ["i"] = "select_horizontal",
+                    ['s'] = 'select_vertical',
+                    ['i'] = 'select_horizontal',
                 }
             }
         },
         pickers = {
             find_files = {
-                find_command = { "rg" , "--files", "--color", "never", "--no-require-git"}
+                find_command = { 'rg' , '--files', '--color', 'never', '--no-require-git'}
             },
             man_pages = {
                 sections = { 'ALL' }

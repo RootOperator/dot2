@@ -28,7 +28,7 @@ vim.g.vim_svelte_plugin_use_typescript = 1
 vim.g.rust_clip_command = 'wl-copy'
 
 vim.api.nvim_create_autocmd({"BufWinEnter", "BufRead"}, {
-  pattern = "*/doc/*",
+  pattern = {"*/doc/*", "man://*"},
   callback = function()
     vim.cmd("wincmd L")
   end,
@@ -88,7 +88,8 @@ vim.api.nvim_create_autocmd('InsertEnter', {
 vim.api.nvim_create_autocmd('InsertLeave', {
     callback = function()
         vim.opt.cursorline = false
-        pcall(vim.cmd, 'StripTrailingWhitespace')
+        MiniTrailspace.trim()
+        MiniTrailspace.trim_last_lines()
     end,
 })
 

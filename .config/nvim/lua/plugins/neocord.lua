@@ -1,13 +1,13 @@
 return {
     'rootoperator/neocord.nvim',
-    event = "VeryLazy",
+    event = 'VeryLazy',
     -- enabled = false,
     opts = {
-        logo               = "adf",
+        logo               = 'adf',
         logo_tooltip       = nil,
-        main_image         = "language",
+        main_image         = 'language',
         enable_line_number = false,
-        blacklist          = {"/home/rootoperator/notes"},
+        blacklist          = {'/home/rootoperator/notes'},
         buttons            = nil,
         global_timer       = true,
     }

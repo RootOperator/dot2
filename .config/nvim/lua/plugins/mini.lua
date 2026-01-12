@@ -1,10 +1,10 @@
-
 return {
     { 'nvim-mini/mini.align', config = true },
     { 'nvim-mini/mini.move', config = true },
     { 'nvim-mini/mini.pairs', config = true },
     { 'nvim-mini/mini.splitjoin', config = true },
     { 'nvim-mini/mini.surround', config = true },
+    { 'nvim-mini/mini.trailspace', config = true },
     {
         'nvim-mini/mini.indentscope',
         config = function()
@@ -39,7 +39,7 @@ return {
     {
         'nvim-mini/mini.files',
         config = function()
-            require("mini.files").setup({
+            require('mini.files').setup({
                 content = {
                     filter = function(entry)
                         return entry.name:sub(1, 1) ~= '.'
@@ -48,7 +48,7 @@ return {
                 mappings = {
                     go_in = 'L',
                     go_in_plus = 'l',
-                    synchronize = "<CR>"
+                    synchronize = '<CR>'
                 }
             })
             local map_split = function(buf_id, lhs, direction)
@@ -61,7 +61,7 @@ return {
 
                     MiniFiles.set_target_window(new_target)
                     MiniFiles.go_in()
-                    if direction ~= "tab" then
+                    if direction ~= 'tab' then
                         MiniFiles.close()
                     end
                 end

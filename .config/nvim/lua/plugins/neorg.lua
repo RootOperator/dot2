@@ -1,5 +1,5 @@
 return {
-    "nvim-neorg/neorg",
+    'nvim-neorg/neorg',
     lazy = false,
     dependencies = {
         'nvim-neorg/lua-utils.nvim',
@@ -8,35 +8,35 @@ return {
     },
     opts = {
         load = {
-            ["core.defaults"] = {},
-            ["core.concealer"] = {
+            ['core.defaults'] = {},
+            ['core.concealer'] = {
                 config = {
-                    icon_preset = "varied"
+                    icon_preset = 'varied'
                 }
             },
-            ["core.export"] = {},
-            ["core.export.markdown"] = {
+            ['core.export'] = {},
+            ['core.export.markdown'] = {
                 config = {
-                    extensions = "all"
+                    extensions = 'all'
                 }
             },
-            ["core.completion"] = {
+            ['core.completion'] = {
                 config = {
-                    engine = "nvim-cmp"
+                    engine = 'nvim-cmp'
                 }
             },
-            ["core.dirman"] = {
+            ['core.dirman'] = {
                 config = {
                     workspaces = {
-                        notes = "~/notes",
+                        notes = '~/notes',
                     }
                 }
             },
-            ["core.esupports.metagen"] = {
+            ['core.esupports.metagen'] = {
                 config = {
                     update_date = true,
-                    type = "empty",
-                    timezone = "implicit-local"
+                    type = 'empty',
+                    timezone = 'implicit-local'
                 }
             }
         }

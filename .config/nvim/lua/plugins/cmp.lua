@@ -10,9 +10,9 @@ return {
             'L3MON4D3/LuaSnip',
             build = 'make install_jsregexp',
             opts = {
-                update_events = "TextChanged,TextChangedI",
-                delete_check_events = "TextChanged",
-                region_check_events = "InsertEnter",
+                update_events = 'TextChanged,TextChangedI',
+                delete_check_events = 'TextChanged',
+                region_check_events = 'InsertEnter',
             }
         },
         'saadparwaiz1/cmp_luasnip'
@@ -60,11 +60,11 @@ return {
             },
             formatting = {
                 format = function(entry, vim_item)
-                    local kind = require("lspkind").cmp_format({
-                        mode = "symbol_text",
+                    local kind = require('lspkind').cmp_format({
+                        mode = 'symbol_text',
                     })(entry, vim.deepcopy(vim_item))
 
-                    local highlights_info = require("colorful-menu").cmp_highlights(entry)
+                    local highlights_info = require('colorful-menu').cmp_highlights(entry)
                     -- error, such as missing parser, fallback to use raw label.
                     if highlights_info == nil then
                         vim_item.abbr = entry:get_completion_item().label
@@ -73,9 +73,9 @@ return {
                         vim_item.abbr = highlights_info.text
                     end
 
-                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                    vim_item.icon = " " .. (strings[1] or "") .. " "
-                    vim_item.menu = ""
+                    local strings = vim.split(kind.kind, '%s', { trimempty = true })
+                    vim_item.icon = ' ' .. (strings[1] or '') .. ' '
+                    vim_item.menu = ''
 
                     return vim_item
                 end,

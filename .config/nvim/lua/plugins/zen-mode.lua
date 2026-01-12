@@ -1,9 +1,9 @@
 return {
-    "folke/zen-mode.nvim",
+    'folke/zen-mode.nvim',
     opts = {
         window = {
             options = {
-                signcolumn = "no",
+                signcolumn = 'no',
             }
         },
         plugins = {
@@ -16,16 +16,16 @@ return {
             tmux = { enabled = true },
             alacritty = {
                 enabled = true,
-                font = "14",
+                font = '14',
             },
         },
         on_open = function(win)
-            vim.cmd("Barbecue hide")
+            vim.cmd('Barbecue hide')
             vim.lsp.inlay_hint.enable(false)
             vim.diagnostic.config({ virtual_text = false })
         end,
         on_close = function()
-            vim.cmd("Barbecue show")
+            vim.cmd('Barbecue show')
             vim.lsp.inlay_hint.enable(true)
             vim.diagnostic.config({ virtual_text = true })
         end

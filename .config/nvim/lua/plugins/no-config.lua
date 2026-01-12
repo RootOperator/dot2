@@ -5,15 +5,14 @@ return {
     'nvim-tree/nvim-web-devicons',
     'nvim-neotest/nvim-nio',
     'neovim/nvim-lspconfig',
-    'nvim-zh/whitespace.nvim',
     'Bekaboo/deadcolumn.nvim',
     'mbbill/undotree',
     'sindrets/diffview.nvim',
     'tpope/vim-obsession',
 
-    { "vague-theme/vague.nvim", config = true },
+    { 'vague-theme/vague.nvim', config = true },
 
-    { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
+    { 'folke/trouble.nvim', opts = {}, cmd = 'Trouble' },
     { 'Fildo7525/pretty_hover', event = 'LspAttach', config = true },
     { 'xzbdmw/colorful-menu.nvim', config = true },
     { 'lewis6991/gitsigns.nvim', config = true },
@@ -22,7 +21,7 @@ return {
     { 'mason-org/mason-lspconfig.nvim', config = true },
     { 'windwp/nvim-ts-autotag', config = true },
     { 'nanozuki/tabby.nvim', config = true },
-    { 'chentoast/marks.nvim', event = "VeryLazy", config = true },
+    { 'chentoast/marks.nvim', event = 'VeryLazy', config = true },
     { 'utilyre/barbecue.nvim', dependencies = { 'SmiteshP/nvim-navic' }, config = true },
     { 'mrcjkb/rustaceanvim', version = '^6', lazy = false },
 }
