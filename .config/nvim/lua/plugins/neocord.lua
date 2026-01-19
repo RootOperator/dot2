@@ -1,7 +1,7 @@
 return {
     'rootoperator/neocord.nvim',
     event = 'VeryLazy',
-    enabled = false,
+    -- enabled = false,
     opts = {
         logo               = 'adf',
         logo_tooltip       = nil,

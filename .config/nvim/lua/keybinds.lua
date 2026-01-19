@@ -67,9 +67,9 @@ vim.keymap.set('n', ']%','<cmd>Trouble prev skip_groups = true jump = true<CR>',
 
 vim.keymap.set('', '<F5>', ':DapContinue<CR>', {noremap = true})
 vim.keymap.set('', '<F6>', ':DapTerminate<CR>', {noremap = true})
+vim.keymap.set('', '<F9>', ':DapStepInto<CR>', {noremap = true})
 vim.keymap.set('', '<F10>', ':DapStepOver<CR>', {noremap = true})
-vim.keymap.set('', '<F11>', ':DapStepInto<CR>', {noremap = true})
-vim.keymap.set('', '<F12>', ':DapStepOut<CR>', {noremap = true})
+vim.keymap.set('', '<F11>', ':DapStepOut<CR>', {noremap = true})
 
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {noremap = true})

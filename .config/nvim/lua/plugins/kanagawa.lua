@@ -22,6 +22,8 @@ return {
                 return {
                     String = { fg = colors.palette.carpYellow, italic = true },
 
+                    FloatBorder = { bg = theme.ui.bg },
+
                     LspInlayHint = { italic = true, fg = theme.ui.nontext },
 
                     MiniIndentscopeSymbol = { fg = colors.palette.sumiInk5 },

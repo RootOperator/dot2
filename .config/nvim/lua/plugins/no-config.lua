@@ -4,7 +4,6 @@ return {
     'leafOfTree/vim-svelte-plugin',
     'nvim-tree/nvim-web-devicons',
     'nvim-neotest/nvim-nio',
-    'neovim/nvim-lspconfig',
     'Bekaboo/deadcolumn.nvim',
     'mbbill/undotree',
     'sindrets/diffview.nvim',
