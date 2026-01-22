@@ -7,13 +7,13 @@ return {
         if not configs.c3_lsp then
             configs.c3_lsp = {
                 default_config = {
-                    cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/c3lsp") },
-                    filetypes = { "c3", "c3i" },
+                    cmd = { "/usr/bin/c3lsp", '-diagnostics-delay', '0' },
+                    filetypes = { 'c3', 'c3i' },
                     root_dir = function(fname)
                         return util.find_git_ancestor(fname)
                     end,
                     settings = {},
-                    name = "c3_lsp"
+                    name = 'c3_lsp'
                 }
             }
         end
