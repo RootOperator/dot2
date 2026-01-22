@@ -42,7 +42,11 @@ return {
         lazy = false,
         build = ':TSUpdate',
         config = function()
-            require('nvim-treesitter').install(langs)
+            local install_langs = vim.tbl_filter(function(lang)
+                return lang ~= "norg" and lang ~= "norg_meta"
+            end, langs)
+
+            require('nvim-treesitter').install(install_langs)
 
             vim.api.nvim_create_autocmd('FileType', {
                 pattern = langs,
