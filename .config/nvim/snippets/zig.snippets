@@ -55,6 +55,10 @@ snippet calloc
     const allocator = std.heap.c_allocator;
     ${0}
 
+snippet smp
+    const allocator = std.heap.smp_allocator;
+    ${0}
+
 snippet stdt
     var stdout_buffer: [1024]u8 = undefined;
     var stdout_writer = std.fs.File.stdout().writer(&stdout_buffer);

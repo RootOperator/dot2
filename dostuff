@@ -23,7 +23,8 @@ cp ~/.config/waybar/ .config -r
 cp ~/.config/rofi/ .config -r
 cp ~/.config/alacritty/ .config -r
 cp ~/.config/starship.toml .config -r
-cp ~/.config/nvim .config -r
+cp ~/.config/nvim/ .config -r
+cp ~/.config/vicinae/ .config -r
 cp ~/.themes . -r
 cp ~/.icons . -r
 cp ~/kanagawa-theme/ . -r

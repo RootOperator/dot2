@@ -51,6 +51,7 @@ return {
                     synchronize = '<CR>'
                 }
             })
+
             local map_split = function(buf_id, lhs, direction)
                 local rhs = function()
                     local cur_target = MiniFiles.get_explorer_state().target_window
@@ -58,35 +59,20 @@ return {
                         vim.cmd(direction .. ' split')
                         return vim.api.nvim_get_current_win()
                     end)
-
                     MiniFiles.set_target_window(new_target)
                     MiniFiles.go_in()
-                    if direction ~= 'tab' then
+                    vim.schedule(function()
                         MiniFiles.close()
-                    end
+                    end)
                 end
 
                 local desc = 'Split ' .. direction
                 vim.keymap.set('n', lhs, rhs, { buffer = buf_id, desc = desc, nowait = true })
             end
 
-            vim.api.nvim_create_autocmd('User', {
-                pattern = 'MiniFilesBufferCreate',
-                callback = function(args)
-                    local buf_id = args.data.buf_id
-
-                    vim.keymap.set('n', '<C-n>', '<cmd>lua MiniFiles.close()<CR>', { buffer = buf_id })
-                    map_split(buf_id, 'i', 'horizontal')
-                    map_split(buf_id, 's', 'vertical')
-                    map_split(buf_id, 't', 'tab')
-                end,
-            })
-
             -- toggle dotfiles
             local show_dotfiles = true
-
             local filter_show = function(fs_entry) return true end
-
             local filter_hide = function(fs_entry)
                 return not vim.startswith(fs_entry.name, '.')
             end
@@ -101,8 +87,12 @@ return {
                 pattern = 'MiniFilesBufferCreate',
                 callback = function(args)
                     local buf_id = args.data.buf_id
-                    -- Tweak left-hand side of mapping to your liking
+
                     vim.keymap.set('n', '.', toggle_dotfiles, { buffer = buf_id })
+                    vim.keymap.set('n', '<C-n>', '<cmd>lua MiniFiles.close()<CR>', { buffer = buf_id })
+                    map_split(buf_id, 'i', 'horizontal')
+                    map_split(buf_id, 's', 'vertical')
+                    map_split(buf_id, 't', 'tab')
                 end,
             })
         end

@@ -6,10 +6,12 @@ return {
                 i = {
                     ['<C-s>'] = 'select_vertical',
                     ['<C-i>'] = 'select_horizontal',
+                    ['<C-t>'] = 'select_tab',
                 },
                 n = {
                     ['s'] = 'select_vertical',
                     ['i'] = 'select_horizontal',
+                    ['t'] = 'select_tab',
                 }
             }
         },
