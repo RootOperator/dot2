@@ -25,6 +25,7 @@ return {
     },
     {
         'nvim-mini/mini.ai',
+        dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
         opts = function()
             local gen_spec = require('mini.ai').gen_spec
             return {
@@ -32,6 +33,7 @@ return {
                 custom_textobjects = {
                     f = gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }, {}),
                     c = gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }, {}),
+                    [' '] = gen_spec.treesitter({ a = '@block.outer', i = '@block.inner' }, {}),
                 },
             }
         end,

@@ -23,7 +23,8 @@ local langs = {
     'svelte',
     'norg',
     'norg_meta',
-    'c3',
+    'just',
+    'slint',
 }
 
 return {
