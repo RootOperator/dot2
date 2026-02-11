@@ -4,3 +4,9 @@ zig init
 jj git init --colocate
 
 echo -e ".zig-cache/\nzig-out/" > .gitignore
+
+sed -i 's|//.*||' build.zig build.zig.zon
+
+zig fmt .
+
+sed -i '/^$/d' build.zig.zon
